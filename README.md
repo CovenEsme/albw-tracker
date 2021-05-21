@@ -2,6 +2,8 @@
 
 This is an item and gear tracker for the [A link Between Worlds Randomizer](https://gitlab.com/marsolk/albw-randomizer-cli)
 
+Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomizer specific information.
+
 ## Build Instructions
 To locally build and run the tracker, you will need to first install [Node.js and npm](https://www.npmjs.com/get-npm).
 
