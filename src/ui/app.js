@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/app.css';
+import '../css/styles.css';
 import GearTracker from './gear-tracker'
 
 function App() {

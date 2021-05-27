@@ -1,0 +1,10 @@
+body {
+    background-color: #000000;
+}
+
+#gear-tracker > img {
+  position: relative;
+  width:    50%;
+  height:   50%;
+  padding:  10px;
+}

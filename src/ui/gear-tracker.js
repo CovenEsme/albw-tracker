@@ -1,10 +1,12 @@
+import _ from 'lodash';
 import React from 'react';
 import gearOverlay from '../assets/gear-overlay.png';
-import '../css/gear-tracker.css';
+//import Assets from './assets';
+import '../css/styles.css';
 
 export default class GearTracker extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = { gear: {
       sword:    0, // Progressive: 0-4
