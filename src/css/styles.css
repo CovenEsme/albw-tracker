@@ -1,5 +1,11 @@
 body {
-    background-color: #000000;
+  background-color: #000000;
+  background-image: url("../assets/merge-dark.png");
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 #gear-tracker > img {
