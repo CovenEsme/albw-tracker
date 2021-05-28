@@ -4,7 +4,7 @@ import gearOverlay from '../assets/gear-overlay.png';
 //import Assets from './assets';
 import '../css/styles.css';
 
-export default class GearTracker extends React.Component {
+class GearTracker extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,3 +50,5 @@ export default class GearTracker extends React.Component {
     </div>;
   }
 }
+
+export default GearTracker;
