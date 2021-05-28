@@ -12,39 +12,38 @@ class GearTracker extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { gear: {
-      sword:    0, // Progressive: 0-4
-      mail:     0,
-      shield:   0,
-
-      bracelet: 0,
-      mitt:     0,
-      boots:    0,
-      gem:      0,
-      flippers: 0,
-      badge:    0,
-      scroll:   0,
-
-      power:    0,
-      wisdom:   0,
-      courage:  0,
-
-      gulley:   0,
-      oren:     0,
-      rosso:    0,
-      impa:     0,
-      irene:    0,
-      osfala:   0,
-      seres:    0,
-
-      heart:    0,
-      rupee:    0,
-      maiamai:  0,
-      tail:     0,
-      horn:     0,
-      guts:     0,
-      ore:      0,
-      }
+    this.state = {
+      swordValue:    0, // Progressive: 0-4
+      // mailValue:     0,
+      // shieldValue:   0,
+      //
+      // braceletValue: 0,
+      // mittValue:     0,
+      // bootsValue:    0,
+      // gemValue:      0,
+      // flippersValue: 0,
+      // badgeValue:    0,
+      // scrollValue:   0,
+      //
+      // powerValue:    0,
+      // wisdomValue:   0,
+      // courageValue:  0,
+      //
+      // gulleyValue:   0,
+      // orenValue:     0,
+      // rossoValue:    0,
+      // impaValue:     0,
+      // ireneValue:    0,
+      // osfalaValue:   0,
+      // seresValue:    0,
+      //
+      // heartValue:    0,
+      // rupeeValue:    0,
+      // maiamaiValue:  0,
+      // tailValue:     0,
+      // hornValue:     0,
+      // gutsValue:     0,
+      // oreValue:      0,
     };
 
     this.swordImages = [
@@ -53,14 +52,22 @@ class GearTracker extends React.Component {
       masterSwordLv1,
       masterSwordLv2,
       masterSwordLv3,
-    ]
+    ];
+  }
+
+  handleClick() {
+    const newSwordValue = this.state.swordValue + 1;
+
+    this.setState({swordValue: newSwordValue});
   }
 
   render() {
     return (
       <div id="progressive-sword">
         <Obtainable obtainableName="Progressive Sword"
-                    images={this.swordImages} />
+                    image={this.swordImages[this.state.swordValue]}
+                    onClick={() => this.handleClick()}
+        />
       </div>
     );
   }
