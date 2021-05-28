@@ -59,7 +59,8 @@ class GearTracker extends React.Component {
   render() {
     return (
       <div id="progressive-sword">
-        <Obtainable obtainableName="Progressive Sword" image={this.swordImages[0]}/>
+        <Obtainable obtainableName="Progressive Sword"
+                    images={this.swordImages} />
       </div>
     );
   }
