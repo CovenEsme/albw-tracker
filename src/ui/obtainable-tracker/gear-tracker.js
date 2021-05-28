@@ -1,6 +1,4 @@
-import _ from 'lodash';
 import React from 'react';
-import gearOverlay from '../../assets/gear-overlay.png';
 import Obtainable from './obtainable';
 import '../../css/styles.css';
 
@@ -60,12 +58,8 @@ class GearTracker extends React.Component {
 
   render() {
     return (
-      <div id="gear-tracker">
-        <img src={gearOverlay} id="gear-overlay" alt="Gear overlay"/>
-
-        <div id="progressive-sword">
-          <Obtainable obtainableName="Progressive Sword" image={this.swordImages[0]}/>
-        </div>
+      <div id="progressive-sword">
+        <Obtainable obtainableName="Progressive Sword" image={this.swordImages[0]}/>
       </div>
     );
   }

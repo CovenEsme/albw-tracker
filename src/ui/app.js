@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/styles.css';
-import GearTracker from './obtainable-tracker/gear-tracker';
+import Tracker from './tracker';
 
 function App() {
   return (
     <div className="app">
-      <GearTracker/>
+      <Tracker />
     </div>
   );
 }
