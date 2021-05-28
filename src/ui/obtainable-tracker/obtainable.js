@@ -2,11 +2,33 @@ import React from 'react';
 
 class Obtainable extends React.Component {
   render() {
+    const {
+      image,
+      obtainableName,
+      incrementObtainable,
+      decrementObtainable,
+    } = this.props;
+
+    const incrementObtainableFunction = (event) => {
+      event.stopPropagation();
+      incrementObtainable();
+    };
+
+    const decrementObtainableFunction = (event) => {
+      event.preventDefault();
+      decrementObtainable();
+    };
+
     return (
-      <div className="obtainable">
-        <img src={this.props.image}
-             alt={this.props.obtainableName}
-             onClick={() => this.props.onClick()}
+      <div
+        className="obtainable"
+        onClick={incrementObtainableFunction}
+        onContextMenu={decrementObtainableFunction}
+        role="button"
+      >
+        <img id="progressive-sword"
+             src={image}
+             alt={obtainableName}
         />
       </div>
     )

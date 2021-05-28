@@ -55,20 +55,33 @@ class GearTracker extends React.Component {
     ];
   }
 
-  handleClick() {
-    const newSwordValue = this.state.swordValue + 1;
+  handleClick(increment) {
+    var newSwordValue = this.state.swordValue;
+
+    if (increment) {
+      newSwordValue++;
+    }
+    else {
+      newSwordValue--;
+    }
+
+    if (newSwordValue >= this.swordImages.length) {
+      newSwordValue = 0;
+    }
+    else if (newSwordValue < 0) {
+      newSwordValue = this.swordImages.length - 1;
+    }
 
     this.setState({swordValue: newSwordValue});
   }
 
   render() {
     return (
-      <div id="progressive-sword">
-        <Obtainable obtainableName="Progressive Sword"
-                    image={this.swordImages[this.state.swordValue]}
-                    onClick={() => this.handleClick()}
-        />
-      </div>
+      <Obtainable obtainableName="Progressive Sword"
+                  image={this.swordImages[this.state.swordValue]}
+                  incrementObtainable={() => this.handleClick(true)}
+                  decrementObtainable={() => this.handleClick(false)}
+      />
     );
   }
 }
