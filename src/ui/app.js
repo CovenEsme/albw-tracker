@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/styles.css';
-import GearTracker from './gear-tracker'
+import GearTracker from './obtainable-tracker/gear-tracker';
 
 function App() {
   return (

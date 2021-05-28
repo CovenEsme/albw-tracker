@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import gearOverlay from '../assets/gear-overlay.png';
-//import Assets from './assets';
+import gearOverlay from '../../assets/gear-overlay.png';
 import '../css/styles.css';
 
 class GearTracker extends React.Component {
