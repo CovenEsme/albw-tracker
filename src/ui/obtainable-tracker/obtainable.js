@@ -3,8 +3,9 @@ import React from 'react';
 class Obtainable extends React.Component {
   render() {
     const {
-      image,
       obtainableName,
+      obtainableFancyName,
+      obtainableImage,
       incrementObtainable,
       decrementObtainable,
     } = this.props;
@@ -26,9 +27,11 @@ class Obtainable extends React.Component {
         onContextMenu={decrementObtainableFunction}
         role="button"
       >
-        <img id="progressive-sword"
-             src={image}
-             alt={obtainableName}
+        <img
+          id={obtainableName}
+          src={obtainableImage}
+          alt={obtainableFancyName}
+          draggable={false}
         />
       </div>
     )

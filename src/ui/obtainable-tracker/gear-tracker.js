@@ -1,5 +1,10 @@
+import _ from 'lodash';
 import React from 'react';
+
+import Helper from '../../services/helper';
+import Images from '../../services/images';
 import Obtainable from './obtainable';
+
 import '../../css/styles.css';
 
 import noSword from '../../assets/gear/sword-0.png';
@@ -75,13 +80,27 @@ class GearTracker extends React.Component {
     this.setState({swordValue: newSwordValue});
   }
 
+  obtainable(obtainableName) {
+    const obtainableFancyName = _.get(Helper.getFancyName(obtainableName, this.state.swordValue))
+    const obtainableImages = _.get(Images.IMAGES, ['GEAR', obtainableName]);
+    const obtainableImage = _.get(obtainableImages, this.state.swordValue);
+
+    return (
+      <Obtainable
+        obtainableName={obtainableName}
+        obtainableFancyName={obtainableFancyName}
+        obtainableImage={obtainableImage}
+        incrementObtainable={() => this.handleClick(true)}
+        decrementObtainable={() => this.handleClick(false)}
+      />
+    );
+  }
+
   render() {
     return (
-      <Obtainable obtainableName="Progressive Sword"
-                  image={this.swordImages[this.state.swordValue]}
-                  incrementObtainable={() => this.handleClick(true)}
-                  decrementObtainable={() => this.handleClick(false)}
-      />
+        <div id="sword-block">
+          {this.obtainable(Helper.GEAR.PROGRESSIVE_SWORD)}
+        </div>
     );
   }
 }
