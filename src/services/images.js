@@ -47,6 +47,11 @@ class Images {
           3: import('../assets/gear/sword-3.png'),
           4: import('../assets/gear/sword-4.png'),
         },
+        [Helper.GEAR.PROGRESSIVE_BRACELET]: {
+          0: import('../assets/gear/bracelet-0.png'),
+          1: import('../assets/gear/bracelet-1.png'),
+          2: import('../assets/gear/bracelet-2.png'),
+        },
       },
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };

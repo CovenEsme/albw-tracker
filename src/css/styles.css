@@ -13,12 +13,14 @@ body {
   height:   auto;
 }
 
-.obtainable {
-  position: absolute;
-}
-
 #sword-block {
   position: absolute;
+  float: left;
+}
+
+.obtainable {
+  position: relative;
+  display:inline-block;
   left: 10px;
   top: 12px;
 }
