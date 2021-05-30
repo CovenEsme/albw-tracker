@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import React from 'react';
 
 class Obtainable extends React.Component {
@@ -28,6 +30,7 @@ class Obtainable extends React.Component {
         role="button"
       >
         <img
+          className={_.toLower(_.snakeCase(obtainableName))}
           id={obtainableName}
           src={obtainableImage}
           alt={obtainableFancyName}
