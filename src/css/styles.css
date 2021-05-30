@@ -9,18 +9,19 @@ body {
 
 #gear-tracker > img {
   position: absolute;
-  width:    auto;
-  height:   auto;
+
 }
 
 #sword-block {
-  position: absolute;
+  position: relative;
   float: left;
 }
 
 .obtainable {
   position: relative;
-  display:inline-block;
+  display: inline-grid;
+  width: 46px;
+  height: 47px;
   left: 10px;
   top: 12px;
 }
