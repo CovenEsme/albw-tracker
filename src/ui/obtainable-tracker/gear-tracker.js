@@ -42,8 +42,8 @@ class GearTracker extends React.Component {
   }
 
   obtainable(obtainableName) {
-    const obtainableFancyName = _.get(Helper.getFancyName(obtainableName,
-                                        this.state.obtainables[obtainableName]))
+    const obtainableFancyName = Helper.getFancyName(obtainableName,
+                                        this.state.obtainables[obtainableName]);
     const obtainableImages = _.get(Images.IMAGES, ['GEAR', obtainableName]);
     const obtainableImage = _.get(obtainableImages,
                                   this.state.obtainables[obtainableName]);
