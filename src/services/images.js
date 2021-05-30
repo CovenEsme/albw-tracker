@@ -47,6 +47,17 @@ class Images {
           3: import('../assets/gear/sword-3.png'),
           4: import('../assets/gear/sword-4.png'),
         },
+        [Helper.GEAR.PROGRESSIVE_MAIL]: {
+          0: import('../assets/gear/mail-0.png'),
+          1: import('../assets/gear/mail-1.png'),
+          2: import('../assets/gear/mail-2.png'),
+          3: import('../assets/gear/mail-3.png'),
+        },
+        [Helper.GEAR.PROGRESSIVE_SHIELD]: {
+          0: import('../assets/gear/shield-0.png'),
+          1: import('../assets/gear/shield-1.png'),
+          2: import('../assets/gear/shield-2.png'),
+        },
         [Helper.GEAR.PROGRESSIVE_BRACELET]: {
           0: import('../assets/gear/bracelet-0.png'),
           1: import('../assets/gear/bracelet-1.png'),

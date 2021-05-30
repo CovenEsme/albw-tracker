@@ -63,6 +63,8 @@ class GearTracker extends React.Component {
     return (
         <div id="sword-block">
           {this.obtainable(Helper.GEAR.PROGRESSIVE_SWORD)}
+          {this.obtainable(Helper.GEAR.PROGRESSIVE_MAIL)}
+          {this.obtainable(Helper.GEAR.PROGRESSIVE_SHIELD)}
         </div>
     );
   }
