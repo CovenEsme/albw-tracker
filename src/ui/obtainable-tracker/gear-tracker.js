@@ -61,11 +61,13 @@ class GearTracker extends React.Component {
 
   render() {
     return (
+      <div id="gear-obtainables">
         <div id="sword-block">
           {this.obtainable(Helper.GEAR.PROGRESSIVE_SWORD)}
           {this.obtainable(Helper.GEAR.PROGRESSIVE_MAIL)}
           {this.obtainable(Helper.GEAR.PROGRESSIVE_SHIELD)}
-
+        </div>
+        <div id="painting-block">
           {this.obtainable(Helper.GEAR.SAGE_GULLEY)}
           {this.obtainable(Helper.GEAR.SAGE_OREN)}
           {this.obtainable(Helper.GEAR.SAGE_ROSSO)}
@@ -74,6 +76,7 @@ class GearTracker extends React.Component {
           {this.obtainable(Helper.GEAR.SAGE_OSFALA)}
           {this.obtainable(Helper.GEAR.SAGE_SERES)}
         </div>
+      </div>
     );
   }
 }
