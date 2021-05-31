@@ -65,6 +65,14 @@ class GearTracker extends React.Component {
           {this.obtainable(Helper.GEAR.PROGRESSIVE_SWORD)}
           {this.obtainable(Helper.GEAR.PROGRESSIVE_MAIL)}
           {this.obtainable(Helper.GEAR.PROGRESSIVE_SHIELD)}
+
+          {this.obtainable(Helper.GEAR.SAGE_GULLEY)}
+          {this.obtainable(Helper.GEAR.SAGE_OREN)}
+          {this.obtainable(Helper.GEAR.SAGE_ROSSO)}
+          {this.obtainable(Helper.GEAR.SAGE_IMPA)}
+          {this.obtainable(Helper.GEAR.SAGE_IRENE)}
+          {this.obtainable(Helper.GEAR.SAGE_OSFALA)}
+          {this.obtainable(Helper.GEAR.SAGE_SERES)}
         </div>
     );
   }

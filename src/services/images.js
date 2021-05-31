@@ -63,6 +63,34 @@ class Images {
           1: import('../assets/gear/bracelet-1.png'),
           2: import('../assets/gear/bracelet-2.png'),
         },
+        [Helper.GEAR.SAGE_GULLEY]: {
+          0: import('../assets/gear/sage-gulley-0.png'),
+          1: import('../assets/gear/sage-gulley-1.png'),
+        },
+        [Helper.GEAR.SAGE_OREN]: {
+          0: import('../assets/gear/sage-oren-0.png'),
+          1: import('../assets/gear/sage-oren-1.png'),
+        },
+        [Helper.GEAR.SAGE_ROSSO]: {
+          0: import('../assets/gear/sage-rosso-0.png'),
+          1: import('../assets/gear/sage-rosso-1.png'),
+        },
+        [Helper.GEAR.SAGE_IMPA]: {
+          0: import('../assets/gear/sage-impa-0.png'),
+          1: import('../assets/gear/sage-impa-1.png'),
+        },
+        [Helper.GEAR.SAGE_IRENE]: {
+          0: import('../assets/gear/sage-irene-0.png'),
+          1: import('../assets/gear/sage-irene-1.png'),
+        },
+        [Helper.GEAR.SAGE_OSFALA]: {
+          0: import('../assets/gear/sage-osfala-0.png'),
+          1: import('../assets/gear/sage-osfala-1.png'),
+        },
+        [Helper.GEAR.SAGE_SERES]: {
+          0: import('../assets/gear/sage-seres-0.png'),
+          1: import('../assets/gear/sage-seres-1.png'),
+        },
       },
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };

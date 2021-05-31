@@ -31,8 +31,50 @@ body {
 
 .progressive_shield {
   position: absolute;
-  left: 103px;
+  left: 102px;
   top: 15px;
+}
+
+.sage_gulley {
+  position: absolute;
+  left: 215px;
+  top: 2px
+}
+
+.sage_oren {
+  position: absolute;
+  left: 265px;
+  top: 19px;
+}
+
+.sage_rosso {
+  position: absolute;
+  left: 277px;
+  top: 71px;
+}
+
+.sage_impa {
+  position: absolute;
+  left: 242px;
+  top: 118px;
+}
+
+.sage_irene {
+  position: absolute;
+  left: 182px;
+  top: 118px;
+}
+
+.sage_osfala {
+  position: absolute;
+  left: 149px;
+  top: 71px;
+}
+
+.sage_seres {
+  position: absolute;
+  left: 166px;
+  top: 19px;
 }
 
 /* .obtainable {
