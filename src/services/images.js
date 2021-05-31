@@ -103,6 +103,32 @@ class Images {
           0: import('../assets/gear/pendant-of-courage-0.png'),
           1: import('../assets/gear/pendant-of-courage-1.png'),
         },
+        [Helper.GEAR.PROGRESSIVE_BRACELET]: {
+          0: import('../assets/gear/bracelet-0.png'),
+          1: import('../assets/gear/bracelet-1.png'),
+          2: import('../assets/gear/bracelet-2.png'),
+        },
+        [Helper.GEAR.PROGRESSIVE_MITT]: {
+          0: import('../assets/gear/mitt-0.png'),
+          1: import('../assets/gear/mitt-1.png'),
+          2: import('../assets/gear/mitt-2.png'),
+        },
+        [Helper.GEAR.PEGASUS_BOOTS]: {
+          0: import('../assets/gear/boots-0.png'),
+          1: import('../assets/gear/boots-1.png'),
+        },
+        [Helper.GEAR.ZORA_FLIPPERS]: {
+          0: import('../assets/gear/flippers-0.png'),
+          1: import('../assets/gear/flippers-1.png'),
+        },
+        [Helper.GEAR.BEE_BADGE]: {
+          0: import('../assets/gear/badge-0.png'),
+          1: import('../assets/gear/badge-1.png'),
+        },
+        [Helper.GEAR.STAMINA_SCROLL]: {
+          0: import('../assets/gear/scroll-0.png'),
+          1: import('../assets/gear/scroll-1.png'),
+        },
       },
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };
