@@ -42,14 +42,24 @@ class Tracker extends React.Component {
     }
     else {
       content = (
-        <div id="gear-tracker">
-          <img
-            id="gear-overlay"
-            src={_.get(Images.IMAGES, 'GEAR_OVERLAY')}
-            alt="Gear overlay"
+        <div id="tracker">
+          <div id="gear-tracker">
+            <img
+              id="gear-overlay"
+              src={_.get(Images.IMAGES, 'GEAR_OVERLAY')}
+              alt="Gear overlay"
+              draggable={false}
+            />
+            <GearTracker />
+          </div>
+          <div id="gear-label">
+            <img
+            id="gear-label"
+            src={_.get(Images.IMAGES, 'GEAR_LABEL')}
+            alt="Gear label"
             draggable={false}
-          />
-          <GearTracker />
+            />
+          </div>
         </div>
       );
     }

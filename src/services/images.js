@@ -144,6 +144,7 @@ class Images {
       MASTER_ORE: import('../assets/gear/ore.png'),
 
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
+      GEAR_LABEL: import('../assets/gear-label.png'),
     };
   }
 }

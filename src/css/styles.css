@@ -8,13 +8,17 @@ body {
 }
 
 #gear-tracker > img {
-  position: absolute;
+  position: relative;
 }
 
-#sword-block {
+#gear-label > img {
+  position: relative;
+}
+
+/* #sword-block {
   position: relative;
   float: left;
-}
+} */
 
 .progressive_sword {
   position: absolute;
