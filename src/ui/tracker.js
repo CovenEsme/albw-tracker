@@ -1,10 +1,10 @@
+import _ from 'lodash';
 import React from 'react';
 
 import GearTracker from './obtainable-tracker/gear-tracker';
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
 
-import gearOverlay from '../assets/gear-overlay.png';
 import '../css/styles.css';
 
 class Tracker extends React.Component {
@@ -43,7 +43,12 @@ class Tracker extends React.Component {
     else {
       content = (
         <div id="gear-tracker">
-          <img src={gearOverlay} id="gear-overlay" alt="Gear overlay"/>
+          <img
+            id="gear-overlay"
+            src={_.get(Images.IMAGES, 'GEAR_OVERLAY')}
+            alt="Gear overlay"
+            draggable={false}
+          />
           <GearTracker />
         </div>
       );
