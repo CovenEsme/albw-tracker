@@ -76,6 +76,11 @@ class GearTracker extends React.Component {
           {this.obtainable(Helper.GEAR.SAGE_OSFALA)}
           {this.obtainable(Helper.GEAR.SAGE_SERES)}
         </div>
+        <div id="pendant-block">
+          {this.obtainable(Helper.GEAR.PENDANT_OF_POWER)}
+          {this.obtainable(Helper.GEAR.PENDANT_OF_WISDOM)}
+          {this.obtainable(Helper.GEAR.PENDANT_OF_COURAGE)}
+        </div>
       </div>
     );
   }

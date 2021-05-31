@@ -91,6 +91,18 @@ class Images {
           0: import('../assets/gear/sage-seres-0.png'),
           1: import('../assets/gear/sage-seres-1.png'),
         },
+        [Helper.GEAR.PENDANT_OF_POWER]: {
+          0: import('../assets/gear/pendant-of-power-0.png'),
+          1: import('../assets/gear/pendant-of-power-1.png'),
+        },
+        [Helper.GEAR.PENDANT_OF_WISDOM]: {
+          0: import('../assets/gear/pendant-of-wisdom-0.png'),
+          1: import('../assets/gear/pendant-of-wisdom-1.png'),
+        },
+        [Helper.GEAR.PENDANT_OF_COURAGE]: {
+          0: import('../assets/gear/pendant-of-courage-0.png'),
+          1: import('../assets/gear/pendant-of-courage-1.png'),
+        },
       },
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };

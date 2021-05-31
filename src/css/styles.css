@@ -77,6 +77,24 @@ body {
   top: 19px;
 }
 
+.pendant_of_power {
+  position: absolute;
+  left: 215px;
+  top: 47px
+}
+
+.pendant_of_wisdom {
+  position: absolute;
+  left: 192px;
+  top: 84px;
+}
+
+.pendant_of_courage {
+  position: absolute;
+  left: 237px;
+  top: 84px;
+}
+
 /* .obtainable {
   position: relative;
   display: inline-grid;
