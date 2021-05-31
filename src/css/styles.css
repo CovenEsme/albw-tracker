@@ -137,6 +137,14 @@ body {
   top: 115px;
 }
 
+
+
+.piece_of_heart {
+  position: absolute;
+  left: 13px;
+  top: 161px;
+}
+
 /* .obtainable {
   position: relative;
   display: inline-grid;

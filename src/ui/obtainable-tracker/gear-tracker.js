@@ -89,6 +89,9 @@ class GearTracker extends React.Component {
           {this.obtainable(Helper.GEAR.BEE_BADGE)}
           {this.obtainable(Helper.GEAR.STAMINA_SCROLL)}
         </div>
+        <div id="heart-container">
+          {this.obtainable(Helper.GEAR.PIECE_OF_HEART)}
+        </div>
       </div>
     );
   }

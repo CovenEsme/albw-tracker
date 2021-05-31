@@ -129,6 +129,12 @@ class Images {
           0: import('../assets/gear/scroll-0.png'),
           1: import('../assets/gear/scroll-1.png'),
         },
+        [Helper.GEAR.PIECE_OF_HEART]: {
+          0: import('../assets/gear/heart-0.png'),
+          1: import('../assets/gear/heart-1.png'),
+          2: import('../assets/gear/heart-2.png'),
+          3: import('../assets/gear/heart-3.png'),
+        },
       },
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };
