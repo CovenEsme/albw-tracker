@@ -41,6 +41,20 @@ class GearTracker extends React.Component {
     this.setState({obtainables: updatedObtainables});
   }
 
+  collectable(collectableName) {
+    const collectableImage = _.get(Images.IMAGES, collectableName);
+
+    return (
+      <img
+        className={_.toLower(_.snakeCase(collectableName))}
+        id={collectableName}
+        src={collectableImage}
+        alt={collectableName}
+        draggable={false}
+      />
+    )
+  }
+
   obtainable(obtainableName) {
     const obtainableFancyName = Helper.getFancyName(obtainableName,
                                         this.state.obtainables[obtainableName]);
@@ -91,6 +105,14 @@ class GearTracker extends React.Component {
         </div>
         <div id="heart-container">
           {this.obtainable(Helper.GEAR.PIECE_OF_HEART)}
+        </div>
+        <div id="collectable-block">
+          {this.collectable('RUPEE')}
+          {this.collectable('MAIAMAI')}
+          {this.collectable('MONSTER_TAIL')}
+          {this.collectable('MONSTER_HORN')}
+          {this.collectable('MONSTER_GUTS')}
+          {this.collectable('MASTER_ORE')}
         </div>
       </div>
     );

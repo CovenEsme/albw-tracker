@@ -9,7 +9,6 @@ body {
 
 #gear-tracker > img {
   position: absolute;
-
 }
 
 #sword-block {
@@ -154,24 +153,60 @@ body {
   top: 12px;
 } */
 
-.accessory-block {
+#accessory-block {
 
 }
 
-.painting-block {
+#painting-block {
 
 }
 
-.pearl-block {
+#pearl-block {
 
 }
 
-.heart-container {
+#heart-container {
 
 }
 
-.collectable-block {
+#collectable-block {
 
+}
+
+.rupee {
+  position: absolute;
+  left: 68px;
+  top: 164px;
+}
+
+.maiamai {
+  position: absolute;
+  left: 109px;
+  top: 164px;
+}
+
+.monster_tail {
+  position: absolute;
+  left: 149px;
+  top: 164px;
+}
+
+.monster_horn {
+  position: absolute;
+  left: 188px;
+  top: 164px;
+}
+
+.monster_guts {
+  position: absolute;
+  left: 228px;
+  top: 164px;
+}
+
+.master_ore {
+  position: absolute;
+  left: 267px;
+  top: 164px;
 }
 
 .loading-spinner {

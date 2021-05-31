@@ -136,6 +136,13 @@ class Images {
           3: import('../assets/gear/heart-3.png'),
         },
       },
+      RUPEE: import('../assets/gear/rupee.png'),
+      MAIAMAI: import('../assets/gear/maiamai.png'),
+      MONSTER_TAIL: import('../assets/gear/tail.png'),
+      MONSTER_HORN: import('../assets/gear/horn.png'),
+      MONSTER_GUTS: import('../assets/gear/guts.png'),
+      MASTER_ORE: import('../assets/gear/ore.png'),
+
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
     };
   }
