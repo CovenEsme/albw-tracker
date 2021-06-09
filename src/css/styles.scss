@@ -7,46 +7,17 @@ body {
   bottom: 0;
 }
 
-.gear-tracker {
-  position: relative;
-  display: inline-block;
-}
-
-#gear-overlay > img {
+#sword-block {
   position: absolute;
+  left: 23px;
+  top:  16px;
+  display: flex;
+  flex-direction: row;
+
+  .obtainable {
+    margin-left: -8px;
+  }
 }
-
-#gear-extension > img {
-  position: absolute;
-}
-
-#gear-label > img {
-  position: relative;
-}
-
-/* #sword-block {
-  position: relative;
-  float: left;
-} */
-
-.progressive_sword {
-  position: absolute;
-  left: 15px;
-  top: 16px;
-}
-
-.progressive_mail {
-  position: absolute;
-  left: 59px;
-  top: 15px
-}
-
-.progressive_shield {
-  position: absolute;
-  left: 106px;
-  top: 16px;
-}
-
 
 
 .sage_gulley {
