@@ -129,6 +129,18 @@ class Images {
           0: import('../assets/gear/scroll-0.png'),
           1: import('../assets/gear/scroll-1.png'),
         },
+        [Helper.GEAR.SMOOTH_GEM]: {
+          0: import('../assets/gear/gem-0.png'),
+          1: import('../assets/gear/gem-1.png'),
+        },
+        [Helper.GEAR.POUCH]: {
+          0: import('../assets/gear/pouch-0a.png'),
+          1: import('../assets/gear/pouch-1a.png'),
+        },
+        [Helper.GEAR.BELL]: {
+          0: import('../assets/gear/bell-0.png'),
+          1: import('../assets/gear/bell-1.png'),
+        },
         [Helper.GEAR.PIECE_OF_HEART]: {
           0: import('../assets/gear/heart-0.png'),
           1: import('../assets/gear/heart-1.png'),
@@ -144,6 +156,7 @@ class Images {
       MASTER_ORE: import('../assets/gear/ore.png'),
 
       GEAR_OVERLAY: import('../assets/gear-overlay.png'),
+      GEAR_EXTENSION: import('../assets/gear-extension.png'),
       GEAR_LABEL: import('../assets/gear-label.png'),
     };
   }

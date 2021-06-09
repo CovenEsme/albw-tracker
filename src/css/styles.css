@@ -7,8 +7,17 @@ body {
   bottom: 0;
 }
 
-#gear-tracker > img {
+.gear-tracker {
   position: relative;
+  display: inline-block;
+}
+
+#gear-overlay > img {
+  position: absolute;
+}
+
+#gear-extension > img {
+  position: absolute;
 }
 
 #gear-label > img {
@@ -22,130 +31,150 @@ body {
 
 .progressive_sword {
   position: absolute;
-  left: 12px;
-  top: 14px;
+  left: 15px;
+  top: 16px;
 }
 
 .progressive_mail {
   position: absolute;
-  left: 56px;
-  top: 13px
+  left: 59px;
+  top: 15px
 }
 
 .progressive_shield {
   position: absolute;
-  left: 103px;
-  top: 14px;
+  left: 106px;
+  top: 16px;
 }
 
 
 
 .sage_gulley {
   position: absolute;
-  left: 215px;
-  top: 2px
+  left: 218px;
+  top: 4px
 }
 
 .sage_oren {
   position: absolute;
-  left: 265px;
-  top: 19px;
+  left: 268px;
+  top: 21px;
 }
 
 .sage_rosso {
   position: absolute;
-  left: 277px;
-  top: 71px;
+  left: 280px;
+  top: 73px;
 }
 
 .sage_impa {
   position: absolute;
-  left: 242px;
-  top: 118px;
+  left: 245px;
+  top: 121px;
 }
 
 .sage_irene {
   position: absolute;
-  left: 182px;
-  top: 118px;
+  left: 185px;
+  top: 121px;
 }
 
 .sage_osfala {
   position: absolute;
-  left: 149px;
-  top: 71px;
+  left: 152px;
+  top: 73px;
 }
 
 .sage_seres {
   position: absolute;
-  left: 166px;
-  top: 19px;
+  left: 169px;
+  top: 21px;
 }
 
 
 
 .pendant_of_power {
   position: absolute;
-  left: 215px;
-  top: 47px
+  left: 218px;
+  top: 49px
 }
 
 .pendant_of_wisdom {
   position: absolute;
-  left: 192px;
-  top: 84px;
+  left: 195px;
+  top: 86px;
 }
 
 .pendant_of_courage {
   position: absolute;
-  left: 237px;
-  top: 84px;
+  left: 240px;
+  top: 86px;
 }
 
 
 
 .progressive_bracelet {
   position: absolute;
-  left: 18px;
-  top: 77px;
+  left: 21px;
+  top: 79px;
 }
 
 .progressive_mitt {
   position: absolute;
-  left: 60px;
-  top: 75px;
+  left: 63px;
+  top: 77px;
 }
 
 .pegasus_boots {
   position: absolute;
-  left: 100px;
-  top: 80px;
+  left: 103px;
+  top: 82px;
 }
 
 .zora_flippers {
   position: absolute;
-  left: 16px;
-  top: 114px;
+  left: 19px;
+  top: 116px;
 }
 
 .bee_badge {
   position: absolute;
-  left: 60px;
-  top: 115px;
+  left: 63px;
+  top: 117px;
 }
 
 .stamina_scroll {
   position: absolute;
-  left: 99px;
-  top: 115px;
+  left: 102px;
+  top: 117px;
+}
+
+
+
+.smooth_gem {
+  position: absolute;
+  left: 348px;
+  top: 51px;
+}
+
+.pouch {
+  position: absolute;
+  left: 345px;
+  top: 95px;
+}
+
+.bell {
+  position: absolute;
+  left: 351px;
+  top: 136px;
 }
 
 
 
 .piece_of_heart {
   position: absolute;
-  left: 13px;
-  top: 161px;
+  left: 15px;
+  top: 164px;
 }
 
 /* .obtainable {
@@ -179,38 +208,38 @@ body {
 
 .rupee {
   position: absolute;
-  left: 68px;
-  top: 164px;
+  left: 71px;
+  top: 166px;
 }
 
 .maiamai {
   position: absolute;
-  left: 109px;
-  top: 164px;
+  left: 112px;
+  top: 166px;
 }
 
 .monster_tail {
   position: absolute;
-  left: 149px;
-  top: 164px;
+  left: 152px;
+  top: 166px;
 }
 
 .monster_horn {
   position: absolute;
-  left: 188px;
-  top: 164px;
+  left: 191px;
+  top: 166px;
 }
 
 .monster_guts {
   position: absolute;
-  left: 228px;
-  top: 164px;
+  left: 231px;
+  top: 166px;
 }
 
 .master_ore {
   position: absolute;
-  left: 267px;
-  top: 164px;
+  left: 270px;
+  top: 166px;
 }
 
 .loading-spinner {
