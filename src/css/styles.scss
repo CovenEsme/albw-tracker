@@ -20,46 +20,48 @@ body {
 }
 
 
-.sage_gulley {
-  position: absolute;
-  left: 218px;
-  top: 4px
-}
+#painting-block {
+  .sage_gulley {
+    position: absolute;
+    left: 218px;
+    top: 4px
+  }
 
-.sage_oren {
-  position: absolute;
-  left: 268px;
-  top: 21px;
-}
+  .sage_oren {
+    position: absolute;
+    left: 268px;
+    top: 21px;
+  }
 
-.sage_rosso {
-  position: absolute;
-  left: 280px;
-  top: 73px;
-}
+  .sage_rosso {
+    position: absolute;
+    left: 280px;
+    top: 73px;
+  }
 
-.sage_impa {
-  position: absolute;
-  left: 245px;
-  top: 121px;
-}
+  .sage_impa {
+    position: absolute;
+    left: 245px;
+    top: 121px;
+  }
 
-.sage_irene {
-  position: absolute;
-  left: 185px;
-  top: 121px;
-}
+  .sage_irene {
+    position: absolute;
+    left: 185px;
+    top: 121px;
+  }
 
-.sage_osfala {
-  position: absolute;
-  left: 152px;
-  top: 73px;
-}
+  .sage_osfala {
+    position: absolute;
+    left: 152px;
+    top: 73px;
+  }
 
-.sage_seres {
-  position: absolute;
-  left: 169px;
-  top: 21px;
+  .sage_seres {
+    position: absolute;
+    left: 169px;
+    top: 21px;
+  }
 }
 
 
@@ -158,10 +160,6 @@ body {
 } */
 
 #accessory-block {
-
-}
-
-#painting-block {
 
 }
 
