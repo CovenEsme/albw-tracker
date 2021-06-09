@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/styles.css';
+import '../css/styles.scss';
 import Tracker from './tracker';
 
 function App() {

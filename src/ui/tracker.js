@@ -5,7 +5,7 @@ import GearTracker from './obtainable-tracker/gear-tracker';
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
 
-import '../css/styles.css';
+import '../css/styles.scss';
 
 class Tracker extends React.Component {
   constructor(props) {
