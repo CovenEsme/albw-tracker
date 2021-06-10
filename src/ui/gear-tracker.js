@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React from 'react';
 
-import Helper from '../../services/helper';
-import Images from '../../services/images';
+import Helper from '../services/helper';
+import Images from '../services/images';
 import Obtainable from './obtainable';
 
-import '../../css/styles.scss';
+import '../css/styles.scss';
 
 class GearTracker extends React.Component {
   constructor(props) {

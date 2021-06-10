@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import GearTracker from './obtainable-tracker/gear-tracker';
+import GearTracker from './gear-tracker';
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
 
