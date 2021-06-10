@@ -22,22 +22,13 @@ class GearTracker extends React.Component {
 
     let newCount = updatedObtainables[obtainableName];
 
-    if (increment) {
-      newCount++;
-    }
-    else {
-      newCount--;
-    }
+    if (increment) {newCount++;}
+    else           {newCount--;}
 
-    if (newCount > maxCount) {
-      newCount = 0;
-    }
-    else if (newCount < 0) {
-      newCount = maxCount;
-    }
+    if (newCount > maxCount) {newCount = 0;}
+    else if (newCount < 0)   {newCount = maxCount;}
 
     updatedObtainables[obtainableName] = newCount;
-
     this.setState({obtainables: updatedObtainables});
   }
 
