@@ -102,6 +102,8 @@ class GearTracker extends React.Component {
           {this.obtainable(Helper.GEAR.ZORA_FLIPPERS)}
           {this.obtainable(Helper.GEAR.BEE_BADGE)}
           {this.obtainable(Helper.GEAR.STAMINA_SCROLL)}
+        </div>
+        <div id="extension-block">
           {this.obtainable(Helper.GEAR.SMOOTH_GEM)}
           {this.obtainable(Helper.GEAR.POUCH)}
           {this.obtainable(Helper.GEAR.BELL)}
