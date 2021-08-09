@@ -1,5 +1,15 @@
+@font-face {
+  font-family: ReturnofGanon;
+  src: local(ReturnofGanon),
+       url("../assets/ReturnofGanon.ttf") format("truetype");
+}
+
 body {
   background-image: url("../assets/merge-dark.png");
+  font-family: ReturnofGanon, "Fira Sans", sans-serif;
+  font-size: x-large;
+  color: white;
+
   position: absolute;
   left:   0;
   right:  0;
@@ -19,7 +29,6 @@ body {
 
   #gear-label-text {
     position: absolute;
-    color:    white;
   }
 }
 
