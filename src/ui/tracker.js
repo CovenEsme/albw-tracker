@@ -50,21 +50,16 @@ class Tracker extends React.Component {
               alt="Gear overlay"
               draggable={false}
             />
-            <img
-              id="gear-extension"
-              src={_.get(Images.IMAGES, 'GEAR_EXTENSION')}
-              alt="Gear extension"
-              draggable={false}
-            />
+            <div className="gear-label">
+              <img
+                id="gear-label-image"
+                src={_.get(Images.IMAGES, 'GEAR_LABEL')}
+                alt="Gear label"
+                draggable={false}
+              />
+              <div id="gear-label-text">This is a sentence!</div>
+            </div>
             <GearTracker />
-          </div>
-          <div className="gear-label">
-            <img
-            id="gear-label"
-            src={_.get(Images.IMAGES, 'GEAR_LABEL')}
-            alt="Gear label"
-            draggable={false}
-            />
           </div>
         </div>
       );
