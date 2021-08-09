@@ -10,6 +10,8 @@ class Obtainable extends React.Component {
       obtainableImage,
       incrementObtainable,
       decrementObtainable,
+      setSelectedObtainable,
+      clearSelectedObtainable,
     } = this.props;
 
     const incrementObtainableFunction = (event) => {
@@ -22,11 +24,17 @@ class Obtainable extends React.Component {
       decrementObtainable();
     };
 
+    const setSelectedObtainableFunction = () => {
+      setSelectedObtainable(obtainableFancyName);
+    };
+
     return (
       <div
         className="obtainable"
         onClick={incrementObtainableFunction}
         onContextMenu={decrementObtainableFunction}
+        onMouseOver={setSelectedObtainableFunction}
+        onMouseOut={clearSelectedObtainable}
         role="button"
       >
         <img

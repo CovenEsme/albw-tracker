@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 
 import GearTracker from './gear-tracker';
@@ -43,24 +42,7 @@ class Tracker extends React.Component {
     else {
       content = (
         <div className="tracker">
-          <div className="gear-tracker">
-            <img
-              id="gear-overlay"
-              src={_.get(Images.IMAGES, 'GEAR_OVERLAY')}
-              alt="Gear overlay"
-              draggable={false}
-            />
-            <div className="gear-label">
-              <img
-                id="gear-label-image"
-                src={_.get(Images.IMAGES, 'GEAR_LABEL')}
-                alt="Gear label"
-                draggable={false}
-              />
-              <div id="gear-label-text">This is a sentence!</div>
-            </div>
             <GearTracker />
-          </div>
         </div>
       );
     }

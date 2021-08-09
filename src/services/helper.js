@@ -11,7 +11,10 @@ class Helper {
   static ALL_OBTAINABLES = _.keys(GEAR_JSON);
 
   static getFancyName(obtainableName, obtainableCount) {
-    return _.get(FANCY_NAMES, [obtainableName, obtainableCount]);
+    const fancyName = _.get(FANCY_NAMES, [obtainableName, obtainableCount]);
+
+    if (!fancyName) {return obtainableName;}
+    else            {return fancyName;}
   }
 
   static getEmptyGear() {
