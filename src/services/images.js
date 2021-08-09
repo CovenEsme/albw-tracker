@@ -155,8 +155,8 @@ class Images {
       MONSTER_GUTS: import('../assets/gear/guts.png'),
       MASTER_ORE: import('../assets/gear/ore.png'),
 
-      GEAR_OVERLAY: import('../assets/gear-overlay.png'),
-      GEAR_LABEL: import('../assets/gear-label.png'),
+      GEAR_OVERLAY: import('../assets/gear/gear-overlay.png'),
+      GEAR_LABEL: import('../assets/gear/gear-label.png'),
     };
   }
 }
