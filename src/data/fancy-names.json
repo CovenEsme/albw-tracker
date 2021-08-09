@@ -1,0 +1,34 @@
+{
+  "Progressive Sword": {
+    "0": "Forgotten Sword",
+    "1": "Forgotten Sword",
+    "2": "Master Sword",
+    "3": "Master Sword Lv2",
+    "4": "Master Sword Lv3"
+  },
+  "Progressive Mail": {
+    "0": "Green Mail",
+    "1": "Green Mail",
+    "2": "Blue Mail",
+    "3": "Red Mail"
+  },
+  "Progressive Shield": {
+    "0": "Shield",
+    "1": "Shield",
+    "2": "Hylian Shield"
+  },
+  "Progressive Bracelet": {
+    "0": "Ravio's Bracelet",
+    "1": "Ravio's Bracelet",
+    "2": "Ravio's Bracelet (Merge)"
+  },
+  "Progressive Mitt": {
+    "0": "Power Glove",
+    "1": "Power Glove",
+    "2": "Titan's Mitt"
+  },
+  "Bell": {
+    "0": "Irene's Bell",
+    "1": "Irene's Bell"
+  }
+}

@@ -1,13 +1,11 @@
-import '../css/app.css';
+import React from 'react';
+import '../css/styles.scss';
+import Tracker from './tracker';
 
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-        <p>
-          ALBW Tracker
-        </p>
-      </header>
+      <Tracker />
     </div>
   );
 }

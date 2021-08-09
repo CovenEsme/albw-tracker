@@ -1,0 +1,232 @@
+@font-face {
+  font-family: ReturnofGanon;
+  src: local(ReturnofGanon),
+       url("../assets/ReturnofGanon.ttf") format("truetype");
+}
+
+body {
+  background-image: url("../assets/merge-dark.png");
+  font-family: ReturnofGanon, "Fira Sans", sans-serif;
+  font-size: x-large;
+  color: white;
+
+  position: absolute;
+  left:   0;
+  right:  0;
+  top:    0;
+  bottom: 0;
+
+  user-select: none;
+}
+
+.gear-tracker {
+  display: inline-block;
+}
+
+.gear-label {
+  position:    relative;
+  display:     flex;
+  justify-content: center;
+  align-items: center;
+
+  #gear-label-text {
+    position: absolute;
+  }
+}
+
+#sword-block {
+  .progressive_sword {
+    position: absolute;
+    left: 15px;
+    top:  16px;
+  }
+
+  .progressive_mail {
+    position: absolute;
+    left: 58px;
+    top:  16px;
+  }
+
+  .progressive_shield {
+    position: absolute;
+    left: 102px;
+    top:   16px;
+  }
+}
+
+#painting-block {
+  .sage_gulley {
+    position: absolute;
+    left: 218px;
+    top:    4px;
+  }
+
+  .sage_oren {
+    position: absolute;
+    left: 268px;
+    top:   21px;
+  }
+
+  .sage_rosso {
+    position: absolute;
+    left: 280px;
+    top:   73px;
+  }
+
+  .sage_impa {
+    position: absolute;
+    left: 245px;
+    top:  121px;
+  }
+
+  .sage_irene {
+    position: absolute;
+    left: 185px;
+    top:  121px;
+  }
+
+  .sage_osfala {
+    position: absolute;
+    left: 152px;
+    top:   73px;
+  }
+
+  .sage_seres {
+    position: absolute;
+    left: 169px;
+    top:   21px;
+  }
+}
+
+#pendant-block {
+  .pendant_of_power {
+    position: absolute;
+    left: 218px;
+    top:   49px;
+  }
+
+  .pendant_of_wisdom {
+    position: absolute;
+    left: 195px;
+    top:   86px;
+  }
+
+  .pendant_of_courage {
+    position: absolute;
+    left: 240px;
+    top:   86px;
+  }
+}
+
+#accessory-block{
+  .progressive_bracelet {
+    position: absolute;
+    left: 21px;
+    top:  79px;
+  }
+
+  .progressive_mitt {
+    position: absolute;
+    left: 63px;
+    top:  77px;
+  }
+
+  .pegasus_boots {
+    position: absolute;
+    left: 103px;
+    top:   82px;
+  }
+
+  .zora_flippers {
+    position: absolute;
+    left: 19px;
+    top: 116px;
+  }
+
+  .bee_badge {
+    position: absolute;
+    left: 63px;
+    top: 117px;
+  }
+
+  .stamina_scroll {
+    position: absolute;
+    left: 102px;
+    top:  117px;
+  }
+}
+
+#extension-block {
+  .smooth_gem {
+    position: absolute;
+    left: 348px;
+    top:   51px;
+  }
+
+  .pouch {
+    position: absolute;
+    left: 345px;
+    top:   95px;
+  }
+
+  .bell {
+    position: absolute;
+    left: 351px;
+    top:  136px;
+  }
+}
+
+#heart-container {
+  .piece_of_heart {
+    position: absolute;
+    left: 15px;
+    top: 164px;
+  }
+}
+
+#collectable-block {
+  .rupee {
+    position: absolute;
+    left: 71px;
+    top: 166px;
+  }
+
+  .maiamai {
+    position: absolute;
+    left: 112px;
+    top:  166px;
+  }
+
+  .monster_tail {
+    position: absolute;
+    left: 152px;
+    top:  166px;
+  }
+
+  .monster_horn {
+    position: absolute;
+    left: 191px;
+    top:  166px;
+  }
+
+  .monster_guts {
+    position: absolute;
+    left: 231px;
+    top:  166px;
+  }
+
+  .master_ore {
+    position: absolute;
+    left: 270px;
+    top:  166px;
+  }
+}
+
+.loading-spinner {
+  position: absolute;
+  display: flex;
+  width:  100%;
+  height: 100%;
+  justify-content: center;
+  align-items:     center;
+}
