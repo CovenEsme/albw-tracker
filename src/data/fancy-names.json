@@ -27,5 +27,8 @@
     "1": "Power Glove",
     "2": "Titan's Mitt"
   },
-  "Bell": {"0": "Irene's Bell"}
+  "Bell": {
+    "0": "Irene's Bell",
+    "1": "Irene's Bell"
+  }
 }
