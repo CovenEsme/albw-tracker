@@ -44,6 +44,7 @@ class Tracker extends React.Component {
       content = (
         <div className="tracker">
             <GearTracker />
+            <ItemsTracker />
         </div>
       );
     }
