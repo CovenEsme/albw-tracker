@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tracker from './tracker';
+import ObtainablesTracker from './obtainables-tracker';
 import Label from './label';
 
 import Images from '../services/images';
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   tracker() {
     return (
-      <Tracker
+      <ObtainablesTracker
         setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
                                                           obtainableName)}
         clearSelectedObtainable={() => this.clearSelectedObtainable()}

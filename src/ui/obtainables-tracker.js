@@ -6,7 +6,7 @@ import Images from '../services/images';
 import Obtainable from './obtainable';
 import Table from './table';
 
-class Tracker extends React.Component {
+class ObtainablesTracker extends React.Component {
   constructor(props) {
     super(props);
 
@@ -152,4 +152,4 @@ class Tracker extends React.Component {
   }
 }
 
-export default Tracker;
+export default ObtainablesTracker;
