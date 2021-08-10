@@ -6,8 +6,6 @@ import Images from '../services/images';
 import Obtainable from './obtainable';
 import Table from './table';
 
-import '../css/styles.scss';
-
 class ItemsTracker extends React.Component {
   constructor(props) {
     super(props);
