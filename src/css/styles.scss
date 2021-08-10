@@ -23,20 +23,10 @@ body {
   display: inline-flex;
   flex-direction: column;
   position: relative;
+  padding-right: 2px;
 
   #gear-obtainables {
     position: absolute;
-  }
-
-  .gear-label {
-    position:        relative;
-    display:         flex;
-    justify-content: center;
-    align-items:     center;
-
-    #gear-label-text {
-      position: absolute;
-    }
   }
 }
 
@@ -58,16 +48,16 @@ body {
       padding-right: 5px;
     }
   }
+}
 
-  .items-label {
-    position:        relative;
-    display:         flex;
-    justify-content: center;
-    align-items:     center;
+.label {
+  position:        absolute;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
 
-    #items-label-text {
-      position: absolute;
-    }
+  #label-text {
+    position: absolute;
   }
 }
 

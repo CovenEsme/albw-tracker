@@ -2,6 +2,8 @@ import React from 'react';
 
 import GearTracker from './gear-tracker';
 import ItemsTracker from './items-tracker';
+import Label from './label';
+
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
 
@@ -13,7 +15,11 @@ class Tracker extends React.Component {
 
     this.state = {
       isLoading: true,
+      selectedObtainable: null,
     };
+
+    this.setSelectedObtainable   = this.setSelectedObtainable.bind(this);
+    this.clearSelectedObtainable = this.clearSelectedObtainable.bind(this);
 
     this.initialize();
   }
@@ -26,9 +32,38 @@ class Tracker extends React.Component {
     });
   }
 
+  setSelectedObtainable(obtainableName) {
+    this.setState({selectedObtainable: obtainableName});
+  }
+
+  clearSelectedObtainable() {
+    this.setState({selectedObtainable: null});
+  }
+
+  gearTracker() {
+    return (
+      <GearTracker
+        setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
+                                                          obtainableName)}
+        clearSelectedObtainable={() => this.clearSelectedObtainable()}
+      />
+    );
+  }
+
+  itemsTracker() {
+    return (
+      <ItemsTracker
+        setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
+                                                          obtainableName)}
+        clearSelectedObtainable={() => this.clearSelectedObtainable()}
+      />
+    );
+  }
+
   render() {
     const {
       isLoading,
+      selectedObtainable,
     } = this.state;
 
     let content;
@@ -43,8 +78,9 @@ class Tracker extends React.Component {
     else {
       content = (
         <div className="tracker">
-            <GearTracker />
-            <ItemsTracker />
+            {this.gearTracker()}
+            {this.itemsTracker()}
+            <Label labelText={selectedObtainable}/>
         </div>
       );
     }

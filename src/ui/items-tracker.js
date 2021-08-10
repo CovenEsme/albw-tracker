@@ -14,27 +14,7 @@ class ItemsTracker extends React.Component {
 
     this.state = {
       obtainables: Helper.getEmptyItems(),
-      selectedObtainable: null,
     };
-
-    this.setSelectedObtainable   = this.setSelectedObtainable.bind(this);
-    this.clearSelectedObtainable = this.clearSelectedObtainable.bind(this);
-  }
-
-  setSelectedObtainable(obtainableName) {
-    this.setState({selectedObtainable: obtainableName});
-  }
-
-  clearSelectedObtainable() {
-    this.setState({selectedObtainable: null});
-  }
-
-  selectedObtainable() {
-    const {selectedObtainable} = this.state;
-
-    return (
-      <div id="items-label-text">{selectedObtainable}</div>
-    )
   }
 
   handleClick(increment, obtainableName) {
@@ -51,7 +31,7 @@ class ItemsTracker extends React.Component {
 
     updatedObtainables[obtainableName] = newCount;
     this.setState({obtainables: updatedObtainables});
-    this.setSelectedObtainable(Helper.getFancyName(obtainableName, newCount));
+    this.props.setSelectedObtainable(Helper.getFancyName(obtainableName, newCount));
   }
 
   obtainable(obtainableName) {
@@ -68,8 +48,8 @@ class ItemsTracker extends React.Component {
         obtainableImage={obtainableImage}
         incrementObtainable={() => this.handleClick(true, obtainableName)}
         decrementObtainable={() => this.handleClick(false, obtainableName)}
-        setSelectedObtainable={this.setSelectedObtainable}
-        clearSelectedObtainable={this.clearSelectedObtainable}
+        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableFancyName)}
+        clearSelectedObtainable={() => this.props.clearSelectedObtainable()}
       />
     );
   }
@@ -111,15 +91,6 @@ class ItemsTracker extends React.Component {
             ]}
             numColumns={5}
           />
-        </div>
-        <div className="items-label">
-          <img
-            id="items-label-image"
-            src={_.get(Images.IMAGES, 'ITEMS_LABEL')}
-            alt="Items label"
-            draggable={false}
-          />
-          {this.selectedObtainable()}
         </div>
       </div>
     );
