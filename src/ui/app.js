@@ -1,7 +1,6 @@
 import React from 'react';
 
-import GearTracker from './gear-tracker';
-import ItemsTracker from './items-tracker';
+import Tracker from './tracker';
 import Label from './label';
 
 import Images from '../services/images';
@@ -40,19 +39,9 @@ class App extends React.Component {
     this.setState({selectedObtainable: null});
   }
 
-  gearTracker() {
+  tracker() {
     return (
-      <GearTracker
-        setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
-                                                          obtainableName)}
-        clearSelectedObtainable={() => this.clearSelectedObtainable()}
-      />
-    );
-  }
-
-  itemsTracker() {
-    return (
-      <ItemsTracker
+      <Tracker
         setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
                                                           obtainableName)}
         clearSelectedObtainable={() => this.clearSelectedObtainable()}
@@ -78,8 +67,7 @@ class App extends React.Component {
     else {
       content = (
         <div className="albw-rando-tracker">
-            {this.gearTracker()}
-            {this.itemsTracker()}
+            {this.tracker()}
             <Label labelText={selectedObtainable}/>
         </div>
       );

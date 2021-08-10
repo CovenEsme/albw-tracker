@@ -3,17 +3,10 @@ import _ from 'lodash';
 import Constants from './constants';
 
 import FANCY_NAMES from '../data/fancy-names.json';
-import GEAR_JSON   from '../data/gear.json';
-import ITEMS_JSON  from '../data/items.json';
+import OBTAINABLES_JSON from '../data/obtainables.json';
 
 class Helper {
-  static GEAR = Constants.createFromArray(_.keys(GEAR_JSON));
-  static ITEMS = Constants.createFromArray(_.keys(ITEMS_JSON));
-
-  static ALL_OBTAINABLES = _.concat(
-                             _.keys(GEAR_JSON),
-                             _.keys(ITEMS_JSON),
-                           );
+  static OBTAINABLES = Constants.createFromArray(_.keys(OBTAINABLES_JSON));
 
   static getFancyName(obtainableName, obtainableCount) {
     const fancyName = _.get(FANCY_NAMES, [obtainableName, obtainableCount]);
@@ -22,32 +15,18 @@ class Helper {
     else            {return fancyName;}
   }
 
-  static getEmptyGear() {
-    let emptyGear = {};
+  static getEmptyObtainables() {
+    let emptyObtainables = {};
 
-    for (var obtainable in GEAR_JSON)  {
-      emptyGear[obtainable] = 0;
+    for (var obtainable in OBTAINABLES_JSON) {
+      emptyObtainables[obtainable] = 0;
     }
 
-    return emptyGear;
+    return emptyObtainables;
   }
 
-  static getEmptyItems() {
-    let emptyItems = {};
-
-    for (var obtainable in ITEMS_JSON)  {
-      emptyItems[obtainable] = 0;
-    }
-
-    return emptyItems;
-  }
-
-  static getMaxGearCount(obtainable) {
-    return GEAR_JSON[obtainable];
-  }
-
-  static getMaxItemsCount(obtainable) {
-    return ITEMS_JSON[obtainable];
+  static getMaxObtainableCount(obtainable) {
+    return OBTAINABLES_JSON[obtainable];
   }
 }
 

@@ -19,7 +19,7 @@ body {
   user-select: none;
 }
 
-.gear-tracker {
+.gear {
   display: inline-flex;
   flex-direction: column;
   position: relative;
@@ -30,7 +30,7 @@ body {
   }
 }
 
-.items-tracker {
+.items {
   width: 252px;
   height: 214px;
   display: inline-flex;
