@@ -19,17 +19,44 @@ body {
   user-select: none;
 }
 
-.gear-tracker {
-  display: inline-block;
+.gear {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  padding-right: 2px;
+
+  #gear-obtainables {
+    position: absolute;
+  }
 }
 
-.gear-label {
-  position:    relative;
-  display:     flex;
-  justify-content: center;
-  align-items: center;
+.items {
+  width: 252px;
+  height: 214px;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
 
-  #gear-label-text {
+  #items-obtainables {
+    position: absolute;
+    padding-top: 12px;
+    padding-left: 10px;
+
+    .obtainable {
+      padding-top: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+
+.label {
+  position:        absolute;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+
+  #label-text {
     position: absolute;
   }
 }
