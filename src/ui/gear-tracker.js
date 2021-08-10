@@ -38,7 +38,7 @@ class GearTracker extends React.Component {
 
   handleClick(increment, obtainableName) {
     const updatedObtainables = this.state.obtainables;
-    const maxCount = Helper.getMaxCount(obtainableName);
+    const maxCount = Helper.getMaxGearCount(obtainableName);
 
     let newCount = updatedObtainables[obtainableName];
 

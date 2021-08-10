@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GearTracker from './gear-tracker';
+import ItemsTracker from './items-tracker';
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
 
