@@ -83,17 +83,8 @@ class ItemsTracker extends React.Component {
           alt="Items overlay"
           draggable={false}
         />
-        <div className="items-label">
-          <img
-            id="items-label-image"
-            src={_.get(Images.IMAGES, 'ITEMS_LABEL')}
-            alt="Items label"
-            draggable={false}
-          />
-          {this.selectedObtainable()}
-        </div>
-        <div id="item-obtainables">
-          <Table
+        <div id="items-obtainables">
+          <Table id="items-table"
             elements={[
               this.obtainable(Helper.ITEMS.PROGRESSIVE_LAMP),
               this.obtainable(Helper.ITEMS.PROGRESSIVE_BOW),
@@ -120,6 +111,15 @@ class ItemsTracker extends React.Component {
             ]}
             numColumns={5}
           />
+        </div>
+        <div className="items-label">
+          <img
+            id="items-label-image"
+            src={_.get(Images.IMAGES, 'ITEMS_LABEL')}
+            alt="Items label"
+            draggable={false}
+          />
+          {this.selectedObtainable()}
         </div>
       </div>
     );

@@ -96,15 +96,6 @@ class GearTracker extends React.Component {
           alt="Gear overlay"
           draggable={false}
         />
-        <div className="gear-label">
-          <img
-            id="gear-label-image"
-            src={_.get(Images.IMAGES, 'GEAR_LABEL')}
-            alt="Gear label"
-            draggable={false}
-          />
-          {this.selectedObtainable()}
-        </div>
         <div id="gear-obtainables">
           <div id="sword-block">
             {this.obtainable(Helper.GEAR.PROGRESSIVE_SWORD)}
@@ -149,6 +140,15 @@ class GearTracker extends React.Component {
             {this.collectable('MONSTER_GUTS')}
             {this.collectable('MASTER_ORE')}
           </div>
+        </div>
+        <div className="gear-label">
+          <img
+            id="gear-label-image"
+            src={_.get(Images.IMAGES, 'GEAR_LABEL')}
+            alt="Gear label"
+            draggable={false}
+          />
+          {this.selectedObtainable()}
         </div>
       </div>
     );
