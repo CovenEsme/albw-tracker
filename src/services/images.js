@@ -148,6 +148,7 @@ class Images {
           3: import('../assets/gear/heart-3.png'),
         },
       },
+
       RUPEE: import('../assets/gear/rupee.png'),
       MAIAMAI: import('../assets/gear/maiamai.png'),
       MONSTER_TAIL: import('../assets/gear/tail.png'),
@@ -155,8 +156,117 @@ class Images {
       MONSTER_GUTS: import('../assets/gear/guts.png'),
       MASTER_ORE: import('../assets/gear/ore.png'),
 
+      ITEMS: {
+        [Helper.ITEMS.PROGRESSIVE_LAMP]: {
+          0: import('../assets/items/lamp-0.png'),
+          1: import('../assets/items/lamp-1.png'),
+          2: import('../assets/items/lamp-2.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_BOW]: {
+          0: import('../assets/items/bow-0.png'),
+          1: import('../assets/items/bow-1.png'),
+          2: import('../assets/items/bow-2.png'),
+          3: import('../assets/items/bow-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_TROD]: {
+          0: import('../assets/items/trod-0.png'),
+          1: import('../assets/items/trod-1.png'),
+          2: import('../assets/items/trod-2.png'),
+          3: import('../assets/items/trod-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_HAMMER]: {
+          0: import('../assets/items/hammer-0.png'),
+          1: import('../assets/items/hammer-1.png'),
+          2: import('../assets/items/hammer-2.png'),
+          3: import('../assets/items/hammer-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_BOMBS]: {
+          0: import('../assets/items/bombs-0.png'),
+          1: import('../assets/items/bombs-1.png'),
+          2: import('../assets/items/bombs-2.png'),
+          3: import('../assets/items/bombs-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_BOOMERANG]: {
+          0: import('../assets/items/boomerang-0.png'),
+          1: import('../assets/items/boomerang-1.png'),
+          2: import('../assets/items/boomerang-2.png'),
+          3: import('../assets/items/boomerang-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_HOOKSHOT]: {
+          0: import('../assets/items/hookshot-0.png'),
+          1: import('../assets/items/hookshot-1.png'),
+          2: import('../assets/items/hookshot-2.png'),
+          3: import('../assets/items/hookshot-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_IROD]: {
+          0: import('../assets/items/irod-0.png'),
+          1: import('../assets/items/irod-1.png'),
+          2: import('../assets/items/irod-2.png'),
+          3: import('../assets/items/irod-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_SROD]: {
+          0: import('../assets/items/srod-0.png'),
+          1: import('../assets/items/srod-1.png'),
+          2: import('../assets/items/srod-2.png'),
+          3: import('../assets/items/srod-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_FROD]: {
+          0: import('../assets/items/frod-0.png'),
+          1: import('../assets/items/frod-1.png'),
+          2: import('../assets/items/frod-2.png'),
+          3: import('../assets/items/frod-3.png'),
+        },
+        [Helper.ITEMS.PROGRESSIVE_NET]: {
+          0: import('../assets/items/net-0.png'),
+          1: import('../assets/items/net-1.png'),
+          2: import('../assets/items/net-2.png'),
+        },
+
+        [Helper.ITEMS.HINT_GLASSES]: {
+          0: import('../assets/items/hint-glasses-0.png'),
+          1: import('../assets/items/hint-glasses-1.png'),
+        },
+        [Helper.ITEMS.BOW_OF_LIGHT]: {
+          0: import('../assets/items/bow-of-light-0.png'),
+          1: import('../assets/items/bow-of-light-1.png'),
+        },
+        [Helper.ITEMS.SCOOT_FRUIT]: {
+          0: import('../assets/items/scoot-fruit-0.png'),
+          1: import('../assets/items/scoot-fruit-1.png'),
+        },
+        [Helper.ITEMS.FOUL_FRUIT]: {
+          0: import('../assets/items/foul-fruit-0.png'),
+          1: import('../assets/items/foul-fruit-1.png'),
+        },
+
+        [Helper.ITEMS.NOTE_BOTTLE]: {
+          0: import('../assets/items/note-bottle-0.png'),
+          1: import('../assets/items/note-bottle-1.png'),
+          2: import('../assets/items/note-bottle-2.png'),
+        },
+        [Helper.ITEMS.BOTTLE_ONE]: {
+          0: import('../assets/items/bottle-0.png'),
+          1: import('../assets/items/bottle-1.png'),
+        },
+        [Helper.ITEMS.BOTTLE_TWO]: {
+          0: import('../assets/items/bottle-0.png'),
+          1: import('../assets/items/bottle-1.png'),
+        },
+        [Helper.ITEMS.BOTTLE_THREE]: {
+          0: import('../assets/items/bottle-0.png'),
+          1: import('../assets/items/bottle-1.png'),
+        },
+        [Helper.ITEMS.BOTTLE_FOUR]: {
+          0: import('../assets/items/bottle-0.png'),
+          1: import('../assets/items/bottle-1.png'),
+        },
+      },
+
       GEAR_OVERLAY: import('../assets/gear/gear-overlay.png'),
       GEAR_LABEL: import('../assets/gear/gear-label.png'),
+
+      ITEMS_OVERLAY: import('../assets/items/items-overlay.png'),
+      ITEMS_LABEL: import('../assets/gear/gear-label.png'),
     };
   }
 }
