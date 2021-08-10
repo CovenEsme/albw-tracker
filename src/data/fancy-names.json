@@ -30,5 +30,90 @@
   "Bell": {
     "0": "Irene's Bell",
     "1": "Irene's Bell"
+  },
+  "Progressive Lamp": {
+    "0": "Lamp",
+    "1": "Lamp",
+    "2": "Super Lamp"
+  },
+  "Progressive Bow": {
+    "0": "Rented Bow",
+    "1": "Rented Bow",
+    "2": "Bow",
+    "3": "Nice Bow"
+  },
+  "Progressive Trod": {
+    "0": "Rented Tornado Rod",
+    "1": "Rented Tornado Rod",
+    "2": "Tornado Rod",
+    "3": "Nice Tornado Rod"
+  },
+  "Progressive Hammer": {
+    "0": "Rented Hammer",
+    "1": "Rented Hammer",
+    "2": "Hammer",
+    "3": "Nice Hammer"
+  },
+  "Progressive Bombs": {
+    "0": "Rented Bombs",
+    "1": "Rented Bombs",
+    "2": "Bombs",
+    "3": "Nice Bombs"
+  },
+  "Progressive Boomerang": {
+    "0": "Rented Boomerang",
+    "1": "Rented Boomerang",
+    "2": "Boomerang",
+    "3": "Nice Boomerang"
+  },
+  "Progressive Hookshot": {
+    "0": "Rented Hookshot",
+    "1": "Rented Hookshot",
+    "2": "Hookshot",
+    "3": "Nice Hookshot"
+  },
+  "Progressive Irod": {
+    "0": "Rented Ice Rod",
+    "1": "Rented Ice Rod",
+    "2": "Ice Rod",
+    "3": "Nice Ice Rod"
+  },
+  "Progressive Srod": {
+    "0": "Rented Sand Rod",
+    "1": "Rented Sand Rod",
+    "2": "Sand Rod",
+    "3": "Nice Sand Rod"
+  },
+  "Progressive Frod": {
+    "0": "Rented Fire Rod",
+    "1": "Rented Fire Rod",
+    "2": "Fire Rod",
+    "3": "Nice Fire Rod"
+  },
+  "Progressive Net": {
+    "0": "Net",
+    "1": "Net",
+    "2": "Super Net"
+  },
+  "Note Bottle": {
+    "0": "Note in a Bottle",
+    "1": "Note in a Bottle",
+    "2": "Empty Bottle"
+  },
+  "Bottle One": {
+    "0": "Empty Bottle",
+    "1": "Empty Bottle"
+  },
+  "Bottle Two": {
+    "0": "Empty Bottle",
+    "1": "Empty Bottle"
+  },
+  "Bottle Three": {
+    "0": "Empty Bottle",
+    "1": "Empty Bottle"
+  },
+  "Bottle Four": {
+    "0": "Empty Bottle",
+    "1": "Empty Bottle"
   }
 }
