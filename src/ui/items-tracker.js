@@ -4,6 +4,7 @@ import React from 'react';
 import Helper from '../services/helper';
 import Images from '../services/images';
 import Obtainable from './obtainable';
+import Table from './table';
 
 import '../css/styles.scss';
 
@@ -92,28 +93,33 @@ class ItemsTracker extends React.Component {
           {this.selectedObtainable()}
         </div>
         <div id="item-obtainables">
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_LAMP)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_BOW)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_TROD)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_HAMMER)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_BOMBS)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_BOOMERANG)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_HOOKSHOT)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_IROD)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_SROD)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_FROD)}
-          {this.obtainable(Helper.ITEMS.PROGRESSIVE_NET)}
+          <Table
+            elements={[
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_LAMP),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_BOW),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_TROD),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_HAMMER),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_BOMBS),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_BOOMERANG),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_HOOKSHOT),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_IROD),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_SROD),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_FROD),
+              this.obtainable(Helper.ITEMS.PROGRESSIVE_NET),
 
-          {this.obtainable(Helper.ITEMS.HINT_GLASSES)}
-          {this.obtainable(Helper.ITEMS.BOW_OF_LIGHT)}
-          {this.obtainable(Helper.ITEMS.SCOOT_FRUIT)}
-          {this.obtainable(Helper.ITEMS.FOUL_FRUIT)}
+              this.obtainable(Helper.ITEMS.HINT_GLASSES),
+              this.obtainable(Helper.ITEMS.BOW_OF_LIGHT),
+              this.obtainable(Helper.ITEMS.SCOOT_FRUIT),
+              this.obtainable(Helper.ITEMS.FOUL_FRUIT),
 
-          {this.obtainable(Helper.ITEMS.NOTE_BOTTLE)}
-          {this.obtainable(Helper.ITEMS.BOTTLE_ONE)}
-          {this.obtainable(Helper.ITEMS.BOTTLE_TWO)}
-          {this.obtainable(Helper.ITEMS.BOTTLE_THREE)}
-          {this.obtainable(Helper.ITEMS.BOTTLE_FOUR)}
+              this.obtainable(Helper.ITEMS.NOTE_BOTTLE),
+              this.obtainable(Helper.ITEMS.BOTTLE_ONE),
+              this.obtainable(Helper.ITEMS.BOTTLE_TWO),
+              this.obtainable(Helper.ITEMS.BOTTLE_THREE),
+              this.obtainable(Helper.ITEMS.BOTTLE_FOUR),
+            ]}
+            numColumns={5}
+          />
         </div>
       </div>
     );
