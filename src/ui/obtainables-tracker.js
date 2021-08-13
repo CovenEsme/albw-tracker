@@ -7,48 +7,27 @@ import Obtainable from './obtainable';
 import Table from './table';
 
 class ObtainablesTracker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      obtainables: Helper.getEmptyObtainables(),
-    };
-  }
-
-  handleClick(increment, obtainableName) {
-    const updatedObtainables = this.state.obtainables;
-    const maxCount = Helper.getMaxObtainableCount(obtainableName);
-
-    let newCount = updatedObtainables[obtainableName];
-
-    if (increment) {newCount++;}
-    else           {newCount--;}
-
-    if (newCount > maxCount) {newCount = 0;}
-    else if (newCount < 0)   {newCount = maxCount;}
-
-    updatedObtainables[obtainableName] = newCount;
-    this.setState({obtainables: updatedObtainables});
-    this.props.setSelectedObtainable(Helper.getFancyName(obtainableName,
-                                                         newCount));
-  }
-
   obtainable(obtainableName) {
-    const obtainableFancyName = Helper.getFancyName(obtainableName,
-                                        this.state.obtainables[obtainableName]);
-    const obtainableImages = _.get(Images.IMAGES,
-                                   ['OBTAINABLES', obtainableName]);
-    const obtainableImage = _.get(obtainableImages,
-                                  this.state.obtainables[obtainableName]);
+    const {
+      incrementObtainable,
+      decrementObtainable,
+      trackerState,
+    } = this.props;
+
+    const obtainableCount = trackerState.getObtainableValue(obtainableName);
+    const obtainableImage = Images.getImage(obtainableName, obtainableCount);
+
+    const obtainableFancyName = Helper.fancyName(obtainableName,
+                                                 obtainableCount);
 
     return (
       <Obtainable
         obtainableName={obtainableName}
         obtainableFancyName={obtainableFancyName}
         obtainableImage={obtainableImage}
-        incrementObtainable={() => this.handleClick(true, obtainableName)}
-        decrementObtainable={() => this.handleClick(false, obtainableName)}
-        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableFancyName)}
+        incrementObtainable={incrementObtainable}
+        decrementObtainable={decrementObtainable}
+        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableName)}
         clearSelectedObtainable={() => this.props.clearSelectedObtainable()}
       />
     );

@@ -1,7 +1,9 @@
 import React from 'react';
 
-import ObtainablesTracker from './obtainables-tracker';
+import Helper from '../services/helper';
 import Label from './label';
+import ObtainablesTracker from './obtainables-tracker';
+import TrackerState from '../services/tracker-state';
 
 import Images from '../services/images';
 import Loader from 'react-loader-spinner';
@@ -14,45 +16,78 @@ class App extends React.Component {
 
     this.state = {
       isLoading: true,
-      selectedObtainable: null,
     };
+
+    this.initialize();
+
+    this.incrementObtainable = this.incrementObtainable.bind(this);
+    this.decrementObtainable = this.decrementObtainable.bind(this);
 
     this.setSelectedObtainable   = this.setSelectedObtainable.bind(this);
     this.clearSelectedObtainable = this.clearSelectedObtainable.bind(this);
-
-    this.initialize();
   }
 
   async initialize() {
     await Images.importImages();
 
+    Helper.initialize();
+
+    const trackerState = TrackerState.default();
+
     this.setState({
       isLoading: false,
+      trackerState,
     });
   }
 
+  incrementObtainable(obtainableName) {
+    const {trackerState} = this.state;
+
+    let newTrackerState = trackerState;
+
+    newTrackerState = newTrackerState.incrementObtainable(obtainableName);
+    newTrackerState = newTrackerState.setSelectedObtainable(obtainableName);
+
+    this.updateTrackerState(newTrackerState);
+  }
+
+  decrementObtainable(obtainableName) {
+    const {trackerState} = this.state;
+
+    let newTrackerState = trackerState;
+
+    newTrackerState = newTrackerState.decrementObtainable(obtainableName);
+    newTrackerState = newTrackerState.setSelectedObtainable(obtainableName);
+
+    this.updateTrackerState(newTrackerState);
+  }
+
   setSelectedObtainable(obtainableName) {
-    this.setState({selectedObtainable: obtainableName});
+    const {trackerState} = this.state;
+    const newTrackerState = trackerState.setSelectedObtainable(obtainableName);
+
+    this.updateTrackerState(newTrackerState);
   }
 
   clearSelectedObtainable() {
-    this.setState({selectedObtainable: null});
+    const {trackerState} = this.state;
+    const newTrackerState = trackerState.clearSelectedObtainable();
+
+    this.updateTrackerState(newTrackerState);
   }
 
-  tracker() {
-    return (
-      <ObtainablesTracker
-        setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(
-                                                          obtainableName)}
-        clearSelectedObtainable={() => this.clearSelectedObtainable()}
-      />
-    );
+  updateTrackerState(newTrackerState) {
+    const trackerState = newTrackerState;
+
+    this.setState({
+      trackerState,
+    });
   }
 
   render() {
     const {
       isLoading,
-      selectedObtainable,
+      trackerState,
     } = this.state;
 
     let content;
@@ -67,8 +102,14 @@ class App extends React.Component {
     else {
       content = (
         <div className="albw-rando-tracker">
-            {this.tracker()}
-            <Label labelText={selectedObtainable}/>
+          <ObtainablesTracker
+            incrementObtainable={(obtainableName) => this.incrementObtainable(obtainableName)}
+            decrementObtainable={(obtainableName) => this.decrementObtainable(obtainableName)}
+            setSelectedObtainable={(obtainableName) => this.setSelectedObtainable(obtainableName)}
+            clearSelectedObtainable={() => this.clearSelectedObtainable()}
+            trackerState={trackerState}
+          />
+          <Label labelText={trackerState.selectedObtainable}/>
         </div>
       );
     }

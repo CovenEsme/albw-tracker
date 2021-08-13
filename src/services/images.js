@@ -7,6 +7,13 @@ class Images {
     return this.images;
   }
 
+  static getImage(obtainableName, obtainableCount) {
+    const obtainableImages = _.get(this.images,
+                                   ['OBTAINABLES', obtainableName]);
+
+    return _.get(obtainableImages, obtainableCount);
+  }
+
   static async importImages() {
     this.images = {};
 

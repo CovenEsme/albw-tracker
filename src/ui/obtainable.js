@@ -16,12 +16,12 @@ class Obtainable extends React.Component {
 
     const incrementObtainableFunction = (event) => {
       event.stopPropagation();
-      incrementObtainable();
+      incrementObtainable(obtainableName);
     };
 
     const decrementObtainableFunction = (event) => {
       event.preventDefault();
-      decrementObtainable();
+      decrementObtainable(obtainableName);
     };
 
     const setSelectedObtainableFunction = () => {
