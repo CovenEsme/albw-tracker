@@ -16,7 +16,7 @@ class TrackerState {
       {},
     );
 
-    newState.selectedObtainable = null;
+    newState.selectedObtainable = "";
 
     return newState;
   }
@@ -74,7 +74,7 @@ class TrackerState {
   clearSelectedObtainable() {
     const newState = this._clone();
 
-    _.set(newState, "selectedObtainable", null);
+    _.set(newState, "selectedObtainable", "");
 
     return newState;
   }
