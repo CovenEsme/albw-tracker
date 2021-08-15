@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import sinon from 'sinon';
 
-import Label from './label';
 import Images from '../services/images';
+import Label from './label';
 
 describe('Label', () => {
   const labelTestId = "label-text";
@@ -46,6 +46,19 @@ describe('Label', () => {
 
       render(<Label labelText={labelText}/>);
 
+      expect(screen.queryByTestId(labelTestId)).toBeInTheDocument();
+      sinon.assert.notCalled(console.error);
+    });
+  });
+
+  describe('Render Label image', () => {
+    test('Renders Label image', async () => {
+      await Images.importImages();
+
+      render(<Label labelText="Test"/>);
+
+      const labelImage = await screen.findByRole('img');
+      expect(labelImage).toHaveAttribute('src', 'gear-label.png');
       sinon.assert.notCalled(console.error);
     });
   });
