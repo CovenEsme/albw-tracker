@@ -4,7 +4,6 @@ import '@testing-library/jest-dom';
 import sinon from 'sinon';
 
 import App from './app';
-import Images from '../services/images';
 
 describe('App', () => {
   beforeEach(() => {
