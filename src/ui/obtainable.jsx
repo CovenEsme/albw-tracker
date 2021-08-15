@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class Obtainable extends React.Component {
@@ -48,5 +48,16 @@ class Obtainable extends React.Component {
     )
   }
 }
+
+Obtainable.propTypes = {
+  labelText: PropTypes.string.isRequired,
+  obtainableName: PropTypes.string.isRequired,
+  obtainableFancyName: PropTypes.string,
+  obtainableImage: PropTypes.string.isRequired,
+  incrementObtainable: PropTypes.func.isRequired,
+  decrementObtainable: PropTypes.func.isRequired,
+  setSelectedObtainable: PropTypes.func.isRequired,
+  clearSelectedObtainable: PropTypes.func.isRequired,
+};
 
 export default Obtainable;
