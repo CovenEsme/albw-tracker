@@ -1,13 +1,28 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import sinon from 'sinon';
 
 import Label from './label';
 import Images from '../services/images';
 
 describe('Label', () => {
+  const labelTestId = "label-text";
 
-  describe('Render Label with starting values', () => {
+  beforeEach(() => {
+    sinon.stub(console, 'error');
+  });
+
+  afterEach(() => {
+    console.error.restore();
+  });
+
+  describe('Render Label with various labelText values', () => {
+    test('Console error when rendering Label without labelText', async () => {
+      render(<Label />);
+
+      sinon.assert.called(console.error);
+    });
 
     test('Renders Label with string', async () => {
       const labelText = "Test label text";
@@ -15,14 +30,15 @@ describe('Label', () => {
       render(<Label labelText={labelText}/>);
 
       expect(screen.queryByText(labelText)).toBeInTheDocument();
+      sinon.assert.notCalled(console.error);
     });
 
-    test('Renders Label with null', async () => {
+    test('Console error when rendering Label with null', async () => {
       const labelText = null;
 
       render(<Label labelText={labelText}/>);
 
-      expect(screen.queryByTestId("label-test")).toBe(null);
+      sinon.assert.called(console.error);
     });
 
     test('Renders Label with empty string', async () => {
@@ -30,7 +46,7 @@ describe('Label', () => {
 
       render(<Label labelText={labelText}/>);
 
-      expect(screen.queryByTestId("label-test")).toBeNull();
+      sinon.assert.notCalled(console.error);
     });
   });
 });
