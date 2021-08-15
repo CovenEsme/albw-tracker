@@ -15,7 +15,7 @@ describe('App', () => {
     console.error.restore();
   });
 
-  test('Renders App with loading spinner while initializing', async () => {
+  test('Renders App with loading spinner while initializing', () => {
     render(<App />);
 
     expect(screen.queryByLabelText('audio-loading')).toBeInTheDocument();

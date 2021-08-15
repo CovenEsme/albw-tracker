@@ -18,13 +18,13 @@ describe('Label', () => {
   });
 
   describe('Render Label with various labelText values', () => {
-    test('Console error when rendering Label without labelText', async () => {
+    test('Console error when rendering Label without labelText', () => {
       render(<Label />);
 
       sinon.assert.called(console.error);
     });
 
-    test('Renders Label with string', async () => {
+    test('Renders Label with string', () => {
       const labelText = "Test label text";
 
       render(<Label labelText={labelText}/>);
@@ -33,7 +33,7 @@ describe('Label', () => {
       sinon.assert.notCalled(console.error);
     });
 
-    test('Console error when rendering Label with null', async () => {
+    test('Console error when rendering Label with null', () => {
       const labelText = null;
 
       render(<Label labelText={labelText}/>);
@@ -41,7 +41,7 @@ describe('Label', () => {
       sinon.assert.called(console.error);
     });
 
-    test('Renders Label with empty string', async () => {
+    test('Renders Label with empty string', () => {
       const labelText = "";
 
       render(<Label labelText={labelText}/>);
