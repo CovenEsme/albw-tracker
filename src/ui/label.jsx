@@ -16,7 +16,7 @@ class Label extends React.Component {
           alt="Label"
           draggable={false}
         />
-        <div id="label-text">{labelText}</div>
+        <div id="label-text" data-testid="label-text">{labelText}</div>
       </div>
     );
   }
