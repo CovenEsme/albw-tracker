@@ -1,5 +1,7 @@
 # ALBW Randomizer Tracker
 
+[![Build Status](https://github.com/elliebeph/albw-tracker/workflows/ci.yml/badge.svg)](https://github.com/elliebeph/albw-tracker/actions)
+
 This is a [web based tracker](https://elliebeph.github.io/albw-tracker) for the [A link Between Worlds Randomizer](https://gitlab.com/marsolk/albw-randomizer-cli).
 
 Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomizer specific information.
