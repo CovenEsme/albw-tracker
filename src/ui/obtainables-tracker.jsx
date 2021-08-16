@@ -118,10 +118,10 @@ class ObtainablesTracker extends React.Component {
                 this.obtainable(Helper.OBTAINABLES.FOUL_FRUIT),
 
                 this.obtainable(Helper.OBTAINABLES.NOTE_BOTTLE),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_ONE),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_TWO),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_THREE),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_FOUR),
+                this.obtainable(Helper.OBTAINABLES.BOTTLE_FIVE),
               ]}
               numColumns={5}
             />
