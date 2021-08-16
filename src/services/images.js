@@ -7,6 +7,13 @@ class Images {
     return this.images;
   }
 
+  static getImage(obtainableName, obtainableCount) {
+    const obtainableImages = _.get(this.images,
+                                   ['OBTAINABLES', obtainableName]);
+
+    return _.get(obtainableImages, obtainableCount);
+  }
+
   static async importImages() {
     this.images = {};
 
@@ -254,10 +261,6 @@ class Images {
           1: import('../assets/items/note-bottle-1.png'),
           2: import('../assets/items/note-bottle-2.png'),
         },
-        [Helper.OBTAINABLES.BOTTLE_ONE]: {
-          0: import('../assets/items/bottle-0.png'),
-          1: import('../assets/items/bottle-1.png'),
-        },
         [Helper.OBTAINABLES.BOTTLE_TWO]: {
           0: import('../assets/items/bottle-0.png'),
           1: import('../assets/items/bottle-1.png'),
@@ -267,6 +270,10 @@ class Images {
           1: import('../assets/items/bottle-1.png'),
         },
         [Helper.OBTAINABLES.BOTTLE_FOUR]: {
+          0: import('../assets/items/bottle-0.png'),
+          1: import('../assets/items/bottle-1.png'),
+        },
+        [Helper.OBTAINABLES.BOTTLE_FIVE]: {
           0: import('../assets/items/bottle-0.png'),
           1: import('../assets/items/bottle-1.png'),
         },

@@ -1,0 +1,219 @@
+{
+  "Forgotten Sword":    {
+                          "0": "sword-0.png",
+                          "1": "sword-1.png",
+                          "2": "sword-2.png",
+                          "3": "sword-3.png",
+                          "4": "sword-4.png"
+                        },
+  "Green Mail":         {
+                          "0": "mail-0.png",
+                          "1": "mail-1.png",
+                          "2": "mail-2.png",
+                          "3": "mail-3.png"
+                        },
+  "Shield":             {
+                          "0": "shield-0.png",
+                          "1": "shield-1.png",
+                          "2": "shield-2.png"
+                        },
+
+  "Ravio's Bracelet":   {
+                          "0": "bracelet-0.png",
+                          "1": "bracelet-1.png",
+                          "2": "bracelet-2.png"
+                        },
+  "Power Glove":        {
+                          "0": "mitt-0.png",
+                          "1": "mitt-1.png",
+                          "2": "mitt-2.png"
+                        },
+  "Pegasus Boots":      {
+                          "0": "boots-0.png",
+                          "1": "boots-1.png"
+                        },
+  "Smooth Gem":         {
+                          "0": "gem-0.png",
+                          "1": "gem-1.png"
+                        },
+  "Zora Flippers":      {
+                          "0": "flippers-0.png",
+                          "1": "flippers-1.png"
+                        },
+  "Bee Badge":          {
+                          "0": "badge-0.png",
+                          "1": "badge-1.png"
+                        },
+  "Stamina Scroll":     {
+                          "0": "scroll-0.png",
+                          "1": "scroll-1.png"
+                        },
+  "Pouch":              {
+                          "0": "pouch-0a.png",
+                          "1": "pouch-1a.png"
+                        },
+  "Irene's Bell":       {
+                          "0": "bell-0.png",
+                          "1": "bell-1.png"
+                        },
+
+  "Pendant of Power":   {
+                          "0": "pendant-of-power-0.png",
+                          "1": "pendant-of-power-1.png"
+                        },
+  "Pendant of Wisdom":  {
+                          "0": "pendant-of-wisdom-0.png",
+                          "1": "pendant-of-wisdom-1.png"
+                        },
+  "Pendant of Courage": {
+                          "0": "pendant-of-courage-0.png",
+                          "1": "pendant-of-courage-1.png"
+                        },
+
+  "Sage Gulley":        {
+                          "0": "sage-gulley-0.png",
+                          "1": "sage-gulley-1.png"
+                        },
+  "Sage Oren":          {
+                          "0": "sage-oren-0.png",
+                          "1": "sage-oren-1.png"
+                        },
+  "Sage Rosso":         {
+                          "0": "sage-rosso-0.png",
+                          "1": "sage-rosso-1.png"
+                        },
+  "Sage Impa":          {
+                          "0": "sage-impa-0.png",
+                          "1": "sage-impa-1.png"
+                        },
+  "Sage Irene":         {
+                          "0": "sage-irene-0.png",
+                          "1": "sage-irene-1.png"
+                        },
+  "Sage Osfala":        {
+                          "0": "sage-osfala-0.png",
+                          "1": "sage-osfala-1.png"
+                        },
+  "Sage Seres":         {
+                          "0": "sage-seres-0.png",
+                          "1": "sage-seres-1.png"
+                        },
+
+  "Piece of Heart":     {
+                          "0": "heart-0.png",
+                          "1": "heart-1.png",
+                          "2": "heart-2.png",
+                          "3": "heart-3.png"
+                        },
+
+  "Rupee":              { "0": "rupee.png" },
+  "Maiamai":            { "0": "maiamai.png" },
+  "Monster Tail":       { "0": "tail.png" },
+  "Monster Horn":       { "0": "horn.png" },
+  "Monster Guts":       { "0": "guts.png" },
+  "Master Ore":         { "0": "ore.png" },
+
+  "Lamp":               {
+                          "0": "lamp-0.png",
+                          "1": "lamp-1.png",
+                          "2": "lamp-2.png"
+                        },
+  "Rented Bow":         {
+                          "0": "bow-0.png",
+                          "1": "bow-1.png",
+                          "2": "bow-2.png",
+                          "3": "bow-3.png"
+                        },
+  "Rented Tornado Rod": {
+                          "0": "trod-0.png",
+                          "1": "trod-1.png",
+                          "2": "trod-2.png",
+                          "3": "trod-3.png"
+                        },
+  "Rented Hammer":      {
+                          "0": "hammer-0.png",
+                          "1": "hammer-1.png",
+                          "2": "hammer-2.png",
+                          "3": "hammer-3.png"
+                        },
+  "Rented Bombs":       {
+                          "0": "bombs-0.png",
+                          "1": "bombs-1.png",
+                          "2": "bombs-2.png",
+                          "3": "bombs-3.png"
+                        },
+  "Rented Boomerang":   {
+                          "0": "boomerang-0.png",
+                          "1": "boomerang-1.png",
+                          "2": "boomerang-2.png",
+                          "3": "boomerang-3.png"
+                        },
+  "Rented Hookshot":    {
+                          "0": "hookshot-0.png",
+                          "1": "hookshot-1.png",
+                          "2": "hookshot-2.png",
+                          "3": "hookshot-3.png"
+                        },
+  "Rented Ice Rod":     {
+                          "0": "irod-0.png",
+                          "1": "irod-1.png",
+                          "2": "irod-2.png",
+                          "3": "irod-3.png"
+                        },
+  "Rented Sand Rod":    {
+                          "0": "srod-0.png",
+                          "1": "srod-1.png",
+                          "2": "srod-2.png",
+                          "3": "srod-3.png"
+                        },
+  "Rented Fire Rod":    {
+                          "0": "frod-0.png",
+                          "1": "frod-1.png",
+                          "2": "frod-2.png",
+                          "3": "frod-3.png"
+                        },
+  "Net":                {
+                          "0": "net-0.png",
+                          "1": "net-1.png",
+                          "2": "net-2.png"
+                        },
+
+  "Hint Glasses":       {
+                          "0": "hint-glasses-0.png",
+                          "1": "hint-glasses-1.png"
+                        },
+  "Bow of Light":       {
+                          "0": "bow-of-light-0.png",
+                          "1": "bow-of-light-1.png"
+                        },
+  "Scoot Fruit":        {
+                          "0": "scoot-fruit-0.png",
+                          "1": "scoot-fruit-1.png"
+                        },
+  "Foul Fruit":         {
+                          "0": "foul-fruit-0.png",
+                          "1": "foul-fruit-1.png"
+                        },
+
+  "Note in a Bottle":   {
+                          "0": "note-bottle-0.png",
+                          "1": "note-bottle-1.png",
+                          "2": "note-bottle-2.png"
+                        },
+  "Empty Bottle (2)":   {
+                          "0": "bottle-0.png",
+                          "1": "bottle-1.png"
+                        },
+  "Empty Bottle (3)":   {
+                          "0": "bottle-0.png",
+                          "1": "bottle-1.png"
+                        },
+  "Empty Bottle (4)":   {
+                          "0": "bottle-0.png",
+                          "1": "bottle-1.png"
+                        },
+  "Empty Bottle (5)":   {
+                          "0": "bottle-0.png",
+                          "1": "bottle-1.png"
+                        }
+}

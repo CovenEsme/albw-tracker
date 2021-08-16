@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Helper from '../services/helper';
@@ -7,48 +8,27 @@ import Obtainable from './obtainable';
 import Table from './table';
 
 class ObtainablesTracker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      obtainables: Helper.getEmptyObtainables(),
-    };
-  }
-
-  handleClick(increment, obtainableName) {
-    const updatedObtainables = this.state.obtainables;
-    const maxCount = Helper.getMaxObtainableCount(obtainableName);
-
-    let newCount = updatedObtainables[obtainableName];
-
-    if (increment) {newCount++;}
-    else           {newCount--;}
-
-    if (newCount > maxCount) {newCount = 0;}
-    else if (newCount < 0)   {newCount = maxCount;}
-
-    updatedObtainables[obtainableName] = newCount;
-    this.setState({obtainables: updatedObtainables});
-    this.props.setSelectedObtainable(Helper.getFancyName(obtainableName,
-                                                         newCount));
-  }
-
   obtainable(obtainableName) {
-    const obtainableFancyName = Helper.getFancyName(obtainableName,
-                                        this.state.obtainables[obtainableName]);
-    const obtainableImages = _.get(Images.IMAGES,
-                                   ['OBTAINABLES', obtainableName]);
-    const obtainableImage = _.get(obtainableImages,
-                                  this.state.obtainables[obtainableName]);
+    const {
+      incrementObtainable,
+      decrementObtainable,
+      trackerState,
+    } = this.props;
+
+    const obtainableCount = trackerState.getObtainableValue(obtainableName);
+    const obtainableImage = Images.getImage(obtainableName, obtainableCount);
+
+    const obtainableFancyName = Helper.fancyName(obtainableName,
+                                                 obtainableCount);
 
     return (
       <Obtainable
         obtainableName={obtainableName}
         obtainableFancyName={obtainableFancyName}
         obtainableImage={obtainableImage}
-        incrementObtainable={() => this.handleClick(true, obtainableName)}
-        decrementObtainable={() => this.handleClick(false, obtainableName)}
-        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableFancyName)}
+        incrementObtainable={incrementObtainable}
+        decrementObtainable={decrementObtainable}
+        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableName)}
         clearSelectedObtainable={() => this.props.clearSelectedObtainable()}
       />
     );
@@ -138,10 +118,10 @@ class ObtainablesTracker extends React.Component {
                 this.obtainable(Helper.OBTAINABLES.FOUL_FRUIT),
 
                 this.obtainable(Helper.OBTAINABLES.NOTE_BOTTLE),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_ONE),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_TWO),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_THREE),
                 this.obtainable(Helper.OBTAINABLES.BOTTLE_FOUR),
+                this.obtainable(Helper.OBTAINABLES.BOTTLE_FIVE),
               ]}
               numColumns={5}
             />
@@ -151,5 +131,11 @@ class ObtainablesTracker extends React.Component {
     );
   }
 }
+
+ObtainablesTracker.propTypes = {
+  incrementObtainable: PropTypes.func.isRequired,
+  decrementObtainable: PropTypes.func.isRequired,
+  trackerState: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default ObtainablesTracker;
