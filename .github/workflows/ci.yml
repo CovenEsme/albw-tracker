@@ -48,3 +48,8 @@ jobs:
         run: |
           set -e
           npm test
+
+      - name: Deploy
+        run: |
+          set -e
+          npm run deploy
