@@ -11,40 +11,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout commit
-    - uses: actions/checkout@v2.3.4
+      - name: Checkout commit
+        uses: actions/checkout@v2.3.4
 
-    - name: Install Node 12.x
-      uses: actions/setup-node@v2.4.0
-      with:
-        node-version: '12.x'
+      - name: Install Node 12.x
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '12.x'
 
-    - name: Install Node 14.x
-      uses: actions/setup-node@2.4.0
-      with:
-        node-version: '14.x'
+      - name: Install Node 14.x
+        uses: actions/setup-node@2.4.0
+        with:
+          node-version: '14.x'
 
-    - name: Install Node 16.x
-      uses: actions/setup-node@2.4.0
-      with:
-        node-version: '16.x'
+      - name: Install Node 16.x
+        uses: actions/setup-node@2.4.0
+        with:
+          node-version: '16.x'
 
-    - name: Install npm packages
-      run: |
-        set -e
-        npm install
+      - name: Install npm packages
+        run: |
+          set -e
+          npm install
 
-    - name: Build UI
-      run: |
-        set -e
-        npm run build:production
+      - name: Build UI
+        run: |
+          set -e
+          npm run build:production
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
+      - name: Build
+        run: |
+          npm install
+          npx webpack
 
-    - name: Run tests
-      run: |
-        set -e
-        npm test
+      - name: Run tests
+        run: |
+          set -e
+          npm test
