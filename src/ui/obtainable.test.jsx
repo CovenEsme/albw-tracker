@@ -7,9 +7,9 @@ import Images from '../services/images';
 import Obtainable from './obtainable';
 
 describe('Obtainable', () => {
-  const obtainableName      = "Test Obtainable";
-  const obtainableFancyName = "Test Obtainable Fancy";
-  const obtainableImage     = "test-obtainable.png";
+  const testObtainableName      = "Test Obtainable";
+  const testObtainableFancyName = "Test Obtainable Fancy";
+  const testObtainableImage     = "test-obtainable.png";
 
   const testFunction = () => {};
 
@@ -21,7 +21,7 @@ describe('Obtainable', () => {
     console.error.restore();
   });
 
-  test('Console error when rendering Obtainable without props', () => {
+  test('Console error rendering Obtainable without props', () => {
     render(<Obtainable />);
 
     sinon.assert.called(console.error);
@@ -29,16 +29,16 @@ describe('Obtainable', () => {
 
   test('Renders Obtainable with fancy name', () => {
     render(<Obtainable
-             obtainableName={obtainableName}
-             obtainableFancyName={obtainableFancyName}
-             obtainableImage={obtainableImage}
+             obtainableName={testObtainableName}
+             obtainableFancyName={testObtainableFancyName}
+             obtainableImage={testObtainableImage}
              incrementObtainable={testFunction}
              decrementObtainable={testFunction}
              setSelectedObtainable={testFunction}
              clearSelectedObtainable={testFunction}
            />);
 
-    expect(screen.getByAltText(obtainableFancyName)).toBeInTheDocument();
+    expect(screen.getByAltText(testObtainableFancyName)).toBeInTheDocument();
     sinon.assert.notCalled(console.error);
   });
 
@@ -46,7 +46,7 @@ describe('Obtainable', () => {
     await Images.importImages();
 
     render(<Obtainable
-             obtainableName={obtainableName}
+             obtainableName={testObtainableName}
              obtainableFancyName=""
              obtainableImage={Images.getImage('Progressive Sword', 0)}
              incrementObtainable={testFunction}
@@ -55,8 +55,8 @@ describe('Obtainable', () => {
              clearSelectedObtainable={testFunction}
            />);
 
-    const obtainableImage = await screen.findByRole('img');
-    expect(obtainableImage).toHaveAttribute('src', 'sword-0.png');
+    const testObtainableImage = await screen.findByRole('img');
+    expect(testObtainableImage).toHaveAttribute('src', 'sword-0.png');
     sinon.assert.notCalled(console.error);
   });
 });

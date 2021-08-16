@@ -18,33 +18,33 @@ describe('Label', () => {
   });
 
   describe('Render Label with various labelText values', () => {
-    test('Console error when rendering Label without labelText', () => {
+    test('Console error rendering Label without labelText', () => {
       render(<Label />);
 
       sinon.assert.called(console.error);
     });
 
     test('Renders Label with string', () => {
-      const labelText = "Test label text";
+      const testLabelText = "Test label text";
 
-      render(<Label labelText={labelText}/>);
+      render(<Label labelText={testLabelText}/>);
 
-      expect(screen.getByText(labelText)).toBeInTheDocument();
+      expect(screen.getByText(testLabelText)).toBeInTheDocument();
       sinon.assert.notCalled(console.error);
     });
 
-    test('Console error when rendering Label with null', () => {
-      const labelText = null;
+    test('Console error rendering Label with null', () => {
+      const testLabelText = null;
 
-      render(<Label labelText={labelText}/>);
+      render(<Label labelText={testLabelText}/>);
 
       sinon.assert.called(console.error);
     });
 
     test('Renders Label with empty string', () => {
-      const labelText = "";
+      const testLabelText = "";
 
-      render(<Label labelText={labelText}/>);
+      render(<Label labelText={testLabelText}/>);
 
       expect(screen.getByTestId(labelTestId)).toBeInTheDocument();
       sinon.assert.notCalled(console.error);
@@ -57,8 +57,8 @@ describe('Label', () => {
 
       render(<Label labelText="Test"/>);
 
-      const labelImage = await screen.findByRole('img');
-      expect(labelImage).toHaveAttribute('src', 'gear-label.png');
+      const testLabelImage = await screen.findByRole('img');
+      expect(testLabelImage).toHaveAttribute('src', 'gear-label.png');
       sinon.assert.notCalled(console.error);
     });
   });
