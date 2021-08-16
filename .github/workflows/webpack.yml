@@ -27,7 +27,7 @@ jobs:
         set -e
         npm install
 
-    -name: Build UI
+    - name: Build UI
       run: |
         set -e
         npm run build:production
