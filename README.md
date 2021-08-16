@@ -13,6 +13,8 @@ Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomize
   * Left click to upgrade an obtainable (e.g. Power Glove -> Titan's Mitt)
   * Right click to downgrade an obtainable (e.g. Titan's Mitt -> Power Glove)
 
+![demo](albw-tracker-demo.gif)
+
 ## Build Instructions
 To locally build and run the tracker, you will need to first install [Node.js and npm](https://www.npmjs.com/get-npm).
 
