@@ -38,9 +38,9 @@ class Helper {
   }
 
   static _setStartingObtainables() {
-    this.startingObtainables = {
-      [this.OBTAINABLES.PROGRESSIVE_MAIL]: 1,
-    };
+    // this.startingObtainables = {
+    //   [this.OBTAINABLES.PROGRESSIVE_MAIL]: 1,
+    // };
   }
 }
 
