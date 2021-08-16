@@ -38,7 +38,7 @@ jobs:
         run: |
           npm install
           npx webpack
-          
+
       - name: Build UI
         run: |
           set -e
@@ -50,8 +50,10 @@ jobs:
           npm test
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        if: ${{ github.repository == 'elliebeph/albw-tracker' github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          force_orphan: true
           publish_dir: ./deploy
