@@ -17,7 +17,7 @@ describe('App', () => {
   test('Renders App with loading spinner while initializing', () => {
     render(<App />);
 
-    expect(screen.queryByLabelText('audio-loading')).toBeInTheDocument();
+    expect(screen.getByLabelText('audio-loading')).toBeInTheDocument();
     expect(screen.queryByAltText('Gear overlay')).toBeNull();
     expect(screen.queryByAltText('Items overlay')).toBeNull();
     expect(screen.queryByAltText('Label')).toBeNull();
@@ -27,11 +27,11 @@ describe('App', () => {
   test('Renders App with tracker after initializing', async () => {
     render(<App />);
 
-    expect(screen.queryByLabelText('audio-loading')).toBeInTheDocument();
+    expect(screen.getByLabelText('audio-loading')).toBeInTheDocument();
 
     expect(await screen.findByAltText('Gear overlay')).toBeInTheDocument();
-    expect(screen.queryByAltText('Items overlay')).toBeInTheDocument();
-    expect(screen.queryByAltText('Label')).toBeInTheDocument();
+    expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
+    expect(screen.getByAltText('Label')).toBeInTheDocument();
     sinon.assert.notCalled(console.error);
   });
 });

@@ -29,7 +29,7 @@ describe('Label', () => {
 
       render(<Label labelText={labelText}/>);
 
-      expect(screen.queryByText(labelText)).toBeInTheDocument();
+      expect(screen.getByText(labelText)).toBeInTheDocument();
       sinon.assert.notCalled(console.error);
     });
 
@@ -46,7 +46,7 @@ describe('Label', () => {
 
       render(<Label labelText={labelText}/>);
 
-      expect(screen.queryByTestId(labelTestId)).toBeInTheDocument();
+      expect(screen.getByTestId(labelTestId)).toBeInTheDocument();
       sinon.assert.notCalled(console.error);
     });
   });

@@ -38,7 +38,7 @@ describe('Obtainable', () => {
              clearSelectedObtainable={testFunction}
            />);
 
-    expect(screen.queryByAltText(obtainableFancyName)).toBeInTheDocument();
+    expect(screen.getByAltText(obtainableFancyName)).toBeInTheDocument();
     sinon.assert.notCalled(console.error);
   });
 
