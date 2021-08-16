@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Helper from '../services/helper';
@@ -130,5 +131,11 @@ class ObtainablesTracker extends React.Component {
     );
   }
 }
+
+ObtainablesTracker.propTypes = {
+  incrementObtainable: PropTypes.func.isRequired,
+  decrementObtainable: PropTypes.func.isRequired,
+  trackerState: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default ObtainablesTracker;
