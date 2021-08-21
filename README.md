@@ -1,12 +1,12 @@
-# ALBW Randomizer Tracker
+# ALBW Randomizer Tracker 📝
 
-[![Build Status](https://github.com/elliebeph/albw-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/elliebeph/albw-tracker/actions)
+![Version](https://img.shields.io/github/package-json/v/elliebeph/albw-tracker) [![Build Status](https://github.com/elliebeph/albw-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/elliebeph/albw-tracker/actions) ![Last Commit](https://img.shields.io/github/last-commit/elliebeph/albw-tracker)
 
 This is a [web based tracker](https://elliebeph.github.io/albw-tracker) for the [A link Between Worlds Randomizer](https://gitlab.com/marsolk/albw-randomizer-cli).
 
 Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomizer specific information.
 
-## How to use the tracker
+## Getting Started 🛫
 
 * Go to [**elliebeph.github.io/albw-tracker**](https://elliebeph.github.io/albw-tracker)
 * Mark off the obtainables you find as you play through the game
@@ -15,7 +15,26 @@ Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomize
 
 [![demo](albw-tracker-demo.gif)](https://elliebeph.github.io/albw-tracker)
 
-## Build Instructions
+## Current Features 🔆
+
+* Gear and Item tracking 🏹
+* Mouse over tooltip label 🏷️
+
+## Upcoming (hopefully 🤞) Features 📅
+
+* Maps! 🗺️
+* Location tracking 🧭
+* Stats 🛰️
+* Logic 🧠
+* Customisation 🎨
+  * Exclude checks 🚫
+  * Upload presets 📤
+  * Set starting items 🧾
+* Save progress 💾
+* Load progress 🔌
+
+## Build Instructions 🧩
+
 To locally build and run the tracker, you will need to first install [Node.js and npm](https://www.npmjs.com/get-npm).
 
 Clone this repository:
@@ -32,3 +51,9 @@ Then build and start the tracker:
 ```bash
 npm start
 ```
+
+## Shoutouts 📣
+
+* [tocapa](https://gitlab.com/marsolk) ~ For creating the [A Link Between Worlds Randomizer](https://gitlab.com/marsolk/albw-randomizer-cli) and making this possible
+* [wooferzfg](https://github.com/wooferzfg) ~ For creating the tracker for [The Wind Waker Randomizer](https://github.com/wooferzfg/tww-rando-tracker) which this tracker is based upon
+* [cjs](https://github.com/cjs8487) ~ For creating the tracker for [Skyward Sword Randomizer](https://github.com/cjs8487/SS-Randomizer-Tracker)
