@@ -58,7 +58,7 @@ describe('Label', () => {
       render(<Label labelText="Test"/>);
 
       const testLabelImage = await screen.findByRole('img');
-      expect(testLabelImage).toHaveAttribute('src', 'gear-label.png');
+      expect(testLabelImage).toHaveAttribute('src', 'tooltip-label.png');
       sinon.assert.notCalled(console.error);
     });
   });
