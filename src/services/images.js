@@ -281,7 +281,7 @@ class Images {
 
       GEAR_OVERLAY: import('../assets/gear/gear-overlay.png'),
       ITEMS_OVERLAY: import('../assets/items/items-overlay.png'),
-      LABEL: import('../assets/gear/gear-label.png'),
+      LABEL: import('../assets/tooltip-label.png'),
     };
   }
 }
