@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[56],{72:function(a,s,e){"use strict";e.r(s),s.default=e.p+"static/media/sage-seres-1.ab06cddc.png"}}]);
+//# sourceMappingURL=56.4e6be14b.chunk.js.map

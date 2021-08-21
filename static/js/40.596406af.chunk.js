@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[40],{95:function(a,t,c){"use strict";c.r(t),t.default=c.p+"static/media/pouch-0a.52090841.png"}}]);
+//# sourceMappingURL=40.596406af.chunk.js.map

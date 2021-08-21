@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[54],{64:function(s,a,t){"use strict";t.r(a),a.default=t.p+"static/media/sage-rosso-1.e2b4f826.png"}}]);
+//# sourceMappingURL=54.53fb3e62.chunk.js.map

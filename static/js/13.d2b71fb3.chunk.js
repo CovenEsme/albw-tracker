@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[13],{81:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/bracelet-2.7e03daf1.png"}}]);
+//# sourceMappingURL=13.d2b71fb3.chunk.js.map
