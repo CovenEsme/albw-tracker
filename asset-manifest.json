@@ -5,8 +5,8 @@
     "static/js/1.9e3d6e37.chunk.js": "/albw-tracker/static/js/1.9e3d6e37.chunk.js",
     "static/js/1.9e3d6e37.chunk.js.map": "/albw-tracker/static/js/1.9e3d6e37.chunk.js.map",
     "main.css": "/albw-tracker/static/css/main.f561c65b.chunk.css",
-    "main.js": "/albw-tracker/static/js/main.f7deda08.chunk.js",
-    "main.js.map": "/albw-tracker/static/js/main.f7deda08.chunk.js.map",
+    "main.js": "/albw-tracker/static/js/main.476d6e4b.chunk.js",
+    "main.js.map": "/albw-tracker/static/js/main.476d6e4b.chunk.js.map",
     "runtime-main.js": "/albw-tracker/static/js/runtime-main.532d816e.js",
     "runtime-main.js.map": "/albw-tracker/static/js/runtime-main.532d816e.js.map",
     "static/js/4.4d51dbe9.chunk.js": "/albw-tracker/static/js/4.4d51dbe9.chunk.js",
@@ -316,6 +316,6 @@
     "static/js/runtime-main.532d816e.js",
     "static/js/4.4d51dbe9.chunk.js",
     "static/css/main.f561c65b.chunk.css",
-    "static/js/main.f7deda08.chunk.js"
+    "static/js/main.476d6e4b.chunk.js"
   ]
 }
