@@ -1,7 +1,7 @@
 {
   "name": "albw-tracker",
   "homepage": "https://elliebeph.github.io/albw-tracker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
