@@ -33,6 +33,14 @@ Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomize
 * Save progress 💾
 * Load progress 🔌
 
+## Dev Branch 🔧
+
+If you are keen to try out the very latest version of the tracker, this is the place for you!
+
+**BE WARNED:** the development deployment ~~may~~ will have bugs, be broken, not work, etc.
+
+Still interested? Then go [here](https://elliebeph.com/albw-tracker) to try it out.
+
 ## Build Instructions 🧩
 
 To locally build and run the tracker, you will need to first install [Node.js and npm](https://www.npmjs.com/get-npm).
