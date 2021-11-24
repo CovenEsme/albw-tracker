@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.15.1",
     "gh-pages": "^3.2.3",
     "sinon": "^11.1.2"
   }
