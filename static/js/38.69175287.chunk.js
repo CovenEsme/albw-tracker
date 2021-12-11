@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[38],{75:function(t,a,s){"use strict";s.r(a),a.default=s.p+"static/media/pendant-of-wisdom-0.f13f88c1.png"}}]);
+//# sourceMappingURL=38.69175287.chunk.js.map

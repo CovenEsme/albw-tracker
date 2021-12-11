@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[45],{65:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/sage-impa-0.09617eb7.png"}}]);
+//# sourceMappingURL=45.b1007bdc.chunk.js.map

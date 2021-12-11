@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[35],{78:function(a,t,c){"use strict";c.r(t),t.default=c.p+"static/media/pendant-of-courage-1.9532c504.png"}}]);
+//# sourceMappingURL=35.10201da6.chunk.js.map

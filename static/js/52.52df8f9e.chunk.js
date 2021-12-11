@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[52],{70:function(a,c,s){"use strict";s.r(c),c.default=s.p+"static/media/sage-osfala-1.cb63bcc8.png"}}]);
+//# sourceMappingURL=52.52df8f9e.chunk.js.map

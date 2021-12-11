@@ -1,2 +1,0 @@
-(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[49],{61:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/sage-oren-0.d666b227.png"}}]);
-//# sourceMappingURL=49.1e14a363.chunk.js.map

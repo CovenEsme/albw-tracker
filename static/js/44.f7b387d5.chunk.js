@@ -1,0 +1,2 @@
+(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[44],{60:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/sage-gulley-1.f2247810.png"}}]);
+//# sourceMappingURL=44.f7b387d5.chunk.js.map
