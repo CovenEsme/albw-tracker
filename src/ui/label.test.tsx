@@ -11,7 +11,7 @@ describe('Label', () => {
   let testLabelText: string = "Test label text";
 
   describe('Render Label with various labelText values', () => {
-    test('Console error rendering Label without labelText', () => {
+    test('Renders Label without text when labelText is not given', () => {
       render(<Label />);
 
       expect(screen.getByTestId(labelTestId)).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('Label', () => {
       expect(screen.getByText(testLabelText)).toBeInTheDocument();
     });
 
-    test('Console error rendering Label with null', () => {
+    test('Renders Label without text when labelText is null', () => {
       testLabelText = null;
 
       render(<Label labelText={testLabelText}/>);
