@@ -1,11 +1,13 @@
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Images from '../services/images';
 
-class Label extends React.Component {
+interface LabelInterface {
+    labelText: string,
+}
 
+class Label extends React.Component<LabelInterface> {
   render() {
     const {labelText} = this.props;
 
@@ -22,9 +24,5 @@ class Label extends React.Component {
     );
   }
 }
-
-Label.propTypes = {
-  labelText: PropTypes.string.isRequired,
-};
 
 export default Label;
