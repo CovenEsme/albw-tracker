@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React from 'react';
 
 interface ObtainableInterface {
-    labelText:               string,
     obtainableName:          string,
     obtainableFancyName?:    string,
     obtainableImage:         string,
