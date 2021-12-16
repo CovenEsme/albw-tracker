@@ -14,8 +14,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    const trackerState = new TrackerState();
+
     this.state = {
       isLoading: true,
+      trackerState,
     };
 
     this.initialize();
@@ -32,11 +35,8 @@ class App extends React.Component {
 
     Helper.initialize();
 
-    const trackerState = TrackerState.default();
-
     this.setState({
       isLoading: false,
-      trackerState,
     });
   }
 

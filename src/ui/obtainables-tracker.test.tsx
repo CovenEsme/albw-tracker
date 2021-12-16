@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import sinon from 'sinon';
 
 import Helper from '../services/helper';
 import OBTAINABLES from '../data/obtainables.json';
@@ -9,38 +8,36 @@ import ObtainablesTracker from './obtainables-tracker';
 import TrackerState from '../services/tracker-state';
 
 describe('ObtainablesTracker', () => {
-  let testTrackerState;
+  let testTrackerState: TrackerState;
 
-  const testFunction = () => {};
+  function testFunction() {};
 
   beforeEach(() => {
-    sinon.stub(console, 'error');
-    testTrackerState = TrackerState.default();
+    testTrackerState = new TrackerState();
   });
 
-  afterEach(() => {
-    console.error.restore();
-  });
-
+  // This causes a huge console error:
+  // Error: Uncaught [TypeError: Cannot read properties of undefined (reading
+  // 'getObtainableValue')]
   test('Exception rendering ObtainablesTracker without props', () => {
     let exception = null;
 
     try {
       render(<ObtainablesTracker />);
-    } catch (te) {
+  } catch(te) {
       exception = te;
     }
 
     expect(exception).not.toBeNull();
-    sinon.assert.called(console.error);
   });
 
-  test('Console error rendering ObtainablesTracker with TrackerState', () => {
+  test('Renders ObtainablesTracker with TrackerState', () => {
     render(<ObtainablesTracker
              trackerState={testTrackerState}
            />);
 
-    sinon.assert.called(console.error);
+    expect(screen.getByAltText('Gear overlay')).toBeInTheDocument();
+    expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
   });
 
   test('Renders ObtainablesTracker with props', () => {
@@ -52,7 +49,8 @@ describe('ObtainablesTracker', () => {
              trackerState={testTrackerState}
            />);
 
-    sinon.assert.notCalled(console.error);
+    expect(screen.getByAltText('Gear overlay')).toBeInTheDocument();
+    expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
   });
 
   test('Renders ObtainablesTracker with all Obtainables', () => {
@@ -60,10 +58,13 @@ describe('ObtainablesTracker', () => {
              trackerState={testTrackerState}
            />);
 
-     for (var obtainable in OBTAINABLES) {
-       const obtainableObject = screen.getAllByAltText(Helper.fancyName(obtainable, 0));
+    let obtainable: string;
 
-       expect(obtainableObject[0]).toBeInTheDocument();
+    for (obtainable in OBTAINABLES) {
+      const obtainableObject = screen.getAllByAltText(
+                                        Helper.fancyName(obtainable, 0));
+
+      expect(obtainableObject[0]).toBeInTheDocument();
      }
   });
 });

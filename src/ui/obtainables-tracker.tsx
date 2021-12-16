@@ -1,14 +1,23 @@
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Helper from '../services/helper';
 import Images from '../services/images';
+import TrackerState from '../services/tracker-state';
+
 import Obtainable from './obtainable';
 import Table from './table';
 
-class ObtainablesTracker extends React.Component {
-  obtainable(obtainableName) {
+interface ObtainablesTrackerInterface {
+    incrementObtainable:     () => void,
+    decrementObtainable:     () => void,
+    trackerState:            TrackerState,
+    setSelectedObtainable:   (obtainableName: string) => void,
+    clearSelectedObtainable: () => void,
+}
+
+class ObtainablesTracker extends React.Component<ObtainablesTrackerInterface> {
+  obtainable(obtainableName: string) {
     const {
       incrementObtainable,
       decrementObtainable,
@@ -131,11 +140,5 @@ class ObtainablesTracker extends React.Component {
     );
   }
 }
-
-ObtainablesTracker.propTypes = {
-  incrementObtainable: PropTypes.func.isRequired,
-  decrementObtainable: PropTypes.func.isRequired,
-  trackerState: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default ObtainablesTracker;
