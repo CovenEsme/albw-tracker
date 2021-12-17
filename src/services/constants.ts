@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 class Constants {
-  static createFromArray(dataArray) {
+  static createFromArray(dataArray: string[]) {
     const data = _.reduce(
       dataArray,
       (accumulator, option) => _.set(
