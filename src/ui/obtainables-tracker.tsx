@@ -107,8 +107,7 @@ class ObtainablesTracker extends React.Component<ObtainablesTrackerInterface> {
             draggable={false}
           />
           <div id="items-obtainables">
-            <Table id="items-table"
-              elements={[
+            <Table elements={[
                 this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_LAMP),
                 this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOW),
                 this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_TROD),
