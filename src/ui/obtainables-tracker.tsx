@@ -9,8 +9,8 @@ import Obtainable from './obtainable';
 import Table from './table';
 
 interface ObtainablesTrackerInterface {
-    incrementObtainable:     () => void,
-    decrementObtainable:     () => void,
+    incrementObtainable:     (obtainableName: string) => void,
+    decrementObtainable:     (obtainableName: string) => void,
     trackerState:            TrackerState,
     setSelectedObtainable:   (obtainableName: string) => void,
     clearSelectedObtainable: () => void,

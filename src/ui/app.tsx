@@ -10,8 +10,13 @@ import Loader from 'react-loader-spinner';
 
 import '../css/styles.scss';
 
-class App extends React.Component {
-  constructor(props) {
+interface AppState {
+  isLoading:    boolean,
+  trackerState: TrackerState,
+}
+
+class App extends React.Component<{}, AppState> {
+  constructor(props: number) {
     super(props);
 
     const trackerState = new TrackerState();
@@ -40,7 +45,7 @@ class App extends React.Component {
     });
   }
 
-  incrementObtainable(obtainableName) {
+  incrementObtainable(obtainableName: string) {
     const {trackerState} = this.state;
 
     let newTrackerState = trackerState;
@@ -51,7 +56,7 @@ class App extends React.Component {
     this.updateTrackerState(newTrackerState);
   }
 
-  decrementObtainable(obtainableName) {
+  decrementObtainable(obtainableName: string) {
     const {trackerState} = this.state;
 
     let newTrackerState = trackerState;
@@ -62,7 +67,7 @@ class App extends React.Component {
     this.updateTrackerState(newTrackerState);
   }
 
-  setSelectedObtainable(obtainableName) {
+  setSelectedObtainable(obtainableName: string) {
     const {trackerState} = this.state;
     const newTrackerState = trackerState.setSelectedObtainable(obtainableName);
 
@@ -76,7 +81,7 @@ class App extends React.Component {
     this.updateTrackerState(newTrackerState);
   }
 
-  updateTrackerState(newTrackerState) {
+  updateTrackerState(newTrackerState: TrackerState) {
     const trackerState = newTrackerState;
 
     this.setState({
@@ -109,7 +114,7 @@ class App extends React.Component {
             clearSelectedObtainable={() => this.clearSelectedObtainable()}
             trackerState={trackerState}
           />
-          <Label labelText={trackerState.selectedObtainable}/>
+          <Label labelText={trackerState.getSelectedObtainable()}/>
         </div>
       );
     }

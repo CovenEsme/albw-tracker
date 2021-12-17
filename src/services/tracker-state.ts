@@ -67,6 +67,10 @@ class TrackerState {
     return newState;
   }
 
+  getSelectedObtainable(): string {
+    return _.get(this, "selectedObtainable");
+  }
+
   clearSelectedObtainable(): TrackerState {
     const newState = this._clone();
 
