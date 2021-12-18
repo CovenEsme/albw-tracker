@@ -3,34 +3,42 @@ import _ from 'lodash';
 import Helper from './helper';
 
 class Images {
+  static _images = {};
+
   static get IMAGES() {
-    return this.images;
+    return this._images;
   }
 
-  static getImage(obtainableName, obtainableCount) {
-    const obtainableImages = _.get(this.images,
+  static getImage(obtainableName: string, obtainableCount: number) {
+    const obtainableImages = _.get(this._images,
                                    ['OBTAINABLES', obtainableName]);
 
     return _.get(obtainableImages, obtainableCount);
   }
 
   static async importImages() {
-    this.images = {};
-
     await this._resolveImports(this._IMAGE_IMPORTS);
   }
 
-  static async _resolveImports(imageImports, keys = []) {
+    // imageImports is type actually type:
+    // Record<string, Record<string, string | Record<number, any>>
+    //                | Promise<typeof import("*.png")>>
+    // This *still* includes an any and it's not worth figuring out the
+    // fully-inclusive type (which might change in the future anyway). :/
+    static async _resolveImports(imageImports: any,
+                               keys: string[] =[]) {
     await Promise.all(
       _.map(
         imageImports,
-        (importValue, importKey) => this._resolveImportValue(importValue, keys, importKey),
+        (importValue, importKey) => this._resolveImportValue(importValue,
+                                                             keys,
+                                                             importKey),
       ),
     );
   }
 
-  static async _resolveImportValue(value, keys, newKey) {
-    const updatedKeys = _.concat(keys, newKey);
+  static async _resolveImportValue(value: any, keys: string[], newKey: string) {
+    const updatedKeys: string[] = _.concat(keys, newKey);
 
     if (_.isPlainObject(value)) {
       await this._resolveImports(value, updatedKeys);
@@ -39,9 +47,9 @@ class Images {
     }
   }
 
-  static async _loadImage(importPromise, imageKeys) {
+  static async _loadImage(importPromise: any, imageKeys: string[]) {
     const imageImport = await importPromise;
-    _.set(this.images, imageKeys, imageImport.default);
+    _.set(this._images, imageKeys, imageImport.default);
   }
 
   static get _IMAGE_IMPORTS() {
