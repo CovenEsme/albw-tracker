@@ -3,7 +3,7 @@ import _ from 'lodash';
 import Helper from './helper';
 
 class TrackerState {
-  private obtainables: Record<string, number>;
+  obtainables: Record<string, number>;
 
   constructor() {
     this.obtainables = _.reduce(
