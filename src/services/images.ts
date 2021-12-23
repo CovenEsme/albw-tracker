@@ -1,295 +1,290 @@
-import _ from 'lodash';
+import _ from "lodash";
 
-import Helper from './helper';
+import Helper from "./helper";
+
+type ImageType = Promise<typeof import("*.png")>;
 
 class Images {
   static _images = {};
 
-  static get IMAGES() {
+  static get IMAGES(): Record<string, string> {
     return this._images;
   }
 
-  static getImage(obtainableName: string, obtainableCount: number) {
-    const obtainableImages = _.get(this._images,
-                                   ['OBTAINABLES', obtainableName]);
+  static getImage(obtainableName: string, obtainableCount: number): string {
+    const obtainableImages = _.get(this._images, [obtainableName]);
 
     return _.get(obtainableImages, obtainableCount);
   }
 
-  static async importImages() {
-    await this._resolveImports(this._IMAGE_IMPORTS);
-  }
-
-    // imageImports is type actually type:
-    // Record<string, Record<string, string | Record<number, any>>
-    //                | Promise<typeof import("*.png")>>
-    // This *still* includes an any and it's not worth figuring out the
-    // fully-inclusive type (which might change in the future anyway). :/
-    static async _resolveImports(imageImports: any,
-                               keys: string[] =[]) {
+  static async importImages(): Promise<void> {
     await Promise.all(
       _.map(
-        imageImports,
-        (importValue, importKey) => this._resolveImportValue(importValue,
-                                                             keys,
-                                                             importKey),
+        this._IMAGE_IMPORTS,
+        (value, key) => this._importSubSet(value, key),
       ),
     );
   }
 
-  static async _resolveImportValue(value: any, keys: string[], newKey: string) {
-    const updatedKeys: string[] = _.concat(keys, newKey);
-
-    if (_.isPlainObject(value)) {
-      await this._resolveImports(value, updatedKeys);
-    } else {
-      await this._loadImage(value, updatedKeys);
-    }
+  static async _importSubSet(arrayOfImages: ImageType[],
+                             key: string): Promise<void> {
+    await Promise.all(
+      _.map(arrayOfImages,
+            (imagePromise, index) => this._loadImage(imagePromise, key, index),
+      ),
+    );
   }
 
-  static async _loadImage(importPromise: any, imageKeys: string[]) {
+  static async _loadImage(importPromise: ImageType, imageKey: string,
+                          imageIndex: number): Promise<void> {
+    const updatedKeys: string[] = [imageKey, imageIndex.toString()];
     const imageImport = await importPromise;
-    _.set(this._images, imageKeys, imageImport.default);
+
+    _.set(this._images, updatedKeys, imageImport.default);
   }
 
-  static get _IMAGE_IMPORTS() {
+  static get _IMAGE_IMPORTS(): Record<string, ImageType[]> {
     return {
-      OBTAINABLES: {
-        [Helper.OBTAINABLES.PROGRESSIVE_SWORD]: {
-          0: import('../assets/gear/sword-0.png'),
-          1: import('../assets/gear/sword-1.png'),
-          2: import('../assets/gear/sword-2.png'),
-          3: import('../assets/gear/sword-3.png'),
-          4: import('../assets/gear/sword-4.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_MAIL]: {
-          0: import('../assets/gear/mail-0.png'),
-          1: import('../assets/gear/mail-1.png'),
-          2: import('../assets/gear/mail-2.png'),
-          3: import('../assets/gear/mail-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_SHIELD]: {
-          0: import('../assets/gear/shield-0.png'),
-          1: import('../assets/gear/shield-1.png'),
-          2: import('../assets/gear/shield-2.png'),
-        },
+      [Helper.OBTAINABLES.PROGRESSIVE_SWORD]: [
+        import("../assets/gear/sword-0.png"),
+        import("../assets/gear/sword-1.png"),
+        import("../assets/gear/sword-2.png"),
+        import("../assets/gear/sword-3.png"),
+        import("../assets/gear/sword-4.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_MAIL]: [
+        import("../assets/gear/mail-0.png"),
+        import("../assets/gear/mail-1.png"),
+        import("../assets/gear/mail-2.png"),
+        import("../assets/gear/mail-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_SHIELD]: [
+        import("../assets/gear/shield-0.png"),
+        import("../assets/gear/shield-1.png"),
+        import("../assets/gear/shield-2.png")
+      ],
 
-        [Helper.OBTAINABLES.SAGE_GULLEY]: {
-          0: import('../assets/gear/sage-gulley-0.png'),
-          1: import('../assets/gear/sage-gulley-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_OREN]: {
-          0: import('../assets/gear/sage-oren-0.png'),
-          1: import('../assets/gear/sage-oren-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_ROSSO]: {
-          0: import('../assets/gear/sage-rosso-0.png'),
-          1: import('../assets/gear/sage-rosso-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_IMPA]: {
-          0: import('../assets/gear/sage-impa-0.png'),
-          1: import('../assets/gear/sage-impa-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_IRENE]: {
-          0: import('../assets/gear/sage-irene-0.png'),
-          1: import('../assets/gear/sage-irene-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_OSFALA]: {
-          0: import('../assets/gear/sage-osfala-0.png'),
-          1: import('../assets/gear/sage-osfala-1.png'),
-        },
-        [Helper.OBTAINABLES.SAGE_SERES]: {
-          0: import('../assets/gear/sage-seres-0.png'),
-          1: import('../assets/gear/sage-seres-1.png'),
-        },
+      [Helper.OBTAINABLES.SAGE_GULLEY]: [
+        import("../assets/gear/sage-gulley-0.png"),
+        import("../assets/gear/sage-gulley-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_OREN]: [
+        import("../assets/gear/sage-oren-0.png"),
+        import("../assets/gear/sage-oren-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_ROSSO]: [
+        import("../assets/gear/sage-rosso-0.png"),
+        import("../assets/gear/sage-rosso-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_IMPA]: [
+        import("../assets/gear/sage-impa-0.png"),
+        import("../assets/gear/sage-impa-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_IRENE]: [
+        import("../assets/gear/sage-irene-0.png"),
+        import("../assets/gear/sage-irene-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_OSFALA]: [
+        import("../assets/gear/sage-osfala-0.png"),
+        import("../assets/gear/sage-osfala-1.png")
+      ],
+      [Helper.OBTAINABLES.SAGE_SERES]: [
+        import("../assets/gear/sage-seres-0.png"),
+        import("../assets/gear/sage-seres-1.png")
+      ],
 
-        [Helper.OBTAINABLES.PENDANT_OF_POWER]: {
-          0: import('../assets/gear/pendant-of-power-0.png'),
-          1: import('../assets/gear/pendant-of-power-1.png'),
-        },
-        [Helper.OBTAINABLES.PENDANT_OF_WISDOM]: {
-          0: import('../assets/gear/pendant-of-wisdom-0.png'),
-          1: import('../assets/gear/pendant-of-wisdom-1.png'),
-        },
-        [Helper.OBTAINABLES.PENDANT_OF_COURAGE]: {
-          0: import('../assets/gear/pendant-of-courage-0.png'),
-          1: import('../assets/gear/pendant-of-courage-1.png'),
-        },
+      [Helper.OBTAINABLES.PENDANT_OF_POWER]: [
+        import("../assets/gear/pendant-of-power-0.png"),
+        import("../assets/gear/pendant-of-power-1.png")
+      ],
+      [Helper.OBTAINABLES.PENDANT_OF_WISDOM]: [
+        import("../assets/gear/pendant-of-wisdom-0.png"),
+        import("../assets/gear/pendant-of-wisdom-1.png")
+      ],
+      [Helper.OBTAINABLES.PENDANT_OF_COURAGE]: [
+        import("../assets/gear/pendant-of-courage-0.png"),
+        import("../assets/gear/pendant-of-courage-1.png")
+      ],
 
-        [Helper.OBTAINABLES.PROGRESSIVE_BRACELET]: {
-          0: import('../assets/gear/bracelet-0.png'),
-          1: import('../assets/gear/bracelet-1.png'),
-          2: import('../assets/gear/bracelet-2.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_MITT]: {
-          0: import('../assets/gear/mitt-0.png'),
-          1: import('../assets/gear/mitt-1.png'),
-          2: import('../assets/gear/mitt-2.png'),
-        },
-        [Helper.OBTAINABLES.PEGASUS_BOOTS]: {
-          0: import('../assets/gear/boots-0.png'),
-          1: import('../assets/gear/boots-1.png'),
-        },
-        [Helper.OBTAINABLES.ZORA_FLIPPERS]: {
-          0: import('../assets/gear/flippers-0.png'),
-          1: import('../assets/gear/flippers-1.png'),
-        },
-        [Helper.OBTAINABLES.BEE_BADGE]: {
-          0: import('../assets/gear/badge-0.png'),
-          1: import('../assets/gear/badge-1.png'),
-        },
-        [Helper.OBTAINABLES.STAMINA_SCROLL]: {
-          0: import('../assets/gear/scroll-0.png'),
-          1: import('../assets/gear/scroll-1.png'),
-        },
+      [Helper.OBTAINABLES.PROGRESSIVE_BRACELET]: [
+        import("../assets/gear/bracelet-0.png"),
+        import("../assets/gear/bracelet-1.png"),
+        import("../assets/gear/bracelet-2.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_MITT]: [
+        import("../assets/gear/mitt-0.png"),
+        import("../assets/gear/mitt-1.png"),
+        import("../assets/gear/mitt-2.png")
+      ],
+      [Helper.OBTAINABLES.PEGASUS_BOOTS]: [
+        import("../assets/gear/boots-0.png"),
+        import("../assets/gear/boots-1.png")
+      ],
+      [Helper.OBTAINABLES.ZORA_FLIPPERS]: [
+        import("../assets/gear/flippers-0.png"),
+        import("../assets/gear/flippers-1.png")
+      ],
+      [Helper.OBTAINABLES.BEE_BADGE]: [
+        import("../assets/gear/badge-0.png"),
+        import("../assets/gear/badge-1.png")
+      ],
+      [Helper.OBTAINABLES.STAMINA_SCROLL]: [
+        import("../assets/gear/scroll-0.png"),
+        import("../assets/gear/scroll-1.png")
+      ],
 
-        [Helper.OBTAINABLES.SMOOTH_GEM]: {
-          0: import('../assets/gear/gem-0.png'),
-          1: import('../assets/gear/gem-1.png'),
-        },
-        [Helper.OBTAINABLES.POUCH]: {
-          0: import('../assets/gear/pouch-0a.png'),
-          1: import('../assets/gear/pouch-1a.png'),
-        },
-        [Helper.OBTAINABLES.BELL]: {
-          0: import('../assets/gear/bell-0.png'),
-          1: import('../assets/gear/bell-1.png'),
-        },
+      [Helper.OBTAINABLES.SMOOTH_GEM]: [
+        import("../assets/gear/gem-0.png"),
+        import("../assets/gear/gem-1.png")
+      ],
+      [Helper.OBTAINABLES.POUCH]: [
+        import("../assets/gear/pouch-0a.png"),
+        import("../assets/gear/pouch-1a.png")
+      ],
+      [Helper.OBTAINABLES.BELL]: [
+        import("../assets/gear/bell-0.png"),
+        import("../assets/gear/bell-1.png")
+      ],
 
-        [Helper.OBTAINABLES.PIECE_OF_HEART]: {
-          0: import('../assets/gear/heart-0.png'),
-          1: import('../assets/gear/heart-1.png'),
-          2: import('../assets/gear/heart-2.png'),
-          3: import('../assets/gear/heart-3.png'),
-        },
+      [Helper.OBTAINABLES.PIECE_OF_HEART]: [
+        import("../assets/gear/heart-0.png"),
+        import("../assets/gear/heart-1.png"),
+        import("../assets/gear/heart-2.png"),
+        import("../assets/gear/heart-3.png")
+      ],
 
-        [Helper.OBTAINABLES.RUPEE]: {
-          0: import('../assets/gear/rupee.png'),
-        },
-        [Helper.OBTAINABLES.MAIAMAI]: {
-          0: import('../assets/gear/maiamai.png'),
-        },
-        [Helper.OBTAINABLES.MONSTER_TAIL]: {
-          0: import('../assets/gear/tail.png'),
-        },
-        [Helper.OBTAINABLES.MONSTER_HORN]: {
-          0: import('../assets/gear/horn.png'),
-        },
-        [Helper.OBTAINABLES.MONSTER_GUTS]: {
-          0: import('../assets/gear/guts.png'),
-        },
-        [Helper.OBTAINABLES.MASTER_ORE]: {
-          0: import('../assets/gear/ore.png'),
-        },
+      [Helper.OBTAINABLES.RUPEE]: [
+        import("../assets/gear/rupee.png")
+      ],
+      [Helper.OBTAINABLES.MAIAMAI]: [
+        import("../assets/gear/maiamai.png")
+      ],
+      [Helper.OBTAINABLES.MONSTER_TAIL]: [
+        import("../assets/gear/tail.png")
+      ],
+      [Helper.OBTAINABLES.MONSTER_HORN]: [
+        import("../assets/gear/horn.png")
+      ],
+      [Helper.OBTAINABLES.MONSTER_GUTS]: [
+        import("../assets/gear/guts.png")
+      ],
+      [Helper.OBTAINABLES.MASTER_ORE]: [
+        import("../assets/gear/ore.png")
+      ],
 
-        [Helper.OBTAINABLES.PROGRESSIVE_LAMP]: {
-          0: import('../assets/items/lamp-0.png'),
-          1: import('../assets/items/lamp-1.png'),
-          2: import('../assets/items/lamp-2.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_BOW]: {
-          0: import('../assets/items/bow-0.png'),
-          1: import('../assets/items/bow-1.png'),
-          2: import('../assets/items/bow-2.png'),
-          3: import('../assets/items/bow-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_TROD]: {
-          0: import('../assets/items/trod-0.png'),
-          1: import('../assets/items/trod-1.png'),
-          2: import('../assets/items/trod-2.png'),
-          3: import('../assets/items/trod-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_HAMMER]: {
-          0: import('../assets/items/hammer-0.png'),
-          1: import('../assets/items/hammer-1.png'),
-          2: import('../assets/items/hammer-2.png'),
-          3: import('../assets/items/hammer-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_BOMBS]: {
-          0: import('../assets/items/bombs-0.png'),
-          1: import('../assets/items/bombs-1.png'),
-          2: import('../assets/items/bombs-2.png'),
-          3: import('../assets/items/bombs-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_BOOMERANG]: {
-          0: import('../assets/items/boomerang-0.png'),
-          1: import('../assets/items/boomerang-1.png'),
-          2: import('../assets/items/boomerang-2.png'),
-          3: import('../assets/items/boomerang-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_HOOKSHOT]: {
-          0: import('../assets/items/hookshot-0.png'),
-          1: import('../assets/items/hookshot-1.png'),
-          2: import('../assets/items/hookshot-2.png'),
-          3: import('../assets/items/hookshot-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_IROD]: {
-          0: import('../assets/items/irod-0.png'),
-          1: import('../assets/items/irod-1.png'),
-          2: import('../assets/items/irod-2.png'),
-          3: import('../assets/items/irod-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_SROD]: {
-          0: import('../assets/items/srod-0.png'),
-          1: import('../assets/items/srod-1.png'),
-          2: import('../assets/items/srod-2.png'),
-          3: import('../assets/items/srod-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_FROD]: {
-          0: import('../assets/items/frod-0.png'),
-          1: import('../assets/items/frod-1.png'),
-          2: import('../assets/items/frod-2.png'),
-          3: import('../assets/items/frod-3.png'),
-        },
-        [Helper.OBTAINABLES.PROGRESSIVE_NET]: {
-          0: import('../assets/items/net-0.png'),
-          1: import('../assets/items/net-1.png'),
-          2: import('../assets/items/net-2.png'),
-        },
+      [Helper.OBTAINABLES.PROGRESSIVE_LAMP]: [
+        import("../assets/items/lamp-0.png"),
+        import("../assets/items/lamp-1.png"),
+        import("../assets/items/lamp-2.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_BOW]: [
+        import("../assets/items/bow-0.png"),
+        import("../assets/items/bow-1.png"),
+        import("../assets/items/bow-2.png"),
+        import("../assets/items/bow-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_TROD]: [
+        import("../assets/items/trod-0.png"),
+        import("../assets/items/trod-1.png"),
+        import("../assets/items/trod-2.png"),
+        import("../assets/items/trod-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_HAMMER]: [
+        import("../assets/items/hammer-0.png"),
+        import("../assets/items/hammer-1.png"),
+        import("../assets/items/hammer-2.png"),
+        import("../assets/items/hammer-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_BOMBS]: [
+        import("../assets/items/bombs-0.png"),
+        import("../assets/items/bombs-1.png"),
+        import("../assets/items/bombs-2.png"),
+        import("../assets/items/bombs-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_BOOMERANG]: [
+        import("../assets/items/boomerang-0.png"),
+        import("../assets/items/boomerang-1.png"),
+        import("../assets/items/boomerang-2.png"),
+        import("../assets/items/boomerang-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_HOOKSHOT]: [
+        import("../assets/items/hookshot-0.png"),
+        import("../assets/items/hookshot-1.png"),
+        import("../assets/items/hookshot-2.png"),
+        import("../assets/items/hookshot-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_IROD]: [
+        import("../assets/items/irod-0.png"),
+        import("../assets/items/irod-1.png"),
+        import("../assets/items/irod-2.png"),
+        import("../assets/items/irod-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_SROD]: [
+        import("../assets/items/srod-0.png"),
+        import("../assets/items/srod-1.png"),
+        import("../assets/items/srod-2.png"),
+        import("../assets/items/srod-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_FROD]: [
+        import("../assets/items/frod-0.png"),
+        import("../assets/items/frod-1.png"),
+        import("../assets/items/frod-2.png"),
+        import("../assets/items/frod-3.png")
+      ],
+      [Helper.OBTAINABLES.PROGRESSIVE_NET]: [
+        import("../assets/items/net-0.png"),
+        import("../assets/items/net-1.png"),
+        import("../assets/items/net-2.png")
+      ],
 
-        [Helper.OBTAINABLES.HINT_GLASSES]: {
-          0: import('../assets/items/hint-glasses-0.png'),
-          1: import('../assets/items/hint-glasses-1.png'),
-        },
-        [Helper.OBTAINABLES.BOW_OF_LIGHT]: {
-          0: import('../assets/items/bow-of-light-0.png'),
-          1: import('../assets/items/bow-of-light-1.png'),
-        },
-        [Helper.OBTAINABLES.SCOOT_FRUIT]: {
-          0: import('../assets/items/scoot-fruit-0.png'),
-          1: import('../assets/items/scoot-fruit-1.png'),
-        },
-        [Helper.OBTAINABLES.FOUL_FRUIT]: {
-          0: import('../assets/items/foul-fruit-0.png'),
-          1: import('../assets/items/foul-fruit-1.png'),
-        },
+      [Helper.OBTAINABLES.HINT_GLASSES]: [
+        import("../assets/items/hint-glasses-0.png"),
+        import("../assets/items/hint-glasses-1.png")
+      ],
+      [Helper.OBTAINABLES.BOW_OF_LIGHT]: [
+        import("../assets/items/bow-of-light-0.png"),
+        import("../assets/items/bow-of-light-1.png")
+      ],
+      [Helper.OBTAINABLES.SCOOT_FRUIT]: [
+        import("../assets/items/scoot-fruit-0.png"),
+        import("../assets/items/scoot-fruit-1.png")
+      ],
+      [Helper.OBTAINABLES.FOUL_FRUIT]: [
+        import("../assets/items/foul-fruit-0.png"),
+        import("../assets/items/foul-fruit-1.png")
+      ],
 
-        [Helper.OBTAINABLES.NOTE_BOTTLE]: {
-          0: import('../assets/items/note-bottle-0.png'),
-          1: import('../assets/items/note-bottle-1.png'),
-          2: import('../assets/items/note-bottle-2.png'),
-        },
-        [Helper.OBTAINABLES.BOTTLE_TWO]: {
-          0: import('../assets/items/bottle-0.png'),
-          1: import('../assets/items/bottle-1.png'),
-        },
-        [Helper.OBTAINABLES.BOTTLE_THREE]: {
-          0: import('../assets/items/bottle-0.png'),
-          1: import('../assets/items/bottle-1.png'),
-        },
-        [Helper.OBTAINABLES.BOTTLE_FOUR]: {
-          0: import('../assets/items/bottle-0.png'),
-          1: import('../assets/items/bottle-1.png'),
-        },
-        [Helper.OBTAINABLES.BOTTLE_FIVE]: {
-          0: import('../assets/items/bottle-0.png'),
-          1: import('../assets/items/bottle-1.png'),
-        },
-      },
+      [Helper.OBTAINABLES.NOTE_BOTTLE]: [
+        import("../assets/items/note-bottle-0.png"),
+        import("../assets/items/note-bottle-1.png"),
+        import("../assets/items/note-bottle-2.png")
+      ],
+      [Helper.OBTAINABLES.BOTTLE_TWO]: [
+        import("../assets/items/bottle-0.png"),
+        import("../assets/items/bottle-1.png")
+      ],
+      [Helper.OBTAINABLES.BOTTLE_THREE]: [
+        import("../assets/items/bottle-0.png"),
+        import("../assets/items/bottle-1.png")
+      ],
+      [Helper.OBTAINABLES.BOTTLE_FOUR]: [
+        import("../assets/items/bottle-0.png"),
+        import("../assets/items/bottle-1.png")
+      ],
+      [Helper.OBTAINABLES.BOTTLE_FIVE]: [
+        import("../assets/items/bottle-0.png"),
+        import("../assets/items/bottle-1.png")
+      ],
 
-      GEAR_OVERLAY: import('../assets/gear/gear-overlay.png'),
-      ITEMS_OVERLAY: import('../assets/items/items-overlay.png'),
-      LABEL: import('../assets/tooltip-label.png'),
+      "GEAR_OVERLAY": [
+        import("../assets/gear/gear-overlay.png")
+      ],
+      "ITEMS_OVERLAY": [
+        import("../assets/items/items-overlay.png")
+      ],
+      "LABEL": [
+        import("../assets/tooltip-label.png")
+      ]
     };
   }
 }
