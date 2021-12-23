@@ -15,7 +15,7 @@ interface AppState {
   trackerState: TrackerState,
 }
 
-class App extends React.Component<{}, AppState> {
+class App extends React.Component<object, AppState> {
   constructor(props: never) {
     super(props);
 
