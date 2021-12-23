@@ -1,29 +1,32 @@
-import _ from 'lodash';
+import _ from "lodash";
 
-import Constants from './constants';
+import Constants from "./constants";
 
-import FANCY_NAMES from '../data/fancy-names.json';
-import OBTAINABLES from '../data/obtainables.json';
+import FANCY_NAMES from "../data/fancy-names.json";
+import OBTAINABLES from "../data/obtainables.json";
 
 class Helper {
   static startingObtainables: Record<string, number>;
 
-  static initialize() {
+  static initialize(): void {
     this.startingObtainables = this._setStartingObtainables();
   }
 
-  static OBTAINABLES: Record<string, string> = Constants.createFromArray(
-                                                           _.keys(OBTAINABLES));
+  static OBTAINABLES: Record<string, string>
+    = Constants.createFromArray(_.keys(OBTAINABLES));
 
   static fancyName(obtainableName: string, obtainableCount: number): string {
     const fancyName = _.get(FANCY_NAMES, [obtainableName, obtainableCount]);
 
-    if (!fancyName) {return obtainableName;}
-    else            {return fancyName;}
+    if (fancyName) {
+      return fancyName;
+    }
+
+    return obtainableName;
   }
 
   static emptyObtainables(): Record<string, number> {
-    let emptyObtainables: Record<string, number> = {};
+    const emptyObtainables: Record<string, number> = {};
     let obtainable: string;
 
     for (obtainable in OBTAINABLES) {
@@ -34,7 +37,9 @@ class Helper {
   }
 
   static startingObtainableCount(obtainable: string): number {
-    return _.get(this.startingObtainables, obtainable, 0);
+    const defaultStartingValue = 0;
+
+    return _.get(this.startingObtainables, obtainable, defaultStartingValue);
   }
 
   static maxObtainableCount(obtainable: string): number {

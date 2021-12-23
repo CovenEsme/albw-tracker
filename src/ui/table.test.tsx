@@ -1,20 +1,20 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import Table from './table';
+import Table from "./table";
 
-describe('Table', () => {
+describe("Table", () => {
   const testText = "Test text";
   const testTextList = ["Test1", "Test2", "Test3", "Test4"]
 
-  test('Renders Table with 1 element', () => {
+  test("Renders Table with 1 element", () => {
     render(<Table elements={[<div>{testText}</div>]}/>);
 
     expect(screen.getByText(testText)).toBeInTheDocument();
   });
 
-  test('Renders Table with 0 elements', () => {
+  test("Renders Table with 0 elements", () => {
     let error = false;
 
     try {
@@ -24,10 +24,10 @@ describe('Table', () => {
     }
 
     expect(error).toBe(false);
-    expect(screen.getByRole('table')).toBeInTheDocument();
+    expect(screen.getByRole("table")).toBeInTheDocument();
   });
 
-  test('Renders Table with 2x2 elements', () => {
+  test("Renders Table with 2x2 elements", () => {
     render(<Table elements={testTextList}
                   numColumns={2}
                   />);
@@ -37,7 +37,7 @@ describe('Table', () => {
     }
   });
 
-  test('Renders Table with 2x1 elements', () => {
+  test("Renders Table with 2x1 elements", () => {
     const newTestTextList = testTextList.slice(0, 3)
 
     render(<Table elements={newTestTextList}

@@ -1,13 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import Helper from '../services/helper';
-import OBTAINABLES from '../data/obtainables.json';
-import ObtainablesTracker from './obtainables-tracker';
-import TrackerState from '../services/tracker-state';
+import Helper from "../services/helper";
+import OBTAINABLES from "../data/obtainables.json";
+import ObtainablesTracker from "./obtainables-tracker";
+import TrackerState from "../services/tracker-state";
 
-describe('ObtainablesTracker', () => {
+describe("ObtainablesTracker", () => {
   let testTrackerState: TrackerState;
 
   function testFunction() {};
@@ -18,8 +18,8 @@ describe('ObtainablesTracker', () => {
 
   // This causes a huge console error:
   // Error: Uncaught [TypeError: Cannot read properties of undefined (reading
-  // 'getObtainableValue')]
-  test('Exception rendering ObtainablesTracker without props', () => {
+  // "getObtainableValue")]
+  test("Exception rendering ObtainablesTracker without props", () => {
     let exception = null;
 
     try {
@@ -31,16 +31,16 @@ describe('ObtainablesTracker', () => {
     expect(exception).not.toBeNull();
   });
 
-  test('Renders ObtainablesTracker with TrackerState', () => {
+  test("Renders ObtainablesTracker with TrackerState", () => {
     render(<ObtainablesTracker
              trackerState={testTrackerState}
            />);
 
-    expect(screen.getByAltText('Gear overlay')).toBeInTheDocument();
-    expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
+    expect(screen.getByAltText("Gear overlay")).toBeInTheDocument();
+    expect(screen.getByAltText("Items overlay")).toBeInTheDocument();
   });
 
-  test('Renders ObtainablesTracker with props', () => {
+  test("Renders ObtainablesTracker with props", () => {
     render(<ObtainablesTracker
              incrementObtainable={testFunction}
              decrementObtainable={testFunction}
@@ -49,11 +49,11 @@ describe('ObtainablesTracker', () => {
              trackerState={testTrackerState}
            />);
 
-    expect(screen.getByAltText('Gear overlay')).toBeInTheDocument();
-    expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
+    expect(screen.getByAltText("Gear overlay")).toBeInTheDocument();
+    expect(screen.getByAltText("Items overlay")).toBeInTheDocument();
   });
 
-  test('Renders ObtainablesTracker with all Obtainables', () => {
+  test("Renders ObtainablesTracker with all Obtainables", () => {
     render(<ObtainablesTracker
              trackerState={testTrackerState}
            />);

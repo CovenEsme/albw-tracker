@@ -1,18 +1,18 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import Images from '../services/images';
-import Obtainable from './obtainable';
+import Images from "../services/images";
+import Obtainable from "./obtainable";
 
-describe('Obtainable', () => {
+describe("Obtainable", () => {
   const testObtainableName      = "Test Obtainable";
   const testObtainableFancyName = "Test Obtainable Fancy";
   const testObtainableImage     = "test-obtainable.png";
 
   function testFunction() {};
 
-  test('Renders Obtainable with fancy name', () => {
+  test("Renders Obtainable with fancy name", () => {
     render(<Obtainable
              obtainableName={testObtainableName}
              obtainableFancyName={testObtainableFancyName}
@@ -26,20 +26,20 @@ describe('Obtainable', () => {
     expect(screen.getByAltText(testObtainableFancyName)).toBeInTheDocument();
   });
 
-  test('Renders Obtainable image', async () => {
+  test("Renders Obtainable image", async () => {
     await Images.importImages();
 
     render(<Obtainable
              obtainableName={testObtainableName}
              obtainableFancyName=""
-             obtainableImage={Images.getImage('Progressive Sword', 0)}
+             obtainableImage={Images.getImage("Progressive Sword", 0)}
              incrementObtainable={testFunction}
              decrementObtainable={testFunction}
              setSelectedObtainable={testFunction}
              clearSelectedObtainable={testFunction}
            />);
 
-    const testObtainableImage = await screen.findByRole('img');
-    expect(testObtainableImage).toHaveAttribute('src', 'sword-0.png');
+    const testObtainableImage = await screen.findByRole("img");
+    expect(testObtainableImage).toHaveAttribute("src", "sword-0.png");
   });
 });

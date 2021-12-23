@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
 interface TableInterface {
   elements:   JSX.Element[],
@@ -7,7 +7,7 @@ interface TableInterface {
 }
 
 class Table extends React.PureComponent<TableInterface> {
-  renderRow(rowElements: JSX.Element[]) {
+  renderRow(rowElements: JSX.Element[]): JSX.Element[] {
     return _.map(rowElements, (element, index) => {
       return (
         <td key={index}>{element}</td>
@@ -15,7 +15,7 @@ class Table extends React.PureComponent<TableInterface> {
     });
   }
 
-  render() {
+  render(): JSX.Element {
     const {
       elements,
       numColumns,

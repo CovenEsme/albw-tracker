@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
 interface ObtainableInterface {
     obtainableName:          string,
@@ -12,7 +12,7 @@ interface ObtainableInterface {
 }
 
 class Obtainable extends React.Component<ObtainableInterface> {
-  render() {
+  render(): React.ReactNode {
     const {
       obtainableName,
       obtainableFancyName,
@@ -23,19 +23,21 @@ class Obtainable extends React.Component<ObtainableInterface> {
       clearSelectedObtainable,
     } = this.props;
 
-    function incrementObtainableFunction(event: any) {
+    function incrementObtainableFunction(event: React.MouseEvent<
+                                                        HTMLDivElement>) {
       event.stopPropagation();
       incrementObtainable(obtainableName);
-    };
+    }
 
-    function decrementObtainableFunction(event: any) {
+    function decrementObtainableFunction(event: React.MouseEvent<
+                                                      HTMLDivElement>) {
       event.preventDefault();
       decrementObtainable(obtainableName);
-    };
+    }
 
     function setSelectedObtainableFunction() {
       setSelectedObtainable(obtainableFancyName);
-    };
+    }
 
     return (
       <div

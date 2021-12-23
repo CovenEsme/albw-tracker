@@ -1,6 +1,6 @@
-import _ from 'lodash';
+import _ from "lodash";
 
-import Helper from './helper';
+import Helper from "./helper";
 
 class TrackerState {
   obtainables: Record<string, number>;
@@ -26,9 +26,11 @@ class TrackerState {
   }
 
   incrementObtainable(obtainableName: string): TrackerState {
-    let newState = this._clone();
+    const newState = this._clone();
+    const incrementValue = 1;
 
-    let newObtainableCount = 1 + this.getObtainableValue(obtainableName);
+    let newObtainableCount = this.getObtainableValue(obtainableName)
+                             + incrementValue;
     const maxObtainableCount = Helper.maxObtainableCount(obtainableName);
 
     if (newObtainableCount > maxObtainableCount) {
@@ -41,9 +43,11 @@ class TrackerState {
   }
 
   decrementObtainable(obtainableName: string): TrackerState {
-    let newState = this._clone();
+    const newState = this._clone();
+    const decrementValue = 1;
 
-    let newObtainableCount = this.getObtainableValue(obtainableName) - 1;
+    let newObtainableCount = this.getObtainableValue(obtainableName)
+                             - decrementValue;
     const minObtainableCount = Helper.startingObtainableCount(obtainableName);
 
     if (newObtainableCount < minObtainableCount) {

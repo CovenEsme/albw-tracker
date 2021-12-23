@@ -1,21 +1,21 @@
-import _ from 'lodash';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
-import Images from '../services/images';
+import Images from "../services/images";
 
 interface LabelInterface {
     labelText: string,
 }
 
 class Label extends React.Component<LabelInterface> {
-  render() {
+  render(): React.ReactNode {
     const {labelText} = this.props;
 
     return (
       <div className="label">
         <img
           id="label-image"
-          src={_.get(Images.IMAGES, 'LABEL')}
+          src={_.get(Images.IMAGES, "LABEL")}
           alt="Label"
           draggable={false}
         />
