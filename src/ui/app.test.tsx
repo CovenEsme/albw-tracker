@@ -1,12 +1,11 @@
-import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
+import _ from "lodash";
+
 import App from "./app";
 import Helper from "../services/helper";
-import Images from "../services/images";
 
-import OBTAINABLES from "../data/obtainables.json";
 import OBTAINABLES_INFO from "../data/test-obtainables-info.json";
 import FANCY_TO_GENERIC_INFO from "../data/test-fancy-to-generic-info.json";
 
@@ -49,7 +48,8 @@ describe("App", () => {
         const obtainable = screen.getByAltText(text);
 
         expect(obtainable).toBeInTheDocument();
-        expect(obtainable).toHaveAttribute("src", OBTAINABLES_INFO[text][0]);
+        expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                        [text, 0]));
       }
     });
 
@@ -101,7 +101,7 @@ describe("App", () => {
     test("Left clicking each Obtainable changes to next image", () => {
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         for (var srcIndex = 0; srcIndex < srcLength; srcIndex++) {
           let srcNumber = srcIndex + 1;
@@ -110,8 +110,8 @@ describe("App", () => {
 
           if (srcNumber == srcLength) {srcNumber = 0;}
 
-          expect(obtainable).toHaveAttribute(
-                               "src", OBTAINABLES_INFO[text][srcNumber]);
+          expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                          [text, srcNumber]));
         }
       }
     });
@@ -119,15 +119,15 @@ describe("App", () => {
     test("Right clicking each Obtainable changes to previous image", () => {
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         for (var srcIndex = srcLength - 1; srcIndex >= 0; srcIndex--) {
           let srcNumber = srcIndex;
 
           fireEvent.contextMenu(obtainable);
 
-          expect(obtainable).toHaveAttribute(
-                               "src", OBTAINABLES_INFO[text][srcNumber]);
+          expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                          [text, srcNumber]));
         }
       }
     });
@@ -223,8 +223,8 @@ describe("App", () => {
 
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const obtainableName = FANCY_TO_GENERIC_INFO[text];
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const obtainableName = _.get(FANCY_TO_GENERIC_INFO, [text]);
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         expect(screen.queryByText(text)).not.toBeInTheDocument();
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -8,15 +7,9 @@ import Label from "./label";
 describe("Label", () => {
   const labelTestId: string = "label-text";
 
-  let testLabelText: string = "Test label text";
+  let testLabelText: any = "Test label text";
 
   describe("Render Label with various labelText values", () => {
-    test("Renders Label without text when labelText is not given", () => {
-      render(<Label />);
-
-      expect(screen.getByTestId(labelTestId)).toBeInTheDocument();
-    });
-
     test("Renders Label with string", () => {
       render(<Label labelText={testLabelText}/>);
 

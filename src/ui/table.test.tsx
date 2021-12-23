@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -6,10 +5,13 @@ import Table from "./table";
 
 describe("Table", () => {
   const testText = "Test text";
-  const testTextList = ["Test1", "Test2", "Test3", "Test4"]
+  const testTextList = [<div>Test0</div>,
+                        <div>Test1</div>,
+                        <div>Test2</div>,
+                        <div>Test3</div>]
 
   test("Renders Table with 1 element", () => {
-    render(<Table elements={[<div>{testText}</div>]}/>);
+    render(<Table elements={[<div>{testText}</div>]} numColumns={1}/>);
 
     expect(screen.getByText(testText)).toBeInTheDocument();
   });
@@ -18,13 +20,28 @@ describe("Table", () => {
     let error = false;
 
     try {
-      render(<Table />);
+      render(<Table elements={[]} numColumns={0}/>);
     } catch(e) {
       error = true;
     }
 
     expect(error).toBe(false);
     expect(screen.getByRole("table")).toBeInTheDocument();
+    expect(screen.queryByText(testText)).toBeNull();
+  });
+
+  test("Renders Table with 1 element but 0 columns", () => {
+    let error = false;
+
+    try {
+      render(<Table elements={[<div>{testText}</div>]} numColumns={0}/>);
+    } catch(e) {
+      error = true;
+    }
+
+    expect(error).toBe(false);
+    expect(screen.getByRole("table")).toBeInTheDocument();
+    expect(screen.queryByText(testText)).toBeNull();
   });
 
   test("Renders Table with 2x2 elements", () => {
@@ -33,7 +50,8 @@ describe("Table", () => {
                   />);
 
     for (let textIndex = 0; textIndex < testTextList.length; textIndex++) {
-      expect(screen.getByText(testTextList[textIndex])).toBeInTheDocument();
+      expect(screen.getByText("Test"
+                              + textIndex.toString())).toBeInTheDocument();
     }
   });
 
@@ -45,7 +63,8 @@ describe("Table", () => {
                   />);
 
     for (let textIndex = 0; textIndex < newTestTextList.length; textIndex++) {
-      expect(screen.getByText(newTestTextList[textIndex])).toBeInTheDocument();
+      expect(screen.getByText("Test"
+                              + textIndex.toString())).toBeInTheDocument();
     }
   });
 });
