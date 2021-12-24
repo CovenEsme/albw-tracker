@@ -1,9 +1,18 @@
-import _ from 'lodash';
-import PropTypes from 'prop-types';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
-class Obtainable extends React.Component {
-  render() {
+interface ObtainableInterface {
+    obtainableName:          string,
+    obtainableFancyName?:    string,
+    obtainableImage:         string,
+    incrementObtainable:     (obtainableName: string) => void,
+    decrementObtainable:     (obtainableName: string) => void,
+    setSelectedObtainable:   (obtainableFancyName?: string) => void,
+    clearSelectedObtainable: () => void,
+}
+
+class Obtainable extends React.Component<ObtainableInterface> {
+  render(): React.ReactNode {
     const {
       obtainableName,
       obtainableFancyName,
@@ -14,19 +23,21 @@ class Obtainable extends React.Component {
       clearSelectedObtainable,
     } = this.props;
 
-    const incrementObtainableFunction = (event) => {
+    function incrementObtainableFunction(event: React.MouseEvent<
+                                                        HTMLDivElement>) {
       event.stopPropagation();
       incrementObtainable(obtainableName);
-    };
+    }
 
-    const decrementObtainableFunction = (event) => {
+    function decrementObtainableFunction(event: React.MouseEvent<
+                                                      HTMLDivElement>) {
       event.preventDefault();
       decrementObtainable(obtainableName);
-    };
+    }
 
-    const setSelectedObtainableFunction = () => {
+    function setSelectedObtainableFunction() {
       setSelectedObtainable(obtainableFancyName);
-    };
+    }
 
     return (
       <div
@@ -48,16 +59,5 @@ class Obtainable extends React.Component {
     )
   }
 }
-
-Obtainable.propTypes = {
-  labelText: PropTypes.string.isRequired,
-  obtainableName: PropTypes.string.isRequired,
-  obtainableFancyName: PropTypes.string,
-  obtainableImage: PropTypes.string.isRequired,
-  incrementObtainable: PropTypes.func.isRequired,
-  decrementObtainable: PropTypes.func.isRequired,
-  setSelectedObtainable: PropTypes.func.isRequired,
-  clearSelectedObtainable: PropTypes.func.isRequired,
-};
 
 export default Obtainable;

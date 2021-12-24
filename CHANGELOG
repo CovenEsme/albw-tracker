@@ -1,3 +1,8 @@
+## 0.1.2 (2021-12-24)
+* Migrate from javascript to typescript
+* Add eslint
+* Various dependency version upgrades
+
 ## 0.1.1 (2021-09-17)
 * Create separate dev branch with it's own dev deployment
 * Merge dependabot version bump upgrades

@@ -1,14 +1,23 @@
-import _ from 'lodash';
-import PropTypes from 'prop-types';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
-import Helper from '../services/helper';
-import Images from '../services/images';
-import Obtainable from './obtainable';
-import Table from './table';
+import Helper from "../services/helper";
+import Images from "../services/images";
+import TrackerState from "../services/tracker-state";
 
-class ObtainablesTracker extends React.Component {
-  obtainable(obtainableName) {
+import Obtainable from "./obtainable";
+import Table from "./table";
+
+interface ObtainablesTrackerInterface {
+    incrementObtainable:     (obtainableName: string) => void,
+    decrementObtainable:     (obtainableName: string) => void,
+    trackerState:            TrackerState,
+    setSelectedObtainable:   (obtainableName: string) => void,
+    clearSelectedObtainable: () => void,
+}
+
+class ObtainablesTracker extends React.Component<ObtainablesTrackerInterface> {
+  obtainable(obtainableName: string): JSX.Element {
     const {
       incrementObtainable,
       decrementObtainable,
@@ -28,19 +37,22 @@ class ObtainablesTracker extends React.Component {
         obtainableImage={obtainableImage}
         incrementObtainable={incrementObtainable}
         decrementObtainable={decrementObtainable}
-        setSelectedObtainable={() => this.props.setSelectedObtainable(obtainableName)}
-        clearSelectedObtainable={() => this.props.clearSelectedObtainable()}
+        setSelectedObtainable={
+          () => this.props.setSelectedObtainable(obtainableName)
+        }
+        clearSelectedObtainable={
+          () => this.props.clearSelectedObtainable()}
       />
     );
   }
 
-  render() {
+  render(): React.ReactNode {
     return (
       <div className="tracker">
         <div className="gear">
           <img
             id="gear-overlay"
-            src={_.get(Images.IMAGES, 'GEAR_OVERLAY')}
+            src={_.get(Images.IMAGES, "GEAR_OVERLAY")}
             alt="Gear overlay"
             draggable={false}
           />
@@ -93,37 +105,36 @@ class ObtainablesTracker extends React.Component {
         <div className="items">
           <img
             id="items-overlay"
-            src={_.get(Images.IMAGES, 'ITEMS_OVERLAY')}
+            src={_.get(Images.IMAGES, "ITEMS_OVERLAY")}
             alt="Items overlay"
             draggable={false}
           />
           <div id="items-obtainables">
-            <Table id="items-table"
-              elements={[
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_LAMP),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOW),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_TROD),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_HAMMER),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOMBS),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOOMERANG),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_HOOKSHOT),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_IROD),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_SROD),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_FROD),
-                this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_NET),
+            <Table elements={[
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_LAMP),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOW),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_TROD),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_HAMMER),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOMBS),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_BOOMERANG),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_HOOKSHOT),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_IROD),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_SROD),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_FROD),
+              this.obtainable(Helper.OBTAINABLES.PROGRESSIVE_NET),
 
-                this.obtainable(Helper.OBTAINABLES.HINT_GLASSES),
-                this.obtainable(Helper.OBTAINABLES.BOW_OF_LIGHT),
-                this.obtainable(Helper.OBTAINABLES.SCOOT_FRUIT),
-                this.obtainable(Helper.OBTAINABLES.FOUL_FRUIT),
+              this.obtainable(Helper.OBTAINABLES.HINT_GLASSES),
+              this.obtainable(Helper.OBTAINABLES.BOW_OF_LIGHT),
+              this.obtainable(Helper.OBTAINABLES.SCOOT_FRUIT),
+              this.obtainable(Helper.OBTAINABLES.FOUL_FRUIT),
 
-                this.obtainable(Helper.OBTAINABLES.NOTE_BOTTLE),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_TWO),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_THREE),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_FOUR),
-                this.obtainable(Helper.OBTAINABLES.BOTTLE_FIVE),
-              ]}
-              numColumns={5}
+              this.obtainable(Helper.OBTAINABLES.NOTE_BOTTLE),
+              this.obtainable(Helper.OBTAINABLES.BOTTLE_TWO),
+              this.obtainable(Helper.OBTAINABLES.BOTTLE_THREE),
+              this.obtainable(Helper.OBTAINABLES.BOTTLE_FOUR),
+              this.obtainable(Helper.OBTAINABLES.BOTTLE_FIVE),
+            ]}
+            numColumns={5}
             />
           </div>
         </div>
@@ -131,11 +142,5 @@ class ObtainablesTracker extends React.Component {
     );
   }
 }
-
-ObtainablesTracker.propTypes = {
-  incrementObtainable: PropTypes.func.isRequired,
-  decrementObtainable: PropTypes.func.isRequired,
-  trackerState: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default ObtainablesTracker;

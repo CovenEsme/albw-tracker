@@ -1,19 +1,21 @@
-import _ from 'lodash';
-import PropTypes from 'prop-types';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
-import Images from '../services/images';
+import Images from "../services/images";
 
-class Label extends React.Component {
+interface LabelInterface {
+    labelText: string,
+}
 
-  render() {
+class Label extends React.Component<LabelInterface> {
+  render(): React.ReactNode {
     const {labelText} = this.props;
 
     return (
       <div className="label">
         <img
           id="label-image"
-          src={_.get(Images.IMAGES, 'LABEL')}
+          src={_.get(Images.IMAGES, "LABEL")}
           alt="Label"
           draggable={false}
         />
@@ -22,9 +24,5 @@ class Label extends React.Component {
     );
   }
 }
-
-Label.propTypes = {
-  labelText: PropTypes.string.isRequired,
-};
 
 export default Label;

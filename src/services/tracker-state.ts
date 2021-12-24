@@ -1,12 +1,12 @@
-import _ from 'lodash';
+import _ from "lodash";
 
-import Helper from './helper';
+import Helper from "./helper";
 
 class TrackerState {
-  static default() {
-    const newState = new TrackerState();
+  obtainables: Record<string, number>;
 
-    newState.obtainables = _.reduce(
+  constructor() {
+    this.obtainables = _.reduce(
       Helper.OBTAINABLES,
       (accumulator, obtainable) => _.set(
         accumulator,
@@ -15,24 +15,22 @@ class TrackerState {
       ),
       {},
     );
-
-    newState.selectedObtainable = "";
-
-    return newState;
   }
 
-  readState() {
+  readState(): Record<string, Record<string, number>> {
     return {obtainables: this.obtainables};
   }
 
-  getObtainableValue(obtainableName) {
+  getObtainableValue(obtainableName: string): number {
     return _.get(this.obtainables, obtainableName);
   }
 
-  incrementObtainable(obtainableName) {
-    let newState = this._clone();
+  incrementObtainable(obtainableName: string): TrackerState {
+    const newState = this._clone();
+    const incrementValue = 1;
 
-    let newObtainableCount = 1 + this.getObtainableValue(obtainableName);
+    let newObtainableCount = this.getObtainableValue(obtainableName)
+                             + incrementValue;
     const maxObtainableCount = Helper.maxObtainableCount(obtainableName);
 
     if (newObtainableCount > maxObtainableCount) {
@@ -44,10 +42,12 @@ class TrackerState {
     return newState;
   }
 
-  decrementObtainable(obtainableName) {
-    let newState = this._clone();
+  decrementObtainable(obtainableName: string): TrackerState {
+    const newState = this._clone();
+    const decrementValue = 1;
 
-    let newObtainableCount = this.getObtainableValue(obtainableName) - 1;
+    let newObtainableCount = this.getObtainableValue(obtainableName)
+                             - decrementValue;
     const minObtainableCount = Helper.startingObtainableCount(obtainableName);
 
     if (newObtainableCount < minObtainableCount) {
@@ -59,7 +59,7 @@ class TrackerState {
     return newState;
   }
 
-  setSelectedObtainable(obtainableName) {
+  setSelectedObtainable(obtainableName: string): TrackerState {
     const newState = this._clone();
 
     const obtainableValue = this.getObtainableValue(obtainableName);
@@ -71,7 +71,11 @@ class TrackerState {
     return newState;
   }
 
-  clearSelectedObtainable() {
+  getSelectedObtainable(): string {
+    return _.get(this, "selectedObtainable");
+  }
+
+  clearSelectedObtainable(): TrackerState {
     const newState = this._clone();
 
     _.set(newState, "selectedObtainable", "");
@@ -79,7 +83,7 @@ class TrackerState {
     return newState;
   }
 
-  _clone() {
+  _clone(): TrackerState {
     const newState = new TrackerState();
 
     newState.obtainables = _.clone(this.obtainables);

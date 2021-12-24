@@ -1,118 +1,107 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import sinon from 'sinon';
+import { render, fireEvent, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import App from './app';
-import Helper from '../services/helper';
-import Images from '../services/images';
+import _ from "lodash";
 
-import OBTAINABLES from '../data/obtainables.json';
-import OBTAINABLES_INFO from '../data/test-obtainables-info.json';
-import FANCY_TO_GENERIC_INFO from '../data/test-fancy-to-generic-info.json';
+import App from "./app";
+import Helper from "../services/helper";
 
-describe('App', () => {
+import OBTAINABLES_INFO from "../data/test-obtainables-info.json";
+import FANCY_TO_GENERIC_INFO from "../data/test-fancy-to-generic-info.json";
+
+describe("App", () => {
   const loadingSpinnerLabel = "audio-loading";
 
 
-  describe('App initialization', () => {
-    beforeEach(() => {
-      sinon.stub(console, 'error');
-    });
-
-    afterEach(() => {
-      console.error.restore();
-    });
-
-    test('Renders App with loading spinner while initializing', () => {
+  describe("App initialization", () => {
+    test("Renders App with loading spinner while initializing", () => {
       render(<App />);
 
       expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
-      expect(screen.queryByAltText('Gear overlay')).toBeNull();
-      expect(screen.queryByAltText('Items overlay')).toBeNull();
-      expect(screen.queryByAltText('Label')).toBeNull();
-      sinon.assert.notCalled(console.error);
+      expect(screen.queryByAltText("Gear overlay")).toBeNull();
+      expect(screen.queryByAltText("Items overlay")).toBeNull();
+      expect(screen.queryByAltText("Label")).toBeNull();
     });
 
-    test('Renders App with tracker after initializing', async () => {
+    test("Renders App with tracker after initializing", async () => {
       render(<App />);
 
       expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
 
-      expect(await screen.findByAltText('Gear overlay')).toBeInTheDocument();
-      expect(screen.getByAltText('Items overlay')).toBeInTheDocument();
-      expect(screen.getByAltText('Label')).toBeInTheDocument();
-      sinon.assert.notCalled(console.error);
+      expect(await screen.findByAltText("Gear overlay")).toBeInTheDocument();
+      expect(screen.getByAltText("Items overlay")).toBeInTheDocument();
+      expect(screen.getByAltText("Label")).toBeInTheDocument();
     });
   });
 
 
-  describe('App interaction with Obtainables', () => {
+  describe("App interaction with Obtainables", () => {
     beforeEach(async () => {
       render(<App />);
 
       expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
-      expect(await screen.findByAltText('Gear overlay')).toBeInTheDocument();
+      expect(await screen.findByAltText("Gear overlay")).toBeInTheDocument();
     });
 
-    test('Renders App with all Obtainables and their images', () => {
+    test("Renders App with all Obtainables and their images", () => {
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
 
         expect(obtainable).toBeInTheDocument();
-        expect(obtainable).toHaveAttribute('src', OBTAINABLES_INFO[text][0]);
+        expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                        [text, 0]));
       }
     });
 
-    test('Left clicking sword cycles forwards through its images', () => {
+    test("Left clicking sword cycles forwards through its images", () => {
       const sword = screen.getByAltText("Forgotten Sword");
 
-      expect(sword).toHaveAttribute('src', 'sword-0.png');
+      expect(sword).toHaveAttribute("src", "sword-0.png");
 
       fireEvent.click(sword);
-      expect(sword).toHaveAttribute('src', 'sword-1.png');
+      expect(sword).toHaveAttribute("src", "sword-1.png");
 
       fireEvent.click(sword);
-      expect(sword).toHaveAttribute('src', 'sword-2.png');
+      expect(sword).toHaveAttribute("src", "sword-2.png");
 
       fireEvent.click(sword);
-      expect(sword).toHaveAttribute('src', 'sword-3.png');
+      expect(sword).toHaveAttribute("src", "sword-3.png");
 
       fireEvent.click(sword);
-      expect(sword).toHaveAttribute('src', 'sword-4.png');
+      expect(sword).toHaveAttribute("src", "sword-4.png");
 
       fireEvent.click(sword);
-      expect(sword).toHaveAttribute('src', 'sword-0.png');
+      expect(sword).toHaveAttribute("src", "sword-0.png");
     });
 
-    test('Right clicking sword cycles backwards through its images', () => {
+    test("Right clicking sword cycles backwards through its images", () => {
       const sword = screen.getByAltText("Forgotten Sword");
 
-      expect(sword).toHaveAttribute('src', 'sword-0.png');
+      expect(sword).toHaveAttribute("src", "sword-0.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-4.png');
+      expect(sword).toHaveAttribute("src", "sword-4.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-3.png');
+      expect(sword).toHaveAttribute("src", "sword-3.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-2.png');
+      expect(sword).toHaveAttribute("src", "sword-2.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-1.png');
+      expect(sword).toHaveAttribute("src", "sword-1.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-0.png');
+      expect(sword).toHaveAttribute("src", "sword-0.png");
 
       fireEvent.contextMenu(sword);
-      expect(sword).toHaveAttribute('src', 'sword-4.png');
+      expect(sword).toHaveAttribute("src", "sword-4.png");
     });
 
-    test('Left clicking each Obtainable changes to next image', () => {
+    test("Left clicking each Obtainable changes to next image", () => {
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         for (var srcIndex = 0; srcIndex < srcLength; srcIndex++) {
           let srcNumber = srcIndex + 1;
@@ -121,29 +110,29 @@ describe('App', () => {
 
           if (srcNumber == srcLength) {srcNumber = 0;}
 
-          expect(obtainable).toHaveAttribute(
-                               'src', OBTAINABLES_INFO[text][srcNumber]);
+          expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                          [text, srcNumber]));
         }
       }
     });
 
-    test('Right clicking each Obtainable changes to previous image', () => {
+    test("Right clicking each Obtainable changes to previous image", () => {
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         for (var srcIndex = srcLength - 1; srcIndex >= 0; srcIndex--) {
           let srcNumber = srcIndex;
 
           fireEvent.contextMenu(obtainable);
 
-          expect(obtainable).toHaveAttribute(
-                               'src', OBTAINABLES_INFO[text][srcNumber]);
+          expect(obtainable).toHaveAttribute("src", _.get(OBTAINABLES_INFO,
+                                                          [text, srcNumber]));
         }
       }
     });
 
-    test('MouseOver sword shows fancy name in label, mouseOut clears', () => {
+    test("MouseOver sword shows fancy name in label, mouseOut clears", () => {
       const sword = screen.getByAltText("Forgotten Sword");
       const labelText = screen.getByTestId("label-text");
 
@@ -157,7 +146,7 @@ describe('App', () => {
       expect(screen.queryByText("Forgotten Sword")).not.toBeInTheDocument();
     });
 
-    test('MouseOver each Obtainable shows fancy name in label', () => {
+    test("MouseOver each Obtainable shows fancy name in label", () => {
       const labelText = screen.getByTestId("label-text");
       expect(labelText).toBeInTheDocument();
 
@@ -174,7 +163,7 @@ describe('App', () => {
       }
     });
 
-    test('Clicking sword changes labelText', () => {
+    test("Clicking sword changes labelText", () => {
       const sword = screen.getByAltText("Forgotten Sword");
       const labelText = screen.getByTestId("label-text");
 
@@ -228,14 +217,14 @@ describe('App', () => {
       expect(screen.getByText("Master Sword Lv3")).toBeInTheDocument();
     });
 
-    test('Clicking each Obtainable changes labelText', () => {
+    test("Clicking each Obtainable changes labelText", () => {
       const labelText = screen.getByTestId("label-text");
       expect(labelText).toBeInTheDocument();
 
       for (var text in OBTAINABLES_INFO) {
         const obtainable = screen.getByAltText(text);
-        const obtainableName = FANCY_TO_GENERIC_INFO[text];
-        const srcLength = Object.keys(OBTAINABLES_INFO[text]).length
+        const obtainableName = _.get(FANCY_TO_GENERIC_INFO, [text]);
+        const srcLength = Object.keys(_.get(OBTAINABLES_INFO, [text])).length
 
         expect(screen.queryByText(text)).not.toBeInTheDocument();
 
