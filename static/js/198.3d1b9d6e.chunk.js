@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[198],{198:function(a,c,e){a.exports=e.p+"static/media/boots-1.0913a75333319573ddcc.png"}}]);

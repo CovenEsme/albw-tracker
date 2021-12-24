@@ -1,2 +1,0 @@
-(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[24],{106:function(t,a,s){"use strict";s.r(a),a.default=s.p+"static/media/horn.f0423420.png"}}]);
-//# sourceMappingURL=24.b9f01f16.chunk.js.map

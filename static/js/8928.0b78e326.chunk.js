@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[8928],{8928:function(a,c,e){a.exports=e.p+"static/media/mitt-0.3c68c7429a3eacaaf980.png"}}]);

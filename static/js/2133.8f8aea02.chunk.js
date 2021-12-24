@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[2133],{2133:function(e,c,a){e.exports=a.p+"static/media/scroll-0.bd8c14dcf5e3a27dd78e.png"}}]);

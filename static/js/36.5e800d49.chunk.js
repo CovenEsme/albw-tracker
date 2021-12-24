@@ -1,2 +1,0 @@
-(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[36],{73:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/pendant-of-power-0.89f41da2.png"}}]);
-//# sourceMappingURL=36.5e800d49.chunk.js.map

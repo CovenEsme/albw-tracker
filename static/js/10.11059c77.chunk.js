@@ -1,2 +1,0 @@
-(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[10],{86:function(t,a,s){"use strict";s.r(a),a.default=s.p+"static/media/boots-1.0913a753.png"}}]);
-//# sourceMappingURL=10.11059c77.chunk.js.map

@@ -1,2 +1,0 @@
-(this["webpackJsonpalbw-tracker"]=this["webpackJsonpalbw-tracker"]||[]).push([[8],{98:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/media/bell-1.2dab98da.png"}}]);
-//# sourceMappingURL=8.f4e7bad8.chunk.js.map
