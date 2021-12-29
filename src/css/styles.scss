@@ -39,25 +39,58 @@ body {
 
   #items-obtainables {
     position: absolute;
-    padding-top: 12px;
+    padding-top:  12px;
     padding-left: 10px;
 
     .obtainable {
-      padding-top: 2px;
-      padding-left: 5px;
+      padding-top:   2px;
+      padding-left:  5px;
       padding-right: 5px;
     }
   }
 }
 
 .label {
-  position:        absolute;
-  display:         flex;
-  justify-content: center;
-  align-items:     center;
+  #label-container {
+    position:        relative;
+    display:         inline-flex;
+    justify-content: center;
+    align-items:     center;
 
-  #label-text {
-    position: absolute;
+    #label-text {
+      position: absolute;
+    }
+  }
+}
+
+.map {
+  position:       relative;
+  display:        inline-flex;
+  flex-direction: column;
+
+  #map-extras {
+    position:        relative;
+    display:         inline-flex;
+    padding-top:     8px;
+    justify-content: right;
+    align-items:     center;
+
+    #map-label {
+      position:        relative;
+      display:         inline-flex;
+      justify-content: center;
+      align-items:     center;
+
+      #map-text {
+        position: absolute;
+      }
+    }
+
+    #change-map {
+      position: absolute;
+      padding-top:    6px;
+      padding-right: 10px;
+    }
   }
 }
 
