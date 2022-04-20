@@ -94,29 +94,34 @@ class App extends React.Component<object, AppState> {
       trackerState,
     } = this.state;
 
-    const spinner = (
-      <div className="loading-spinner">
-        <SpinnerRoundFilled size="25%" color="#d4ce46" enabled={isLoading}/>
-      </div>
-    );
+    let content;
 
-    const content = (
-      <div className="albw-rando-tracker">
-        <ObtainablesTracker
-          incrementObtainable={
-            (obtainableName) => this.incrementObtainable(obtainableName)}
-          decrementObtainable={
-            (obtainableName) => this.decrementObtainable(obtainableName)}
-          setSelectedObtainable={
-            (obtainableName) => this.setSelectedObtainable(obtainableName)}
-          clearSelectedObtainable={
-            () => this.clearSelectedObtainable()}
-          trackerState={trackerState}
-        />
-        <Label labelText={trackerState.getSelectedObtainable()}/>
-        {spinner}
-      </div>
-    );
+    if (isLoading) {
+      content = (
+        <div className="loading-spinner">
+          <SpinnerRoundFilled size="25%" color="#d4ce46"/>
+          <div>Loading...</div>
+        </div>
+      );
+    }
+    else {
+      content = (
+        <div className="albw-rando-tracker">
+          <ObtainablesTracker
+            incrementObtainable={
+              (obtainableName) => this.incrementObtainable(obtainableName)}
+            decrementObtainable={
+              (obtainableName) => this.decrementObtainable(obtainableName)}
+            setSelectedObtainable={
+              (obtainableName) => this.setSelectedObtainable(obtainableName)}
+            clearSelectedObtainable={
+              () => this.clearSelectedObtainable()}
+            trackerState={trackerState}
+          />
+          <Label labelText={trackerState.getSelectedObtainable()}/>
+        </div>
+      )
+    };
 
     return (
       <>
