@@ -1,4 +1,5 @@
 import React from "react";
+import { SpinnerRoundFilled } from "spinners-react";
 
 import Helper from "../services/helper";
 import Label from "./label";
@@ -6,7 +7,6 @@ import ObtainablesTracker from "./obtainables-tracker";
 import TrackerState from "../services/tracker-state";
 
 import Images from "../services/images";
-import Loader from "react-loader-spinner";
 
 import "../css/styles.scss";
 
@@ -94,33 +94,29 @@ class App extends React.Component<object, AppState> {
       trackerState,
     } = this.state;
 
-    let content;
+    const spinner = (
+      <div className="loading-spinner">
+        <SpinnerRoundFilled size="25%" color="#d4ce46" enabled={isLoading}/>
+      </div>
+    );
 
-    if (isLoading) {
-      content = (
-        <div className="loading-spinner">
-          <Loader color="white" type="Oval" />
-        </div>
-      );
-    }
-    else {
-      content = (
-        <div className="albw-rando-tracker">
-          <ObtainablesTracker
-            incrementObtainable={
-              (obtainableName) => this.incrementObtainable(obtainableName)}
-            decrementObtainable={
-              (obtainableName) => this.decrementObtainable(obtainableName)}
-            setSelectedObtainable={
-              (obtainableName) => this.setSelectedObtainable(obtainableName)}
-            clearSelectedObtainable={
-              () => this.clearSelectedObtainable()}
-            trackerState={trackerState}
-          />
-          <Label labelText={trackerState.getSelectedObtainable()}/>
-        </div>
-      );
-    }
+    const content = (
+      <div className="albw-rando-tracker">
+        <ObtainablesTracker
+          incrementObtainable={
+            (obtainableName) => this.incrementObtainable(obtainableName)}
+          decrementObtainable={
+            (obtainableName) => this.decrementObtainable(obtainableName)}
+          setSelectedObtainable={
+            (obtainableName) => this.setSelectedObtainable(obtainableName)}
+          clearSelectedObtainable={
+            () => this.clearSelectedObtainable()}
+          trackerState={trackerState}
+        />
+        <Label labelText={trackerState.getSelectedObtainable()}/>
+        {spinner}
+      </div>
+    );
 
     return (
       <>
