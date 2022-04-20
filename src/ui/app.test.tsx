@@ -10,27 +10,28 @@ import OBTAINABLES_INFO from "../data/test-obtainables-info.json";
 import FANCY_TO_GENERIC_INFO from "../data/test-fancy-to-generic-info.json";
 
 describe("App", () => {
-  const loadingSpinnerLabel = "audio-loading";
+  const loadingSpinnerLabel = "Loading...";
 
 
   describe("App initialization", () => {
     test("Renders App with loading spinner while initializing", () => {
       render(<App />);
 
-      expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
       expect(screen.queryByAltText("Gear overlay")).toBeNull();
       expect(screen.queryByAltText("Items overlay")).toBeNull();
       expect(screen.queryByAltText("Label")).toBeNull();
+
+      expect(screen.getByText(loadingSpinnerLabel)).toBeInTheDocument();
     });
 
     test("Renders App with tracker after initializing", async () => {
       render(<App />);
 
-      expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
-
       expect(await screen.findByAltText("Gear overlay")).toBeInTheDocument();
       expect(screen.getByAltText("Items overlay")).toBeInTheDocument();
       expect(screen.getByAltText("Label")).toBeInTheDocument();
+
+      expect(screen.queryByText(loadingSpinnerLabel)).toBeNull();
     });
   });
 
@@ -39,7 +40,7 @@ describe("App", () => {
     beforeEach(async () => {
       render(<App />);
 
-      expect(screen.getByLabelText(loadingSpinnerLabel)).toBeInTheDocument();
+      expect(screen.getByText(loadingSpinnerLabel)).toBeInTheDocument();
       expect(await screen.findByAltText("Gear overlay")).toBeInTheDocument();
     });
 

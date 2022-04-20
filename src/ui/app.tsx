@@ -1,4 +1,5 @@
 import React from "react";
+import { SpinnerRoundFilled } from "spinners-react";
 
 import Helper from "../services/helper";
 import Label from "./label";
@@ -6,7 +7,6 @@ import ObtainablesTracker from "./obtainables-tracker";
 import TrackerState from "../services/tracker-state";
 
 import Images from "../services/images";
-import Loader from "react-loader-spinner";
 
 import "../css/styles.scss";
 
@@ -99,7 +99,8 @@ class App extends React.Component<object, AppState> {
     if (isLoading) {
       content = (
         <div className="loading-spinner">
-          <Loader color="white" type="Oval" />
+          <SpinnerRoundFilled size="25%" color="#d4ce46"/>
+          <div>Loading...</div>
         </div>
       );
     }
@@ -119,7 +120,7 @@ class App extends React.Component<object, AppState> {
           />
           <Label labelText={trackerState.getSelectedObtainable()}/>
         </div>
-      );
+      )
     }
 
     return (
