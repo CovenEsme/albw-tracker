@@ -121,7 +121,7 @@ class App extends React.Component<object, AppState> {
           <Label labelText={trackerState.getSelectedObtainable()}/>
         </div>
       )
-    };
+    }
 
     return (
       <>
