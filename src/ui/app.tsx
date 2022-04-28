@@ -3,6 +3,7 @@ import { SpinnerRoundFilled } from "spinners-react";
 
 import Helper from "../services/helper";
 import Label from "./label";
+import Map from "./map";
 import ObtainablesTracker from "./obtainables-tracker";
 import TrackerState from "../services/tracker-state";
 
@@ -119,6 +120,7 @@ class App extends React.Component<object, AppState> {
             trackerState={trackerState}
           />
           <Label labelText={trackerState.getSelectedObtainable()}/>
+          <Map />
         </div>
       )
     }

@@ -48,7 +48,7 @@ class ObtainablesTracker extends React.Component<ObtainablesTrackerInterface> {
 
   render(): React.ReactNode {
     return (
-      <div className="tracker">
+      <div className="obtainables-tracker">
         <div className="gear">
           <img
             id="gear-overlay"
