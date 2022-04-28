@@ -10,7 +10,7 @@
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
     "node-sass": "^7.0.0",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
     "spinners-react": "^1.0.7",
