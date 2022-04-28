@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout commit 🛎️
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3.0.2
 
       - name: Install Node ⬢
-        uses: actions/setup-node@v2.5.0
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: '16.x'
       
@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@4.1.8
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
           folder: build
