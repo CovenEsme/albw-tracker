@@ -8,21 +8,19 @@ describe("Map", () => {
   const mapLoruleAltText       = "Map of Lorule";
   const changeMapButtonAltText = "Change map button";
 
-  test("Renders Map with default Hyrule image", () => {
+  beforeEach(() => {
     render(<Map />);
+  });
 
+  test("Renders Map with default Hyrule image", () => {
     expect(screen.getByAltText(mapHyruleAltText)).toBeInTheDocument();
   });
 
   test("Renders Map with map change button", () => {
-    render(<Map />);
-
     expect(screen.getByAltText(changeMapButtonAltText)).toBeInTheDocument();
   });
 
   test("Renders Lorule Map after the change map button is clicked", () => {
-    render(<Map />);
-
     const mapOfHyrule = screen.getByAltText(mapHyruleAltText);
     const changeMapButton = screen.getByAltText(changeMapButtonAltText);
 
@@ -37,8 +35,6 @@ describe("Map", () => {
   });
 
   test("Renders the correct Map after the change map button is toggled", () => {
-    render(<Map />);
-
     const mapOfHyrule = screen.getByAltText(mapHyruleAltText);
     const changeMapButton = screen.getByAltText(changeMapButtonAltText);
 
