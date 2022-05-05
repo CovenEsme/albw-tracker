@@ -13,13 +13,15 @@ class Label extends React.Component<LabelInterface> {
 
     return (
       <div className="label">
-        <img
-          id="label-image"
-          src={_.get(Images.IMAGES, "LABEL")}
-          alt="Label"
-          draggable={false}
-        />
-        <div id="label-text" data-testid="label-text">{labelText}</div>
+        <div id="label-container">
+          <img
+            id="label-image"
+            src={_.get(Images.IMAGES, "LABEL")}
+            alt="Label"
+            draggable={false}
+          />
+          <div id="label-text" data-testid="label-text">{labelText}</div>
+        </div>
       </div>
     );
   }
