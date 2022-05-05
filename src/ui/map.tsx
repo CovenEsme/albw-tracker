@@ -25,7 +25,7 @@ class Map extends React.Component {
             <img
               id="hyrule-map-tooltip"
               src={_.get(Images.IMAGES, "MAP_TOOLTIP")}
-              alt="Map label"
+              alt="Hyrule map label"
               draggable={false}
             />
             <div id="map-text">{mapText}</div>
