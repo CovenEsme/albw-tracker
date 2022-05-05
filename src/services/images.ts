@@ -284,6 +284,22 @@ class Images {
       ],
       "LABEL": [
         import("../assets/tooltip-label.png")
+      ],
+
+      "HYRULE_MAP": [
+        import("../assets/maps/hyrule-map.png")
+      ],
+      "LORULE_MAP": [
+        import("../assets/maps/lorule-map.png")
+      ],
+      "MAP_TOOLTIP": [
+        import("../assets/maps/hyrule-map-tooltip.png")
+      ],
+      "CHANGE_MAP_UP": [
+        import("../assets/maps/map-button-up.png")
+      ],
+      "CHANGE_MAP_DOWN": [
+        import("../assets/maps/map-button-down.png")
       ]
     };
   }
