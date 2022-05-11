@@ -15,14 +15,17 @@ Visit the [ALBW Randomizer discord](https://discord.gg/dmAJh2uY7M) for randomize
 
 [![demo](albw-tracker-demo.gif)](https://elliebeph.github.io/albw-tracker)
 
-## Current Features 🔆
+## Existing Features 🔆
 
 * Gear and Item tracking 🏹
 * Mouse over tooltip label 🏷️
 
-## Upcoming (hopefully 🤞) Features 📅
+## Currently Working On 🔧
 
 * Maps! 🗺️
+
+## Upcoming (hopefully 🤞) Features 📅
+
 * Location tracking 🧭
 * Stats 🛰️
 * Logic 🧠
