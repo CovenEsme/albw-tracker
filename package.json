@@ -20,7 +20,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@types/lodash": "^4.14.182",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@typescript-eslint/parser": "^5.31.0",
     "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.29.4",
     "gh-pages": "^4.0.0",
