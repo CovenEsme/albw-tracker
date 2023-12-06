@@ -72,7 +72,7 @@ class TrackerState {
   }
 
   getSelectedObtainable(): string {
-    return _.get(this, "selectedObtainable");
+    return _.get<TrackerState, string>(this, "selectedObtainable");
   }
 
   clearSelectedObtainable(): TrackerState {
