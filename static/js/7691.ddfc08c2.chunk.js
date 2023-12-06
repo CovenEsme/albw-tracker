@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[7691],{7691:(a,e,c)=>{a.exports=c.p+"static/media/pouch-0a.52090841b09c8212b8bd.png"}}]);

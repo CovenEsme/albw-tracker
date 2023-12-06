@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[4844],{4844:function(e,a,c){e.exports=c.p+"static/media/sword-2.d35f5ecd476887e474d6.png"}}]);

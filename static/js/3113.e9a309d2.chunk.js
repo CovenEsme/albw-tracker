@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[3113],{3113:function(e,a,t){e.exports=t.p+"static/media/horn.f0423420f43f0b7bb444.png"}}]);

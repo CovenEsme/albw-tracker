@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[2027],{2027:(a,c,e)=>{a.exports=e.p+"static/media/scroll-1.677a2cc7ff95fdfb1217.png"}}]);

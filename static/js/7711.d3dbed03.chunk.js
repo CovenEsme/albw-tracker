@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[7711],{7711:function(e,a,t){e.exports=t.p+"static/media/pendant-of-wisdom-1.6918e44bef49d0e2f1a7.png"}}]);

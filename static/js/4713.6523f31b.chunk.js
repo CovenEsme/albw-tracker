@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[4713],{4713:function(e,a,c){e.exports=c.p+"static/media/badge-1.dbd13bf9651880cfc769.png"}}]);

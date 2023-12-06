@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[405],{405:function(a,e,s){a.exports=s.p+"static/media/sage-rosso-0.687fd83aea7f5b159b0b.png"}}]);

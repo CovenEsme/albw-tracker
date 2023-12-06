@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[7243],{7243:function(e,c,a){e.exports=a.p+"static/media/bell-0.cd992518b1c20a3df6ce.png"}}]);
