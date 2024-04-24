@@ -55,6 +55,9 @@
     "typescript": "^5.4.5"
   },
   "overrides": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "postcss": "^8.4.38",
+    "tough-cookie": "^4.1.3",
+    "nth-check": "^2.0.1"
   }
 }
