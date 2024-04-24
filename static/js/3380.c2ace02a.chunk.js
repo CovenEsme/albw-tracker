@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[3380],{3380:(e,a,t)=>{e.exports=t.p+"static/media/tooltip-label.e41844d54834eb1d5c86.png"}}]);

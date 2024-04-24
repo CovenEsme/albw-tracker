@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[9711],{9711:(e,a,c)=>{e.exports=c.p+"static/media/sage-osfala-1.cb63bcc8737ef57feace.png"}}]);

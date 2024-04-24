@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[3929],{3929:(e,a,t)=>{e.exports=t.p+"static/media/heart-2.3ee155d8f5c421a2aeb9.png"}}]);

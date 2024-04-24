@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[3391],{3391:(e,a,p)=>{e.exports=p.p+"static/media/flippers-1.b3eb84eff57094540b8c.png"}}]);

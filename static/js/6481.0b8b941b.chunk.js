@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[6481],{6481:(e,a,c)=>{e.exports=c.p+"static/media/pendant-of-courage-0.fe8f1e5bca4f2e85e9f4.png"}}]);

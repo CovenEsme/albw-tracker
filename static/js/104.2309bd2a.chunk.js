@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[104],{104:(e,a,p)=>{e.exports=p.p+"static/media/pendant-of-power-1.ea2ef416b5b3f42c1f08.png"}}]);

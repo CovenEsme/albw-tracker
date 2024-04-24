@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalbw_tracker=self.webpackChunkalbw_tracker||[]).push([[1681],{1681:(a,e,s)=>{a.exports=s.p+"static/media/sage-impa-0.09617eb7fa57aadba5c2.png"}}]);
