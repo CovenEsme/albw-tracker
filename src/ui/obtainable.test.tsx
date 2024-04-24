@@ -30,7 +30,7 @@ describe("Obtainable", () => {
 
     render(<Obtainable
              obtainableName={testObtainableName}
-             obtainableFancyName=""
+             obtainableFancyName="Test Fancy Name"
              obtainableImage={Images.getImage("Progressive Sword", 0)}
              incrementObtainable={testFunction}
              decrementObtainable={testFunction}
