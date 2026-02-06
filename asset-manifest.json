@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/albw-tracker/static/css/main.de19284f.css",
-    "main.js": "/albw-tracker/static/js/main.3592d78d.js",
+    "main.js": "/albw-tracker/static/js/main.95bbcdd4.js",
     "static/js/7120.a70d75a6.chunk.js": "/albw-tracker/static/js/7120.a70d75a6.chunk.js",
     "static/js/4025.1d541038.chunk.js": "/albw-tracker/static/js/4025.1d541038.chunk.js",
     "static/js/5842.bddbe4cf.chunk.js": "/albw-tracker/static/js/5842.bddbe4cf.chunk.js",
@@ -186,10 +186,10 @@
     "static/media/ReturnofGanon.ttf": "/albw-tracker/static/media/ReturnofGanon.5093b29d91a95e8d36c6.ttf",
     "index.html": "/albw-tracker/index.html",
     "main.de19284f.css.map": "/albw-tracker/static/css/main.de19284f.css.map",
-    "main.3592d78d.js.map": "/albw-tracker/static/js/main.3592d78d.js.map"
+    "main.95bbcdd4.js.map": "/albw-tracker/static/js/main.95bbcdd4.js.map"
   },
   "entrypoints": [
     "static/css/main.de19284f.css",
-    "static/js/main.3592d78d.js"
+    "static/js/main.95bbcdd4.js"
   ]
 }
